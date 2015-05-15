@@ -1,0 +1,269 @@
+{
+
+    "about-me" : {
+        "li" : "I have a Masters in Atmospheric Science",
+        "ul" : [
+            {"li" : "First exposure to programming &amp; computational methods"},
+            {"li" : "Realized I have a strong technical prowess; Lot's of interest"},
+            {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT grad school in architecture and Austin was too good to pass up"},
+            {"li" : "Got into web development because it was easily accessible and has creative elements"},
+            {"li" : "Initially worked as a contractor on an eclectic mix of projects"},
+            {"li" : "Have been working in an agency setting (with agile aspirations) for more than 3 years"}
+        ]
+    },
+
+    "career-goals" : {
+        "li" : "A narration of the history of my career",
+        "ul" : [
+            {"li" : "While an undergraduate, took many internships to gain real-world experience"},
+            {"li" : "One internship lead to my first real job (HARP) where I used my undergraduate education"},
+            {"li" : "This job had flexibility, allowed me to travel, important to me at the time"},
+            {"li" : "Always knew I would return for my Masters"},
+            {"li" : "Followed my undergraduate concentration (fell into Meteorology)"},
+            {"li" : "Years of catch-up and intense learning: fell in love with the elegance of the math, but drawn to the daily programming involved"},
+            {"li" : "After graduating, contracted myself out as a freelance programmer &amp; web developer (and more travel)"},
+            {"li" : "Settled into Austin in 2011 and worked at a couple of small digital shops (PCS and VM Foundry)"},
+            {"li" : "Bought out by a larger marketing firm (W2O Group) at beginning of 2013 and have since been working at a larger scale"}
+        ]
+    },
+
+    "science" : {
+        "li" : "Scientific background: natural curiousity, developed a lot of patience"
+    },
+
+    "weakness-1" : {
+        "li" : "Tend to get excited and start developing when solutions already exist"
+    },
+
+    "weakness-2" : {
+        "li" : "Overorganization: tough to find the balance when starting a project, so go all out"
+    },
+
+    "learn-1" : {
+        "li" : "Strong motivation to learn",
+        "ul" : [
+            {"li" : "Adapt Training internship: PHP, MySQL, Perl CGI &amp; JavaScript"},
+            {"li" : "MasterCard Content Hub: Learning OOP on the job (PHP 'model' back-end) while developing a front-end application ('view' and 'controller')"}
+        ]
+    },
+
+    "learn-2" : {
+        "li" : "Solving day to day programming challenges: learning in the process (monster csh program)"
+    },
+
+    "challenges-1" : {
+        "li" : "Following interests and jumping into entirely new careers"
+    },
+
+    "challenges-2" : {
+        "li" : "Learning under a deadline"
+    },
+
+    "program-challenge-1" : {
+        "li" : "Coding a Mesoscale model for a class project: At first, not even aware of the power of the Fortran PRINT statement (serious learning experience)"
+    },
+
+    "program-challenge-2" : {
+        "li" : "Transitioning from procedural to object-oriented coding (leap of faith)"
+    },
+
+    "motivation-1" : {
+        "li" : "Owning the development cycle: agile sprints including planning, kanban boards, and retrospectives"
+    },
+
+    "motivation-2" : {
+        "li" : "Getting the job done: Self motivation to finish thesis; highlight day-to-day accomplishments"
+    },
+
+    "mesomodel-1" : {
+        "li" : "Programmed a mesoscale model from scratch that includes",
+        "ul" : [
+            {"li" : "Flux-form advection: Simplification to remove the density term (instead focusing on non-dimensional pressure tendency)"},
+            {"li" : "Kessler microphysics scheme: Warm phase microphysical scheme"},
+            {"li" : "Leapfrog finite differencing: 2nd order accurate, centered in time, centered in space finite differencing scheme (Experimented w/ others: see WWW)"},
+            {"li" : "Asselin filter: Addresses the problem of decoupling w/in Leapfrog scheme"},
+            {"li" : "Artificial diffusion: Ensure numerical stability with Leapfrog differencing"},
+            {"li" : "Lateral boundary sponges: Minimize problems arising from boundary conditions (Experimented w/ others: see WWW)"},
+            {"li" : "Rayleigh dampening: Numerical (and atmospheric) stability aloft: Essentially acts as a top-boundary sponge"}
+        ]
+    },
+
+    "mesomodel-2" : {
+        "li" : "The first time seeing model output of a slowly ascending warm bubble (using GrADS)"
+    },
+
+    "success-1" : {
+        "li" : "Making the program do what it is supposed to do all while implementing it in a thought-out, managable way"
+    },
+
+    "success-2" : {
+        "li" : "Keeping deadlines"
+    },
+
+    "personal-dev-1" : {
+        "li" : "Making my life easier: Perl grocery list",
+        "ul" : [
+            {"li" : "Grocery list from family recipe files - inputting 'pumpkin soup, eggplant parm, &amp; peanut butter' generates a PDF list sorted by store aisle"}
+        ]
+    },
+
+    "personal-dev-2" : {
+        "li" : "Making my life easier and learning something in the process: WordPress recipe site and grocery list plugin",
+        "ul" : [
+            {"li" : "As above but sorted by store aisle on a per-user, per-store basis"}
+        ]
+    },
+
+    "w2o-team-1" : {
+        "li" : "Work alongside 3 other WordPress developers, a Solution Manager, and a BA on a daily basis"
+    },
+
+    "w2o-team-2" : {
+        "li" : "Lead developer on a project that had a revolving door of developers (5 in-house, 3 contracted out)"
+    },
+
+    "pcs-team-1" : {
+        "li" : "Lead Developer at PCS: Worked with a team of developers &amp; graphic artists to design, develop, deploy, &amp; maintain several websites"
+    },
+
+    "w2o-1" : {
+        "li" : "Web Developer",
+        "ul" : [
+            {"li" : "Collaborated on the Social BI software team: Executive dashboard"},
+            {"li" : "Collaborated on the W2OPress software package that standardizes project development"},
+            {"li" : "Created object-oriented, custom-built web applications and plugins"},
+            {"li" : "Built and maintained several WordPress (multi)sites, including responsive"},
+            {"li" : "Developed plugins that interact with a variety of external APIs"},
+            {"li" : "Planned and deployed Google Analytics events and conversions"}
+        ]
+    },
+
+    "vmf-1" : {
+        "li" : "Junior Web Developer",
+        "ul" : [
+            {"li" : "Built websites using PHP, MySQL, jQuery, and CSS"},
+            {"li" : "Maintained several WordPress sites"},
+            {"li" : "Learned best practices for deploying to staging and production environments using Git"},
+            {"li" : "Programmed a variety of cross-browser newsletters to work across multiple email clients"}
+        ]
+    },
+
+    "pcs-1" : {
+        "li" : "Setup, developed (using PHP Smarty templates), and maintained a variety of CMS and payment gateways: WHMCS, SugarCRM, Recurly",
+        "ul" : [
+            {"li" : "Designed software to generate custom reports"},
+            {"li" : "Implemented language translations across several sites"},
+            {"li" : "eg: WHMCS scripting via external API to clean up the database (3500 client account closings)"},
+            {"li" : "eg: Password-protected front-end portal for queries to an archived database (generated from a rediculously large spreadsheet)"}
+        ]
+    },
+
+    "cron-1" : {
+        "li" : "Setup cronjobs via cPanel &amp; C-shell: Automated billing, DB backups, server status"
+    },
+
+    "adapt-1" : {
+        "li" : "Adapt Training: Training Log - More objective workout prescription based on movement assessments",
+        "ul" : [
+            {"li" : "Using Perl-CGI, I coded the training rubric into programming logic and implemented a web-based approach for training assessment"},
+            {"li" : "Options along the way vary by trainer certification level (more advanced trainers are allowed more leeway for assessment)"},
+            {"li" : "Scores are given; A workout is prescribed; Everything recorded to a SQL database"}
+        ]
+    },
+
+    "adapt-2" : {
+        "li" : "Adapt also needed a method to share workouts and histories with their clients",
+        "ul" : [
+            {"li" : "Created a database-query web portal to allow clients to log into the system"}
+        ]
+    },
+
+    "adapt-3" : {
+        "li" : "I have more details of this self-made internship (ie: semi-free work) if you need...",
+        "ul" : [
+            {"li" : "Developed a program for Adapt staff that allows \"seamless\" integration of CGI with their HTML skins"},
+            {"li" : "Client-side verification of field values with JavaScript (take heat off the server; initial security sweep)"},
+            {"li" : "Server-side parsing of all user input with Perl (final security sweep)"},
+            {"li" : "Malicious activity detection - errors are logged for monitoring"},
+            {"li" : "Prescribed workouts are emailed to the client"},
+            {"li" : "New clients receive a welcome (form) letter"}
+        ]
+    },
+
+    "greenwood" : {
+        "li" : "Customized education tools for youths with Autism",
+        "ul" : [
+            {"li" : "Simple application entirely coded using JavaScript"},
+            {"li" : "Responds to correct answers - chimes if correct answer picked 1st (reward)"},
+            {"li" : "Keeps a running score"}
+        ]
+    },
+
+    "new-media-arc" : {
+        "li" : "Designed file processing tools with Perl to streamline website creation"
+    },
+
+    "thesis-research" : {
+        "li" : "Examined the effects of the Appalachians on the precipitation distribution of tropical cyclones that impinge upon them",
+        "ul" : [
+            {"li" : "Identified areas of frequent heavy rain owing to (in)direct mountain effects"},
+            {"li" : "Documented the Appalachians effects on tropical and mid-latitude cyclones, and their interactions (ET and reintensification)"}
+        ]
+    },
+
+    "thesis-data" : {
+        "li" : "NARR, ECMWF, SSM/I, StageIV, GFS, WRF"
+    },
+
+    "thesis-method" : {
+        "li" : "Monthly climatologies, composites (by storm track), case studies, WRF modeling"
+    },
+
+    "thesis-findings-1" : {
+        "li" : "Identification of most frequent areas of heavy rainfall by storm track (1st goal) relatively straightforward"
+    },
+
+    "thesis-findings-2" : {
+        "li" : "Documenting Appalachians effect on tropical and mid-latitude cycles, and their interactions was more complicated",
+        "ul" : [
+            {"li" : "Expands upon the synoptic approach of Atallah et al. (2007) LOT vs ROT tropical precipitation (diabatic energy distribution)"},
+            {"li" : "Noting Hart &amp; Evans (2006) upper-level mid-latitude trough orientation and ET"},
+            {"li" : "Orographic tropical cyclone rainfall enhances downstream ridge; tilts trough negatively through blocking"},
+            {"li" : "Increased baroclinicity of mid-latitude fronts to the west from this blocking and physical mountain presence (O'Handley &amp; Bosart 1996)"},
+            {"li" : "Increased potential for ET and reintensification NE of Appalachians with mountains present"}
+        ]
+    },
+
+    "conference" : {
+        "li" : "28th Conference on Hurricanes and Tropical Meteorology (Orlando, FL)"
+    },
+
+    "hobbies" : {
+        "li" : "Programming, Running, Biking, Soccer, Hiking, Camping"
+    },
+
+    "travel" : {
+        "li" : "Traveling",
+        "ul" : [
+            {"li" : "2001: Europe (6 weeks)"},
+            {"li" : "2002: France (1 year)"},
+            {"li" : "2003: Mexico (6 weeks)"},
+            {"li" : "2005: Egypt, India, Spain (6 months)"},
+            {"li" : "2010: India, Nepal, China (2 months)"},
+            {"li" : "2014: Spain, Portugal, Morocco (1 month)"}
+        ]
+    },
+
+    "salary-1" : {
+        "li" : "Open based upon the position and the overall compensation package"
+    },
+
+    "salary-2" : {
+        "li" : "...no matter how hard you push, you will not get a response from me"
+    },
+
+    "" : {
+        "li" : ""
+    }
+
+}

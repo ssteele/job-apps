@@ -1,0 +1,118 @@
+Steven Harville Steele
+steve-steele.com
+
+
+Contact Information
+
+1407-B Kirkwood Rd
+Austin, TX 78722
+503.891.3306
+steven.harville.steele@gmail.com
+
+
+Objective
+
+To apply my experience to web and application development
+
+
+Technical Proficiency
+
+Mac OS, Unix/Linux, Windows, PHP, Laravel, WordPress, (S)CSS, JavaScript, jQuery, Ajax, Responsive Design, MySQL, Git, Python, Perl, bash, Regex, Illustrator, Photoshop
+Mac OS, Unix/Linux, Windows, JavaScript, Angular, jQuery, Ajax, (S)CSS, Responsive Design, PHP, WordPress, MySQL, Git, Python, Perl, bash, Regex, Illustrator, Photoshop
+
+Professional Experience
+
+W2O Digital, Austin, TX
+Web Developer Jan 2013 – Present
+Collaborated on the Social BI and W2OPress software teams. Created object-oriented, responsive back-end web sites and single-page front-end applications. Built and maintained WordPress (multi)sites. Developed plugins that interact with a variety of external APIs. Planned and deployed Google Analytics events and conversions.
+Clients: MasterCard, Purdue Pharma, EMD Serono, Intel
+
+VM Foundry, Austin, TX
+Web Developer Apr 2012 – Dec 2012
+Built websites using PHP, MySQL, jQuery, and CSS. Maintained several WordPress sites. Learned best practices for deploying to staging and production environments using Git. Programmed a variety of cross-browser newsletters to work across multiple email clients. VM Foundry was sold and merged with W2O Group in 2012, forming W2O Digital.
+Clients: PGA, Sunny Delight, Auxogyn, Sutter Home
+
+Web Services Consultant, Various Companies Nov 2010 – Feb 2012
+
+Prison Call Solutions, LLC - Austin, TX
+Developed and maintained the front and back ends of several online businesses. Managed clients/billing using WHMCS, SugarCRM, and Recurly. Programmed custom reports and website translations.
+
+Adapt Training - Beaverton, OR
+Created and implemented a secure, web-based training log and database query using PHP, MySQL, Perl (CGI), and JavaScript designed to handle, manage, track, and return client-driven user input
+
+The Greenwood School - Portland, OR
+Built custom web-based educational tools for youths with autism using JavaScript
+
+New Media Arc, LLC - Oklahoma City, OK
+Designed tools to streamline website creation using Perl
+
+Other Projects
+• Set up and administer an ubuntu 10.04-LTS server running on an old powerpc 32-bit G3 Mac iBook
+• Programmed a complex, fully functional task management portal using PHP, MySQL, and JavaScript
+• Composed analysis program to compare NumPy execution speeds against Python OOP methods
+• Constructed an array of Python, PHP, JavaScript, and LaTeX apps to aid in finding employment
+
+North Carolina State University, Raleigh, NC
+Research Assistant: Tropical Meteorology Group Aug 2007 – May 2009
+Research Thesis: ”Effects of Appalachian Topography on Precipitation from Landfalling Hurricanes”
+A study that isolates topographic from synoptic forcing using rainfall climatology, storm case studies and composites, and numerical simulations
+
+
+Education
+
+North Carolina State University College of Physical and Mathematical Sciences
+M.S. in Atmospheric Science May 2009
+
+The University of North Carolina at Charlotte Department of Geography and Earth Sciences
+B.S. in Earth Science (Conc. in Atmospheric/Hydrology) May 2001
+
+
+Conference Presentations
+
+Harville, S., 2008: Effects of Appalachian Topography on Precipitation from Landfalling Hurricanes.
+28th Conference on Hurricanes and Tropical Meteorology, page 13D.2.
+
+Forsythe, R., S. Harville, J. Soule, and C. Matthews, 2004: Stream Regime and Restoration Challenges in Urbanizing Areas of the Piedmont of North Carolina. NC SRI Southeastern Regional Conference on Stream Restoration, pages 61-62.
+
+
+Applicable Courses and Projects
+
+[Tropical Meteorology] WRF simulations of Hurricane Ivan (2004) with and without topography
+[Mesoscale Modeling] Programmed a 3-D numerical model in Fortran for mesoscale experimentation
+[Intro to Fortran] Matrix multiplication: Strassen’s recursive method vs. explicit scheme
+
+
+References
+
+Matt Smith
+Director, Interactive Development, Technology
+W2O Digital
+3000 E Cesar Chavez, Suite 300
+Austin, TX 78702
+512.693.4866
+msmith@w2ogroup.com
+
+Roland Adesanya
+Solution Manager
+W2O Digital
+3000 E Cesar Chavez, Suite 300
+Austin, TX 78702
+512.298.1194
+radesanya@w2ogroup.com
+
+Patrick Lynch
+President
+Prison Call Solutions, LLC
+1712 E Riverside Drive #90
+Austin, TX 78741
+512.516.7453
+patrick@prisoncallsolutions.com
+
+Dr. Anantha Aiyyer
+Assistant Professor
+Department of Marine, Earth, and Atmospheric Sciences
+Campus Box 8208
+North Carolina State University
+Raleigh, NC 27695-8208
+919.515.7973
+aaiyyer@ncsu.edu

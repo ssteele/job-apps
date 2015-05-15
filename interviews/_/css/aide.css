@@ -1,0 +1,256 @@
+body {
+    font:16px "Trebuchet MS";
+    line-height:24px;
+    background-color:#73735d;
+}
+
+ul {
+    margin:0;
+    padding:0;
+}
+
+ul li {
+    margin:0;
+    padding:0;
+}
+
+ul li:hover {
+    background-color:#ff0;
+}
+
+ul li ul li {
+    margin-left:20px;
+}
+
+a,
+a:visited {
+    text-decoration:none;
+    color:#00f;
+}
+
+.hidden {
+    display:none;
+}
+
+.no-border {
+    border-top:none !important;
+    border-right:none !important;
+    border-bottom:none !important;
+    border-left:none !important;
+}
+
+.alert {
+    color:#f00;
+}
+
+.top-buttons {
+    padding:10px 10px 10px 20px;
+    width:1188px;
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+    border-top:1px solid #000;
+    border-bottom:1px solid #777;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    text-align:center;
+}
+
+#start, #stop {
+    color:#fff;
+    background-color:#333;
+    border-top:4px solid #777;
+    border-bottom:4px solid #000;
+    border-left:7px solid #222;
+    border-right:7px solid #222;
+}
+
+.log-notification {
+    width:1210px;
+    margin:0 auto;
+    padding:10px;
+    background-color:#ff0;
+    color:#000;
+    text-align:center;
+    border-bottom:1px solid #000;
+}
+
+.mgmt:hover {
+    background-color:#ccc;
+    color:#000;
+}
+
+#start:hover {
+    background-color:#0d0;
+}
+
+#stop:hover {
+    background-color:#f00;
+}
+
+#report {
+    position:relative;
+    width:1230px;
+    margin:0 auto;
+}
+
+.summary {
+    color:#111;
+    background-color:#eee;
+    padding:10px 10px 40px 40px;
+    width:1150px;
+    margin-left:auto;
+    margin-right:auto;
+    border-top:14px solid #ccc;
+    border-bottom:7px solid #fff;
+    border-left:16px solid #ddd;
+    border-right:16px solid #ddd;
+    cursor:text;
+}
+
+#copy-answers {
+    position:absolute;
+    bottom:30px;
+    left:70px;
+}
+
+.open {
+    color:#fff;
+    background-color:#000;
+    border-top:4px solid #ccc;
+    border-bottom:4px solid #333;
+    border-left:7px solid #999;
+    border-right:7px solid #999;
+}
+
+.close {
+    color:#fff;
+    background-color:#000;
+    border-top:4px solid #ccc;
+    border-bottom:4px solid #333;
+    border-left:7px solid #999;
+    border-right:7px solid #999;
+}
+
+.topic,
+.question {
+    font:16px "Trebuchet MS";
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+    border-top:1px solid #000;
+    border-bottom:1px solid #777;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    width:1230px;
+}
+
+.question {
+    text-align:center;
+}
+
+.title {
+    color:#999;
+    padding:10px;
+    width:1210px;
+}
+
+.title:hover {
+    opacity:0.5;
+    color:#eee;
+}
+
+.topic .title:hover {
+    opacity:1;
+    color:#999;
+}
+
+.answer {
+    padding:10px 10px 10px 40px;
+    background-color:#ccd9ff;
+    font-size:14px;
+    color:#444;
+    text-align:left;
+    line-height:1.5em;
+    border-top:14px solid #9ab;
+    border-bottom:7px solid #def;
+    border-left:16px solid #000;
+    border-right:16px solid #000;
+}
+
+.grayed-out {
+    color:#999;
+}
+
+.talking-point {
+    width:1215px;
+    color:#333;
+    background-color:#cba;
+    border-top:4px solid #edc;
+    border-bottom:4px solid #543;
+    border-left:7px solid #ba9;
+    border-right:7px solid #ba9;
+}
+
+.talking-point .title,
+.talking-point .title:hover {
+    color:#444;
+}
+
+.talking-point h3 {
+    margin:10px 0 5px;
+}
+
+.talking-point ul {
+    margin-left:20px;
+}
+
+.talking-point .answer {
+    padding-bottom:20px;
+    font:12px Georgia, Serif;
+    line-height:18px;
+    border-top:14px solid #543;
+    border-bottom:7px solid #cba;
+    border-left:16px solid #987;
+    border-right:16px solid #987;
+}
+
+.talking-point li.answer {
+    display:none;
+}
+
+.general .title {
+    background-color:#300;
+}
+
+.general .answer {
+    border-left-color:#170000;
+    border-right-color:#170000;
+}
+
+.experience .title {
+    background-color:#222;
+}
+
+.experience .answer {
+    border-left:16px solid #111;
+    border-right:16px solid #111;
+}
+
+.thesis .title {
+    background-color:#440;
+}
+
+.thesis .answer {
+    border-left:16px solid #220;
+    border-right:16px solid #220;
+}
+
+.typical .title {
+    background-color:#003;
+}
+
+.typical .answer {
+    border-left:16px solid #000017;
+    border-right:16px solid #000017;
+}
