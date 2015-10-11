@@ -1,0 +1,159 @@
+body {
+    background-color:#73735d;
+    font-size:16px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+    color:#333;
+    cursor:pointer;
+    font-family:"Trebuchet MS";
+}
+
+h3 {
+    font-size:14px;
+    margin:1rem 0 0;
+}
+
+ul {
+    font-size:14px;
+    margin-bottom:0;
+}
+
+.hidden {
+    display:none;
+}
+
+.centered {
+    text-align:center;
+}
+
+.alert {
+    color:#f00;
+}
+
+.notification {
+    background-color:#ff0;
+}
+
+.full-width {
+    padding-left:0;
+    padding-right:0;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+.grayed-out,
+.grayed-out li {
+    color:#999;
+}
+
+.title,
+.report > div {
+    padding:0.5rem 1rem;
+}
+
+.button {
+    background-color:#333;
+    color:#ccc;
+    margin-bottom:0;
+}
+
+.button:hover {
+    background-color:#ccc;
+    color:#333;
+}
+
+.start:hover {
+    background-color:#0f0;
+}
+
+.stop:hover {
+    background-color:#f00;
+}
+
+.current,
+.answer {
+    background-color:#ccd9ff;
+    padding:1rem;
+}
+
+.title {
+    color:#999;
+}
+
+.job-title {
+    background-color: #eee;
+    padding: 5px;
+    text-align: center;
+}
+
+.question:hover .job-title {
+    color:#333;
+    opacity:1;
+}
+
+.topic .title {
+    text-align:right;
+}
+
+.question:hover .title {
+    background-color:#ccc;
+    color:#333;
+    opacity:0.5;
+}
+
+.question li:hover {
+    background-color:#ff0;
+}
+
+.color-1 {
+    background-color:#422;
+}
+
+.color-2 {
+    background-color:#242;
+}
+
+.color-3 {
+    background-color:#224;
+}
+
+.color-4 {
+    background-color:#331;
+}
+
+.color-5 {
+    background-color:#313;
+}
+
+.color-6 {
+    background-color:#133;
+}
+
+.color-7 {
+    background-color:#411;
+}
+
+.color-8 {
+    background-color:#033;
+}
+
+.summary {
+    background-color:#eee;
+    color:#111;
+}
+
+.copy {
+    margin:0;
+    width:100%;
+}

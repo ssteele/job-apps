@@ -1,1 +1,4 @@
-<?php require_once 'jobs/index.php'; ?>
+<?php
+
+$request = 'valid';
+require_once 'app/index.php';

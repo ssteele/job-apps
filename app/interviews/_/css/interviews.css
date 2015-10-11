@@ -1,0 +1,185 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color:#333;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:"Trebuchet MS", sans-serif;
+}
+
+.hidden {
+    display:none;
+}
+
+.centered {
+    text-align:center;
+}
+
+.right {
+    text-align:right;
+}
+
+h2 {
+    background-color:#eee;
+    border-bottom:1pt solid #fff;
+    border-top:1pt solid #fff;
+    font-size:14pt;
+    font-weight:normal;
+    padding:10px 0;
+}
+
+h3 {
+    font-size:12pt;
+}
+
+ul,
+ol {
+    margin-top:8px;
+}
+
+ul {
+    margin-left:30px;
+}
+
+ol {
+    margin-left:35px;
+}
+
+li {
+    font-size:12pt;
+    margin-left:1em;
+}
+
+pre {
+    font-size:10pt;
+}
+
+.container {
+    background-color:#ccc;
+    border-left:2px solid #888;
+    border-right:2px solid #888;
+    margin:0 auto;
+    min-height:662px;
+    padding:80px 0 25px;
+    position:relative;
+}
+
+.title {
+    background:#f00;
+    -moz-border-radius:2px 10px 10px 2px;
+    -khtml-border-radius:2px 10px 10px 2px;
+    -webkit-border-radius:2px 10px 10px 2px;
+    border-radius:2px 10px 10px 2px;
+    -moz-box-shadow:-4px 2px 4px #333;
+    -khtml-box-shadow:-4px 2px 4px #333;
+    -webkit-box-shadow:-4px 2px 4px #333;
+    box-shadow:-4px 2px 4px #333;
+    color:#fff;
+    font-size:14pt;
+    left:-5px;
+    margin:0;
+    padding:10px 25px;
+    position:relative;
+    top:-55px;
+}
+
+.timestamp {
+    font:24pt Georgia;
+    margin:-20px 0 20px;
+    padding-left:1em;
+}
+
+.timestamp span {
+    display:block;
+}
+
+.time {
+    padding-left:1em;
+}
+
+.icon {
+    position:absolute;
+    right:10px;
+    top:80px;
+}
+
+.small.icon {
+    background-size:64px;
+    height:64px;
+    top:100px;
+    width:64px;
+}
+
+.medium.icon {
+    height:128px;
+    width:128px;
+}
+
+.recruiter {
+    background-image:url(../img/recruiter.png);
+}
+
+.code {
+    background-image:url(../img/code.png);
+}
+
+.phone {
+    background-image:url(../img/phone.png);
+}
+
+.face {
+    background-image:url(../img/face.png);
+}
+
+.contract {
+    background-image:url(../img/contract.png);
+}
+
+.content {
+    font-size:12pt;
+    margin:2em;
+}
+
+.block {
+    border-bottom:1px solid #e3e3e3;
+    margin-bottom:25px;
+    padding-bottom:25px;
+}
+
+.block:last-child {
+    border-bottom:none;
+}
+
+.asked {
+    color:#888;
+}
+
+.answer {
+    color:#090;
+    list-style-type:none;
+    margin-bottom:10px;
+}
+
+.email {
+    font-size:10pt;
+    font-style:italic;
+}
+
+.aide h3,
+.toggle-aide {
+    cursor:pointer;
+}
+
+.toggle-aide li {
+    margin:-8px 0 8px;
+}
