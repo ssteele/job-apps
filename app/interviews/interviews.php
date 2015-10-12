@@ -38,7 +38,7 @@ require_once route( [JOBS_PATH, 'interviews/' . $file] );
 
         </div>
 
-        <div class="row">
+        <div class="row interview">
 
             <div class="small-12 medium-10 medium-centered columns content">
                 <?php

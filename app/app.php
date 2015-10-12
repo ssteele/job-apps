@@ -14,8 +14,8 @@
 <body>
 
 <?php
-require_once route( [JOBS_PATH, 'applications/applications.php'] );
 require_once route( [JOBS_PATH, 'applications/archives.php'] );
+require_once route( [JOBS_PATH, 'applications/applications.php'] );
 require_once route( [JOBS_PATH, 'applications/meta.php'] );
 ?>
 

@@ -64,14 +64,15 @@ pre {
     font-size:10pt;
 }
 
+.row.interview {
+    margin:0 auto;
+}
+
 .container {
     background-color:#ccc;
     border-left:2px solid #888;
     border-right:2px solid #888;
-    margin:0 auto;
-    min-height:662px;
-    padding:80px 0 25px;
-    position:relative;
+    padding:25px 0;
 }
 
 .title {
@@ -85,17 +86,15 @@ pre {
     -webkit-box-shadow:-4px 2px 4px #333;
     box-shadow:-4px 2px 4px #333;
     color:#fff;
+    display:inline-block;
     font-size:14pt;
-    left:-5px;
-    margin:0;
+    margin:0 100px 0 -5px;
     padding:10px 25px;
-    position:relative;
-    top:-55px;
 }
 
 .timestamp {
     font:24pt Georgia;
-    margin:-20px 0 20px;
+    margin:20px 0;
     padding-left:1em;
 }
 
@@ -147,7 +146,7 @@ pre {
 
 .content {
     font-size:12pt;
-    margin:2em;
+    /*padding:2em;*/
 }
 
 .block {
