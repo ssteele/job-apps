@@ -218,7 +218,7 @@ abstract class Application {
 
         if ( $this->letter ) {
 
-            $path = JOBS_PATH . 'cover-letters/archives/' . $this->_local_filepath;
+            $path = JOBS_PATH . 'cover-letters/' . $this->_local_filepath;
 
             if ( file_exists( $path . '.pdf' ) ) {
                 return '<a href="' . $path . '.pdf" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
@@ -241,7 +241,7 @@ abstract class Application {
 
         if ( $this->resume ) {
 
-            $path = JOBS_PATH . 'resumes/archives/' . $this->_local_filepath;
+            $path = JOBS_PATH . 'resumes/' . $this->_local_filepath;
 
             if ( file_exists( $path . '.pdf' ) ) {
                 return '<a href="' . $path . '.pdf" class="icon submitted" title="Resume"><i class="fa fa-file"></i></a>';
