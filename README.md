@@ -62,7 +62,7 @@ Once you have found a posting that interests you, add it to the app. Job applica
 
 A couple of mock applications have been populated into the app to give you a sense of where to put things. The app will alert you what to name files with a click the appropriate icon/text. The basic workflow is to copy the filename text from the alert box, navigate to the appropriate folder in the jobs directory (postings, cover-letters, or resumes), and save a new file named from the copied filename. Note: new job entries must have a status of 'dream' or 'potential' when following the examples below. Otherwise the app assumes you don't want to save an archive of the posting, or that you did not send a resume or cover letter.
 
-Click on the lefthand date of a new entry to save a local copy of the job posting (must copy the original job posting page's source into the new file). Save cover letters and resumes for potential applications with a mouse click over the envelope and page icon outlines to the right. If your cover letter was, say, an email instead of a PDF, change the extension of the new file to 'txt' instead of 'pdf.' Later, we'll also save interviews by adding an entry to the interviews array (see code above) and clicking the spinning <i class="icon-refresh">: See Interview Pages section below for more.
+Click on the lefthand date of a new entry to save a local copy of the job posting (must copy the original job posting page's source into the new file). Save cover letters and resumes for potential applications with a mouse click over the envelope and page icon outlines to the right. If your cover letter was, say, an email instead of a PDF, change the extension of the new file to 'txt' instead of 'pdf.' Later, we'll also save interviews by adding an entry to the interviews array (see code above) and clicking the spinning arrow: See Interview Pages section below for more.
 
 ###Easily Create Custom Resumes and Cover Letters (optional)
 
@@ -70,7 +70,7 @@ For this you'll need to set LaTeX up on your machine. If you've never heard of L
 
 ###Interview Pages
 
-When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning <i class="icon-refresh">. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
+When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
 
 *jobs/interviews/04-21-2015_senior_devops_engineer_w2o_group.php*
 
@@ -91,7 +91,7 @@ When you've secured an interview, add it to the interviews array (inside the cor
     // Notes                                                        // random notes, how you felt about the interview, the people, how well you did, anything really
     // Email communication                                          // i usually copy important email communications here surrounding the meeting
 
-Now when you go back to the app, that spinning <i class="icon-refresh"> should be a clickable interview icon. Click it to view the interview page you just made.
+Now when you go back to the app, that spinning arrow should be a clickable interview icon. Click it to view the interview page you just made.
 
 ###Interview Aide
 
