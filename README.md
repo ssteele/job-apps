@@ -5,15 +5,19 @@
 ###Setup
 Very basic coding skill is required: PHP, JSON, LaTeX (optional). You'll want to set up a server on your local machine (MAMP, Node, nginx) or publically (hopefully behind basic auth) and serve from project root. No database is necessary.
 
+    git clone https://github.com/ssteele/job-apps.git
+    cd job-apps
+    composer install
+
 ###Save Links, Job Lists, and Companies
 
 Once served, fire up the site (http://YOUR-URL). Then start populating the app with useful links. These could include your online resume, several job lists, companies you're tracking, or anything else you want to keep in a centralized place with the job applications we'll be making later.
 
-*jobs/applications/meta.php*
+*src/jobs/applications/meta.php*
 
     $links = [
         'Resume'         => 'http://steve-steele.com/cv/',
-        'Interview Aide' => 'app/interview-aide/',                  // this links to the Interview Aide (see details below)
+        'Interview Aide' => 'src/app/interview-aide/',              // this links to the Interview Aide (see details below)
     ];
 
     $lists = [                                                      // below is a link to Laravel job postings on Indeed that don't have a bunch of unrelated technologies also listed
@@ -25,9 +29,9 @@ Once served, fire up the site (http://YOUR-URL). Then start populating the app w
     ];
 
 ###Find and Track Jobs
-Once you have found a posting that interests you, add it to the app. Job applications are fed into the system using basic PHP arrays:
+Once you have found a posting that interests you, add it to the app. Job applications are fed into the application using basic PHP arrays:
 
-*jobs/applications/applications.php*
+*src/jobs/applications/applications.php*
 
     // basic template - duplicate me when you find new job postings
     $jobs[] = Job::create([
@@ -40,11 +44,11 @@ Once you have found a posting that interests you, add it to the app. Job applica
 
     // ...lots of options
     $jobs[] = Job::create([
-        'status'         => 'rejected',                             // dream, potential, applied, rejected
+        'status'         => 'rejected',                             // options: dream, potential, applied, rejected
         'search_date'    => '05.15.2015',                           // when you found the posting
         'app_date'       => '05.16.2015',                           // when you actually applied for the job
         'title'          => 'DevOps Engineer',                      // job title
-        'company'        => 'W2O Group',                            // company, duh...
+        'company'        => 'W2O Group',                            // company name
         'local_posting'  => true,                                   // if true, clicking on date in the app alerts you to the file that you should save the job posting markup within
         'public_posting' => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
         'resume'         => true,                                   // keep track of the resume you sent
@@ -60,19 +64,19 @@ Once you have found a posting that interests you, add it to the app. Job applica
         ],
     ]);
 
-A couple of mock applications have been populated into the app to give you a sense of where to put things. The app will alert you what to name files with a click the appropriate icon/text. The basic workflow is to copy the filename text from the alert box, navigate to the appropriate folder in the jobs directory (postings, cover-letters, or resumes), and save a new file named from the copied filename. Note: new job entries must have a status of 'dream' or 'potential' when following the examples below. Otherwise the app assumes you don't want to save an archive of the posting, or that you did not send a resume or cover letter.
+A couple of mock applications have been populated into the app to give you a sense of where to put things. The app will alert you what to name files with a click the appropriate icon/text. The basic workflow is to copy the filename text from the alert box, navigate to the appropriate folder in the jobs directory (postings, cover-letters, or resumes), and save a new file named from the copied filename. Note: new job entries must have a status of 'dream' or 'potential' when following the examples below. Otherwise the app assumes you don't want to save an archive of the posting, or that you do not want to track a resume or cover letter.
 
 Click on the lefthand date of a new entry to save a local copy of the job posting (must copy the original job posting page's source into the new file). Save cover letters and resumes for potential applications with a mouse click over the envelope and page icon outlines to the right. If your cover letter was, say, an email instead of a PDF, change the extension of the new file to 'txt' instead of 'pdf.' Later, we'll also save interviews by adding an entry to the interviews array (see code above) and clicking the spinning arrow: See Interview Pages section below for more.
 
 ###Easily Create Custom Resumes and Cover Letters (optional)
 
-For this you'll need to set LaTeX up on your machine. If you've never heard of LaTeX, you should forget that last sentence and generate PDFs using some online service. Or make DOCs if you must. A basic layout and bash scripts are included if you're game to using LaTeX. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be super burdensome if you want to tweak something on your layout.
+For this you'll need to set LaTeX up on your machine. If you've never heard of LaTeX, you should forget that last sentence and generate PDFs using some online service. Or make DOCs if you must. A basic layout and bash scripts are included if you're game to using LaTeX. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
 
 ###Interview Pages
 
-When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
+When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `src/jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `src/jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
 
-*jobs/interviews/04-21-2015_senior_devops_engineer_w2o_group.php*
+*src/jobs/interviews/04-21-2015_senior_devops_engineer_w2o_group.php*
 
     $type = 'phone';                                                // interview type: recruiter, code, phone, face, contract
     $date = 'February 1, 2015';                                     // interview date
@@ -99,7 +103,7 @@ http://YOUR-URL/app/interview-aide/
 
 Outline answers to common interview questions using JSON.
 
-*jobs/interview-aide/json/general-question-answer.json*
+*src/jobs/interview-aide/json/general-question-answer.json*
 
     {
         "about-me" : {
@@ -134,7 +138,7 @@ Outline answers to common interview questions using JSON.
 
 Organize your content into topic sections. The example below is a 'Get to know me' section. Here I define questions I might expect to face during an interview, and I use the answers I created previously (above) to address those questions.
 
-*jobs/interview-aide/general-question-answer.php*
+*src/jobs/interview-aide/general-question-answer.php*
 
     $about_me = [
         'title' => 'Get to know you...',                            // about_me section title
