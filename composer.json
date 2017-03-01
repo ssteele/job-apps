@@ -1,0 +1,23 @@
+{
+    "name": "ssteele/job-apps",
+    "description": "A standalone application to help you stay organized while seeking employment",
+    "license": "MIT",
+    "keywords": ["job, application"],
+    "authors": [
+        {
+            "name": "Steve Steele",
+            "email": "steven.harville.steele@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SteveSteele\\JobApp\\": "src/app/SteveSteele/JobApp",
+            "SteveSteele\\Interview\\": "src/app/SteveSteele/Interview",
+            "SteveSteele\\Aide\\": "src/app/SteveSteele/Aide"
+        }
+    }
+}

@@ -1,4 +1,4 @@
 <?php
 
 $request = 'valid';
-require_once 'app/index.php';
+require_once 'src/app/index.php';
