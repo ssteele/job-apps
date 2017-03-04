@@ -31,7 +31,8 @@ class Potential extends Application
         if ($this->letter) {
             $output = '';
 
-            $output .= '<span class="icon submitted copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '.pdf">';
+            $action = (AUTO_LATEX) ? 'auto-generate' : 'copy-to-clipboard';
+            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '.pdf">';
             $output .= '    <i class="fa fa-envelope-o"></i>';
             $output .= '</span>';
 
@@ -51,7 +52,8 @@ class Potential extends Application
         if ($this->resume) {
             $output = '';
 
-            $output .= '<span class="icon submitted copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '.pdf">';
+            $action = (AUTO_LATEX) ? 'auto-generate' : 'copy-to-clipboard';
+            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '.pdf">';
             $output .= '    <i class="fa fa-file-o"></i>';
             $output .= '</span>';
 
