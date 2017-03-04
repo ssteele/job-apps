@@ -28,9 +28,7 @@ class Dream extends Application
      */
     protected function jobLetter()
     {
-        $return = parent::jobLetter();
-
-        if ($this->letter && false === $return) {
+        if ($this->letter) {
             $output = '';
 
             $output .= '<span class="icon submitted copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '.pdf">';
@@ -40,7 +38,7 @@ class Dream extends Application
             return $output;
         }
 
-        return $return;
+        return false;
     }
 
 
@@ -50,9 +48,7 @@ class Dream extends Application
      */
     protected function jobResume()
     {
-        $return = parent::jobResume();
-
-        if ($this->resume && false === $return) {
+        if ($this->resume) {
             $output = '';
 
             $output .= '<span class="icon submitted copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '.pdf">';
@@ -62,7 +58,7 @@ class Dream extends Application
             return $output;
         }
 
-        return $return;
+        return false;
     }
 
 
