@@ -1,8 +1,10 @@
 #!/bin/bash
 
-filename='cover_steve-steele'
+# set variables
+filename='cv_steve-steele'
 
-./latex.bash
+# driver
+./generate-manual.bash
 open -a /Applications/Adobe\ Acrobat\ Reader\ DC.app/ ${filename}.pdf &
 
 exit

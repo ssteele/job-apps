@@ -127,10 +127,9 @@ function sanitizeByType($input, $type)
  * Sanitize user input: run through wp_kses at a minimum
  * @param  mixed $input          Untrusted user input
  * @param  string|array $type    Type specification
- * @param  array        $allow   Allowed protocols: passed to wp_kses
  * @return mixed                 Sanitized output
  */
-function sanitizeInput($input, $type = null, $allow = array())
+function sanitizeInput($input, $type = null)
 {
     if (! is_null($type) && empty($allow)) {
         if (is_array($input) && is_array($type) && count($input) == count($type)) {
