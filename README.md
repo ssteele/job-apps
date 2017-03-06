@@ -72,6 +72,17 @@ Click on the lefthand date of a new entry to save a local copy of the job postin
 
 For this you'll need to set LaTeX up on your machine. If you've never heard of LaTeX, you should forget that last sentence and generate PDFs using some online service. Or make DOCs if you must. A basic layout and bash scripts are included if you're game to using LaTeX. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
 
+Here's how I installed it:
+
+    brew cask install mactex
+
+You may need to update the paths to your LaTeX library in a few files:
+
+    src/jobs/cover-letters/latex/generate-auto.bash
+    src/jobs/resumes/latex/generate-auto.bash
+
+You'll also want to update file names from 'steve-steele' to your own name as well as any references therein.
+
 ###Interview Pages
 
 When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `src/jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `src/jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
