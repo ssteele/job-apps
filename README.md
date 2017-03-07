@@ -70,7 +70,7 @@ Click on the lefthand date of a new entry to save a local copy of the job postin
 
 ###Easily Create Custom Resumes and Cover Letters (optional)
 
-For this you'll need to set LaTeX up on your machine. If you've never heard of LaTeX, you should forget that last sentence and generate PDFs using some online service. Or make DOCs if you must. A basic layout and bash scripts are included if you're game to using LaTeX. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
+For this you'll need to set LaTeX up on your machine. A basic layout and bash scripts are included. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
 
 Here's how I installed it:
 
