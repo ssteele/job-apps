@@ -191,7 +191,7 @@ abstract class Application
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
                     $output .= '</span>';
-                    $output .= '<a hidden href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
+                    $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } else {
