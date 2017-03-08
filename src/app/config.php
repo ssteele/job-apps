@@ -3,6 +3,7 @@
 // options
 define('ENVIRONMENT', 'local');
 define('AUTO_LATEX', true);
+define('AUTO_PHP', true);
 
 // paths
 define('APP_URL', 'http://shs.job-apps.com:8888/');

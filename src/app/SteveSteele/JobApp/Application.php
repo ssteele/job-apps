@@ -157,6 +157,7 @@ abstract class Application
     {
         $mapAwesome = [
             ''          => 'refresh fa-spin',
+            'generate'  => 'refresh',
             'recruiter' => 'comment',
             'code'      => 'desktop',
             'phone'     => 'phone-square',
@@ -185,6 +186,10 @@ abstract class Application
                     $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
+                } elseif (AUTO_PHP) {
+                    $output .= '<span class="icon generate" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
+                    $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
+                    $output .= '</span>';
                 } else {
                     $output .= '<span class="icon copy-to-clipboard" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType() . '"></i>';
@@ -273,30 +278,30 @@ abstract class Application
     {
         $output = '';
 
-        $output .=  '<div class="row">';
-
-        $output .=      '<div class="small-6 medium-2 large-2 columns">';
-        $output .=          $this->jobApplicationDate();
-        $output .=      '</div>';
-
-        $output .=      '<div class="show-for-medium-up medium-6 large-5 columns">';
-        $output .=          $this->jobTitle();
-        $output .=      '</div>';
-
-        $output .=      '<div class="small-3 medium-2 large-3 columns">';
-        $output .=          $this->jobInterviews();
-        $output .=      '</div>';
-
-        $output .=      '<div class="small-3 medium-2 large-2 columns">';
-        $output .=          $this->jobAssets();
-        $output .=      '</div>';
-
-        $output .=  '</div>';
-
         $output .=  '<div class="row hide-for-medium-up">';
         $output .=      '<div class="small-12 columns mobile-pad">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
+        $output .=  '</div>';
+
+        $output .=  '<div class="row">';
+
+        $output .=      '<div class="small-3 medium-2 large-2 columns">';
+        $output .=          $this->jobApplicationDate();
+        $output .=      '</div>';
+
+        $output .=      '<div class="show-for-medium-up medium-5 large-5 columns">';
+        $output .=          $this->jobTitle();
+        $output .=      '</div>';
+
+        $output .=      '<div class="small-6 medium-3 large-4 columns">';
+        $output .=          $this->jobInterviews();
+        $output .=      '</div>';
+
+        $output .=      '<div class="small-3 medium-2 large-1 columns">';
+        $output .=          $this->jobAssets();
+        $output .=      '</div>';
+
         $output .=  '</div>';
 
         echo $output;
