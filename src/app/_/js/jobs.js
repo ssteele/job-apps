@@ -35,7 +35,7 @@ $(function() {
 
         $('.copy-to-clipboard').click(function() {
 
-            var path = $(this).attr('id') + '.pdf';
+            var path = $(this).attr('id') + '.' + $(this).attr('data-type');
             window.prompt("Copy to clipboard: Ctrl+C, Enter", path);
 
         });

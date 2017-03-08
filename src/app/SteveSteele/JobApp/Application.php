@@ -186,7 +186,7 @@ abstract class Application
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } else {
-                    $output .= '<span class="icon copy-to-clipboard" id="' . $date . '_' . $this->localFilename . '.php">';
+                    $output .= '<span class="icon copy-to-clipboard" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType() . '"></i>';
                     $output .= '</span>';
                 }

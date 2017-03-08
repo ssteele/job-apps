@@ -14,7 +14,7 @@ class Potential extends Application
     {
         $output = '';
 
-        $output .= '<span class="copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '.php">';
+        $output .= '<span class="copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '" data-type="php">';
         $output .=     $this->searchDate;
         $output .= '</span>';
 
@@ -32,7 +32,7 @@ class Potential extends Application
             $output = '';
 
             $action = (AUTO_LATEX) ? 'auto-generate' : 'copy-to-clipboard';
-            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-path="' . COVER_LETTERS_PATH . '">';
+            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . COVER_LETTERS_PATH . '">';
             $output .= '    <i class="fa fa-envelope-o"></i>';
             $output .= '</span>';
 
@@ -53,7 +53,7 @@ class Potential extends Application
             $output = '';
 
             $action = (AUTO_LATEX) ? 'auto-generate' : 'copy-to-clipboard';
-            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-path="' . RESUMES_PATH . '">';
+            $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . RESUMES_PATH . '">';
             $output .= '    <i class="fa fa-file-o"></i>';
             $output .= '</span>';
 
