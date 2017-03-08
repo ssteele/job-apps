@@ -41,12 +41,69 @@ $(function() {
 
 
     /**
+     * Hide generator element and show the hidden link after generating document
+     * @param  {obj} generator    Generator DOM element
+     * @param  {obj} link         Hidden DOM element link
+     */
+    var activate_link = function(generator, link)
+    {
+        generator.hide();
+        link.show();
+    }
+
+
+    /**
+     * Reset icons after generating document
+     * @param  {obj} icon         DOM element
+     * @param  {obj} iconClass    Font awesome icon class
+     */
+    var reset_icon = function(icon, iconClass)
+    {
+        icon.attr('class', iconClass);
+    }
+
+
+    /**
      * Automatically generate php documents
      */
     var auto_generate_php = function()
     {
         $('.auto-generate-php').click(function() {
-            alert();
+
+            var generatorMarkup = $(this);
+            var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'));
+
+            var icon = $(this).find('i');
+            var iconClass = icon.attr('class');
+            icon.attr('class', 'fa fa-fw fa-refresh fa-spin');
+
+            var endpoint = 'src/app/ajax/generate-php-document.php';
+            var data = {
+                'filePath': $(this).attr('data-path'),
+                'fileName': $(this).attr('id')
+            };
+
+            $.ajax({
+                url: endpoint,
+                type: 'post',
+                cache: false,
+                dataType: 'json',
+                data: data,
+                success: function (response) {
+                    if ('error' === response.status || 'invalid' === response.status) {
+                        $message  = 'An error occurred while generating the document...\n'
+                        $message += response.message;
+                        alert($message);
+                    }
+                    setTimeout(function() {activate_link(generatorMarkup, hiddenLinkMarkup)}, 500);
+                },
+                error: function(response) {
+                    $message  = 'A error occurred with the request...\n'
+                    $message += response.message;
+                    alert($message);
+                    icon.attr('class', iconClass);
+                }
+            });
         });
     }
 
@@ -80,7 +137,7 @@ $(function() {
                         $message += response.message;
                         alert($message);
                     }
-                    icon.attr('class', iconClass);
+                    setTimeout(function() {reset_icon(icon, iconClass)}, 500);
                 },
                 error: function(response) {
                     $message  = 'A error occurred with the request...\n'

@@ -2,11 +2,12 @@
 
 namespace SteveSteele\JobApp;
 
-class LatexDocument implements Document
+class PhpDocument implements Document
 {
 
-    private $script = '';
+    private $path = '';
     private $file = '';
+    private $template = 'template.php';
 
 
     /**
@@ -17,20 +18,20 @@ class LatexDocument implements Document
      */
     public function __construct($serverPath = '', $filePath = '', $fileName = '')
     {
-        $this->setScript($serverPath, $filePath);
+        $this->setPath($serverPath, $filePath);
         $this->setFile($fileName);
     }
 
 
     /**
-     * Latex generator script setter
+     * PHP document path setter
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      */
-    private function setScript($serverPath = '', $filePath = '')
+    private function setPath($serverPath = '', $filePath = '')
     {
-        $this->script = $serverPath . '/' . $filePath . 'latex/generate-auto.bash';
-        return $this->script;
+        $this->path = $serverPath . '/' . $filePath;
+        return $this->path;
     }
 
 
@@ -40,18 +41,20 @@ class LatexDocument implements Document
      */
     private function setFile($fileName = '')
     {
-        $this->file = $fileName;
+        $this->file = $fileName . '.php';
         return $this->file;
     }
 
 
     /**
      * Document generator
-     * @return string    Latex generator script output
+     * @return string    PHP generator output
      */
     public function generate()
     {
-        $output = exec(escapeshellcmd($this->script . ' ' . $this->file), $commandLineOutput);
+        $status = copy($this->path . $this->template, $this->path . $this->file);
+        $output = ($status) ? 'Document generated' : 'Failed to generate PHP';
+
         return $output;
     }
 }
