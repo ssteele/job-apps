@@ -187,7 +187,7 @@ abstract class Application
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } elseif (AUTO_PHP) {
-                    $output .= '<span class="icon generate" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
+                    $output .= '<span class="icon auto-generate-php" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
                     $output .= '</span>';
                 } else {

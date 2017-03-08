@@ -45,7 +45,9 @@ $(function() {
      */
     var auto_generate_php = function()
     {
-        // pass for now
+        $('.auto-generate-php').click(function() {
+            alert();
+        });
     }
 
 
