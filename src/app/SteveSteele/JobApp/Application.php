@@ -176,7 +176,6 @@ abstract class Application
     protected function jobInterviews()
     {
         $output = '<span class="interview">&nbsp;';
-
         if ($this->interviews) {
             foreach ($this->interviews as $date => $type) {
                 $file = JOBS_PATH . 'interviews/' . $date . '_' . $this->localFilename . '.php';
@@ -203,8 +202,8 @@ abstract class Application
                 }
             }
         }
-
         $output .= '</span>';
+
         return $output;
     }
 

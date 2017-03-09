@@ -23,6 +23,16 @@ class Potential extends Application
 
 
     /**
+     * Do not render job interviews for potential applications
+     * @return boolean    False always
+     */
+    protected function jobInterviews()
+    {
+        return false;
+    }
+
+
+    /**
      * Render cover letter link created for this job
      * @return string    HTML markup
      */
