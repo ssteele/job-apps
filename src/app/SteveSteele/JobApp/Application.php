@@ -187,10 +187,12 @@ abstract class Application
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } elseif (AUTO_PHP) {
+                    // generator markup
                     $output .= '<span class="icon auto-generate-php" id="' . $date . '_' . $this->localFilename . '"';
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
                     $output .= '</span>';
+                    // markup to replace generator element after document created
                     $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';

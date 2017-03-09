@@ -47,7 +47,7 @@ $(function() {
      */
     var activate_link = function(generator, link)
     {
-        generator.hide();
+        generator.replaceWith(link);
         link.show();
     }
 
