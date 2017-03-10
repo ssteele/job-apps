@@ -185,7 +185,7 @@ abstract class Application
                     $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
-                } elseif (AUTO_PHP) {
+                } elseif (AUTO_GENERATE_PHP_INTERVIEWS) {
                     // generator markup
                     $output .= '<span class="icon auto-generate-php" id="' . $date . '_' . $this->localFilename . '"';
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';

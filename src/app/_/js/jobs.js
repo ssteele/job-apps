@@ -66,6 +66,43 @@ $(function() {
     /**
      * Automatically generate php documents
      */
+    var auto_curl_html = function()
+    {
+        $('.auto-curl-html').click(function() {
+
+            var endpoint = 'src/app/ajax/curl-html-posting.php';
+            var data = {
+                'filePath': $(this).attr('data-path'),
+                'fileName': $(this).attr('id'),
+                'postUrl': $(this).attr('data-url')
+            };
+
+            $.ajax({
+                url: endpoint,
+                type: 'post',
+                cache: false,
+                dataType: 'json',
+                data: data,
+                success: function (response) {
+                    if ('error' === response.status || 'invalid' === response.status) {
+                        $message  = 'An error occurred while fetching/saving the html post...\n'
+                        $message += response.message;
+                        alert($message);
+                    }
+                },
+                error: function(response) {
+                    $message  = 'A error occurred with the request...\n'
+                    $message += response.message;
+                    alert($message);
+                }
+            });
+        });
+    }
+
+
+    /**
+     * Automatically generate php documents
+     */
     var auto_generate_php = function()
     {
         $('.auto-generate-php').click(function() {
@@ -155,6 +192,7 @@ $(function() {
      */
     var auto_generate = function()
     {
+        auto_curl_html();
         auto_generate_php();
         auto_generate_latex();
     }

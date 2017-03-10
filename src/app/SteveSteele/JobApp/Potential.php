@@ -14,7 +14,8 @@ class Potential extends Application
     {
         $output = '';
 
-        $output .= '<span class="copy-to-clipboard" id="' . $this->terminalFriendlyFilepath . '" data-type="php">';
+        $action = (AUTO_CURL_HTML_POSTINGS) ? 'auto-curl-html' : 'copy-to-clipboard';
+        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">';
         $output .=     $this->searchDate;
         $output .= '</span>';
 
@@ -41,7 +42,7 @@ class Potential extends Application
         if ($this->letter) {
             $output = '';
 
-            $action = (AUTO_LATEX) ? 'auto-generate-latex' : 'copy-to-clipboard';
+            $action = (AUTO_GENERATE_LATEX_DOCUMENTS) ? 'auto-generate-latex' : 'copy-to-clipboard';
             $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . JOBS_COVER_LETTERS_PATH . '">';
             $output .= '    <i class="fa fa-envelope-o"></i>';
             $output .= '</span>';
@@ -62,7 +63,7 @@ class Potential extends Application
         if ($this->resume) {
             $output = '';
 
-            $action = (AUTO_LATEX) ? 'auto-generate-latex' : 'copy-to-clipboard';
+            $action = (AUTO_GENERATE_LATEX_DOCUMENTS) ? 'auto-generate-latex' : 'copy-to-clipboard';
             $output .= '<span class="icon submitted ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . JOBS_RESUMES_PATH . '">';
             $output .= '    <i class="fa fa-file-o"></i>';
             $output .= '</span>';
