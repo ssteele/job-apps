@@ -70,6 +70,12 @@ $(function() {
     {
         $('.auto-curl-html').click(function() {
 
+            var generatorMarkup = $(this);
+            var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'));
+
+            var icon = $(this).find('i');
+            icon.attr('class', 'fa fa-fw fa-refresh fa-spin');
+
             var endpoint = 'src/app/ajax/curl-html-posting.php';
             var data = {
                 'filePath': $(this).attr('data-path'),
@@ -89,6 +95,7 @@ $(function() {
                         $message += response.message;
                         alert($message);
                     }
+                    setTimeout(function() {activate_link(generatorMarkup, hiddenLinkMarkup)}, 500);
                 },
                 error: function(response) {
                     $message  = 'A error occurred with the request...\n'

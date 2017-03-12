@@ -96,7 +96,7 @@ abstract class Application
      */
     protected function officialDateMarkup()
     {
-        return $this->officialDate;
+        return '(' . $this->officialDate . ')';
     }
 
 
@@ -107,19 +107,19 @@ abstract class Application
     protected function jobApplicationDate()
     {
         $output  = '';
-        $output .= '<span class="postings">[';
+        $output .= '<span class="postings">';
 
         $path = JOBS_PATH . 'postings/' . $this->localFilePath;
 
         if ($this->localPosting && file_exists($path . '.php')) {
-            $output .= '<a href="' . JOBS_URL . 'postings/' . $this->localFilePath . '.php">';
+            $output .= '[<a href="' . JOBS_URL . 'postings/' . $this->localFilePath . '.php">';
             $output .=     $this->officialDate;
-            $output .= '</a>';
+            $output .= '</a>]';
         } else {
             $output .= $this->officialDateMarkup();
         }
 
-        $output .= ']</span>';
+        $output .= '</span>';
 
         return $output;
     }
@@ -191,6 +191,7 @@ abstract class Application
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';
                     $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
                     $output .= '</span>';
+
                     // markup to replace generator element after document created
                     $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
                     $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';

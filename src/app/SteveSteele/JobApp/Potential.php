@@ -14,10 +14,22 @@ class Potential extends Application
     {
         $output = '';
 
-        $action = (AUTO_CURL_HTML_POSTINGS) ? 'auto-curl-html' : 'copy-to-clipboard';
-        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">';
-        $output .=     $this->searchDate;
+        // generator markup
+        $action = (AUTO_CURL_HTML_POSTINGS) ? 'generate auto-curl-html' : 'copy-to-clipboard';
+        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">(';
+        $output .=      $this->searchDate;
+        $output .= ')';
+
+        // markup to render progress icon
+        $output .= '<i class="fa fa-fw fa-refresh"></i>';
         $output .= '</span>';
+
+        // markup to replace generator element after job posting fetched
+        $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
+        $output .= '<a href="' . JOBS_URL . 'postings/' . $this->localFilePath . '.php">';
+        $output .=     $this->officialDate;
+        $output .= '</a>';
+        $output .= ']</span>';
 
         return $output;
     }

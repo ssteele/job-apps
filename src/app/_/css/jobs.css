@@ -80,10 +80,6 @@ a:hover {
     border-top:1px solid #777;
 }
 
-.interview {
-    float:left;
-}
-
 .interview a,
 .interview a:hover {
     border-bottom:none;
@@ -114,10 +110,6 @@ a:hover {
     margin-right:0;
 }
 
-.postings {
-    float:left;
-}
-
 .online {
     float:left;
 }
@@ -135,6 +127,16 @@ a:hover {
     text-decoration:line-through;
 }
 
-.copy-to-clipboard {
+.generate:hover {
+    color:#778;
+}
+
+.postings {
     cursor:pointer;
+    display:inline-block;
+}
+
+.postings i {
+    margin:4px 0 0 8px;
+    position:absolute;
 }
