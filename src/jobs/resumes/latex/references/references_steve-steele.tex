@@ -1,0 +1,72 @@
+%______________________________________________________________________________________________________________________
+% @brief LaTeX2e Resume for Steven Harville Steele
+\documentclass[margin,line]{resume}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+
+% FIGURE HANDLING from Ron
+\usepackage{ifthen}
+\newcommand{\graphic}[4]%
+{%
+\ifthenelse{\equal{#1}{pdf}}{\includegraphics[#2]{#3.pdf}}{}%
+\ifthenelse{\equal{#1}{ps}} {\includegraphics[#2]{#3.#4}}{}%
+\ifthenelse{\equal{#1}{none}}{}{}%
+}
+% END FIGURE HANDLING
+
+
+%______________________________________________________________________________________________________________________
+\begin{document}
+\name{\Large Steven Harville Steele\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \small \ \textcolor{blue}{steve-steele.com}}
+\begin{resume}
+
+\vspace{1em}
+
+%______________________________________________________________________________________________________________________
+\section{\mysidestyle References}
+
+
+\begin{tabular}{@{}p{9cm}p{3cm}}
+\textbf{Bob Jeffreys}\\
+Director\\
+W2O Group\\
+3000 E Cesar Chavez, Suite 300                 &  555.555.5555\\
+Austin, TX 78702                     &  e@mail.com\\
+\end{tabular}
+
+\begin{tabular}{@{}p{9cm}p{3cm}}
+\textbf{Jeffrey Bobs}\\
+Associate Director\\
+W2O Group\\
+3000 E Cesar Chavez, Suite 300                 &  555.555.5555\\
+Austin, TX 78702                     &  e@mail.com\\
+\end{tabular}
+
+\begin{tabular}{@{}p{9cm}p{3cm}}
+\textbf{Dan Henries}\\
+Group Director\\
+W2O Group\\
+3000 E Cesar Chavez, Suite 300                 &  555.555.5555\\
+Austin, TX 78702                     &  e@mail.com\\
+\end{tabular}
+
+\begin{tabular}{@{}p{9cm}p{3cm}}
+\textbf{Henry Dans}\\
+W2O Group\\
+3000 E Cesar Chavez, Suite 300                 &  555.555.5555\\
+Austin, TX 78702                     &  e@mail.com\\
+\end{tabular}
+
+
+%______________________________________________________________________________________________________________________
+\end{resume}
+
+\begin{figure}[b]
+\hfill \includegraphics[scale=2.0]{qr}
+\end{figure}
+
+\end{document}
+%______________________________________________________________________________________________________________________
+% EOF
