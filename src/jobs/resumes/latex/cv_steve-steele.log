@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.5.22)  2 MAR 2017 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.5.22)  12 MAR 2017 00:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -195,26 +195,23 @@ Package color Info: Driver file: dvips.def on input line 144.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
 No file cv_steve-steele.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 \AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 16.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -223,73 +220,41 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count99
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 31.
 
-Overfull \hbox (7.70488pt too wide) in paragraph at lines 117--137
+Overfull \hbox (7.70488pt too wide) in paragraph at lines 135--155
 \OT1/cmr/m/n/10 Developed and main-tained the front and back ends of sev-eral o
 n-line busi-nesses. Man-aged clients/billing
  []
 
-
-Overfull \hbox (0.57544pt too wide) in paragraph at lines 117--137
-\OT1/cmr/m/n/10 Programmed a com-plex, fully func-tional task man-age-ment por-
-tal us-ing PHP, MySQL, and JavaScript 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--137
-
- []
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
 [1
 
 ]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 194.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 194.
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--224
-
- []
-
-
-Overfull \hbox (16.4198pt too wide) in paragraph at lines 258--259
-[][][][][] 
- []
-
-
-Overfull \hbox (28.36423pt too wide) in paragraph at lines 266--267
-[][][][][] 
- []
-
-
-Overfull \hbox (53.75317pt too wide) in paragraph at lines 291--292
-[][][][][] 
- []
-
-File: qr.eps Graphic file (type eps)
-<qr.eps>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
- [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 344.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 344.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 315.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 315.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
  ) 
 Here is how much of TeX's memory you used:
- 4865 strings out of 493015
- 72444 string characters out of 6133377
- 158407 words of memory out of 5000000
- 8410 multiletter control sequences out of 15000+600000
- 6768 words of font info for 24 fonts, out of 8000000 for 9000
+ 4834 strings out of 493015
+ 72211 string characters out of 6133377
+ 157407 words of memory out of 5000000
+ 8381 multiletter control sequences out of 15000+600000
+ 6677 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,9n,34p,361b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,5n,21p,361b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cv_steve-steele.dvi (2 pages, 11264 bytes).
+Output written on cv_steve-steele.dvi (1 page, 6180 bytes).
