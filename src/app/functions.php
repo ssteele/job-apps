@@ -2,6 +2,7 @@
 
 
 require_once 'config.php';
+require_once 'application-config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 header('Cache-Control: no-cache, max-age=0, must-revalidate, no-store');
