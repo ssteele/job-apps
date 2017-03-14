@@ -21,15 +21,17 @@ class Potential extends Application
         $output .= ')';
 
         // markup to render progress icon
-        $output .= '<i class="fa fa-fw fa-refresh"></i>';
+        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="fa fa-fw fa-refresh"></i>' : '';
         $output .= '</span>';
 
         // markup to replace generator element after job posting fetched
-        $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
-        $output .= '<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
-        $output .=     $this->officialDate;
-        $output .= '</a>';
-        $output .= ']</span>';
+        if (AUTO_CURL_HTML_POSTINGS) {
+            $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
+            $output .= '<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
+            $output .=     $this->officialDate;
+            $output .= '</a>';
+            $output .= ']</span>';
+        }
 
         return $output;
     }
