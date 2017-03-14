@@ -26,7 +26,7 @@ class Potential extends Application
 
         // markup to replace generator element after job posting fetched
         $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
-        $output .= '<a href="' . JOBS_URL . 'postings/' . $this->localFilePath . '.php">';
+        $output .= '<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
         $output .=     $this->officialDate;
         $output .= '</a>';
         $output .= ']</span>';

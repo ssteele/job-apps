@@ -10,20 +10,20 @@ use SteveSteele\JobApp\Job;
 <head>
 <meta charset="utf-8">
 <title>Austin Job Search</title>
-<link rel="shortcut icon" href="/<?php route([APP_PATH, '_/img/texas_flag.png'], 'png'); ?>" />
-<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '_/css/foundation-5.5.2.min.css'], 'css'); ?>">
-<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '_/css/font-awesome.min.css'], 'css'); ?>">
-<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '_/css/jobs.css'], 'css'); ?>">
-<script type="text/javascript" src="/<?php route([APP_PATH, '_/js/jquery-2.1.1.min.js'], 'js'); ?>"></script>
-<script type="text/javascript" src="/<?php route([APP_PATH, '_/js/foundation-5.5.2.min.js'], 'js'); ?>"></script>
-<script type="text/javascript" src="/<?php route([APP_PATH, '_/js/jobs.js'], 'js'); ?>"></script>
+<link rel="shortcut icon" href="/<?php route([APP_PATH, '/_/img/texas_flag.png'], 'png'); ?>" />
+<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '/_/css/foundation-5.5.2.min.css'], 'css'); ?>">
+<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '/_/css/font-awesome.min.css'], 'css'); ?>">
+<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '/_/css/jobs.css'], 'css'); ?>">
+<script type="text/javascript" src="/<?php route([APP_PATH, '/_/js/jquery-2.1.1.min.js'], 'js'); ?>"></script>
+<script type="text/javascript" src="/<?php route([APP_PATH, '/_/js/foundation-5.5.2.min.js'], 'js'); ?>"></script>
+<script type="text/javascript" src="/<?php route([APP_PATH, '/_/js/jobs.js'], 'js'); ?>"></script>
 </head>
 <body>
 
 <?php
-require_once route([JOBS_PATH, 'applications/archives.php']);
-require_once route([JOBS_PATH, 'applications/applications.php']);
-require_once route([JOBS_PATH, 'applications/meta.php']);
+require_once route([JOBS_PATH, '/applications/archives.php']);
+require_once route([JOBS_PATH, '/applications/applications.php']);
+require_once route([JOBS_PATH, '/applications/meta.php']);
 ?>
 
 <div class="row">

@@ -8,19 +8,19 @@ namespace SteveSteele\Aide;
 <head>
 <meta charset="utf-8">
 <title>Interview Aide</title>
-<link rel="shortcut icon" href="/<?php route([AIDE_PATH, '_/img/suit.png'], 'png'); ?>" />
-<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '_/css/foundation-5.5.2.min.css'], 'css'); ?>">
-<link rel="stylesheet" type="text/css" href="/<?php route([AIDE_PATH, '_/css/aide.css'], 'css'); ?>">
-<script type="text/javascript" src="/<?php route([APP_PATH, '_/js/jquery-2.1.1.min.js'], 'js'); ?>"></script>
-<script type="text/javascript" src="/<?php route([APP_PATH, '_/js/foundation-5.5.2.min.js'], 'js'); ?>"></script>
-<script type="text/javascript" src="/<?php route([AIDE_PATH, '_/js/aide.js'], 'js'); ?>"></script>
+<link rel="shortcut icon" href="/<?php route([AIDE_PATH, '/_/img/suit.png'], 'png'); ?>" />
+<link rel="stylesheet" type="text/css" href="/<?php route([APP_PATH, '/_/css/foundation-5.5.2.min.css'], 'css'); ?>">
+<link rel="stylesheet" type="text/css" href="/<?php route([AIDE_PATH, '/_/css/aide.css'], 'css'); ?>">
+<script type="text/javascript" src="/<?php route([APP_PATH, '/_/js/jquery-2.1.1.min.js'], 'js'); ?>"></script>
+<script type="text/javascript" src="/<?php route([APP_PATH, '/_/js/foundation-5.5.2.min.js'], 'js'); ?>"></script>
+<script type="text/javascript" src="/<?php route([AIDE_PATH, '/_/js/aide.js'], 'js'); ?>"></script>
 </head>
 <body>
 
 <?php
-require_once route([JOBS_PATH, 'interview-aide/current-interview-specific.php']);
-require_once route([JOBS_PATH, 'interview-aide/general-question-answer.php']);
-$aide->setPartialPath(route([AIDE_PATH, 'partials/']));
+require_once route([JOBS_PATH, '/interview-aide/current-interview-specific.php']);
+require_once route([JOBS_PATH, '/interview-aide/general-question-answer.php']);
+$aide->setPartialPath(route([AIDE_PATH, '/partials/']));
 ?>
 
 <div class="row">

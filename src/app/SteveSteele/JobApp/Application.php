@@ -109,10 +109,10 @@ abstract class Application
         $output  = '';
         $output .= '<span class="postings">';
 
-        $path = JOBS_PATH . 'postings/' . $this->localFilePath;
+        $path = JOBS_PATH . '/postings/' . $this->localFilePath;
 
         if ($this->localPosting && file_exists($path . '.php')) {
-            $output .= '[<a href="' . JOBS_URL . 'postings/' . $this->localFilePath . '.php">';
+            $output .= '[<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
             $output .=     $this->officialDate;
             $output .= '</a>]';
         } else {
@@ -178,8 +178,8 @@ abstract class Application
         $output = '<span class="interview">&nbsp;';
         if ($this->interviews) {
             foreach ($this->interviews as $date => $type) {
-                $file = JOBS_PATH . 'interviews/' . $date . '_' . $this->localFilename . '.php';
-                $path = APP_PATH . 'interview/?i=' . urlencode($date . '_' . $this->localFilename);
+                $file = JOBS_PATH . '/interviews/' . $date . '_' . $this->localFilename . '.php';
+                $path = APP_PATH . '/interview/?i=' . urlencode($date . '_' . $this->localFilename);
 
                 if (file_exists($file)) {
                     $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
@@ -216,7 +216,7 @@ abstract class Application
     protected function jobLetter()
     {
         if ($this->letter) {
-            $path = JOBS_PATH . 'cover-letters/' . $this->localFilePath;
+            $path = JOBS_PATH . '/cover-letters/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
                 return '<a href="' . $path . '.pdf" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
@@ -236,7 +236,7 @@ abstract class Application
     protected function jobResume()
     {
         if ($this->resume) {
-            $path = JOBS_PATH . 'resumes/' . $this->localFilePath;
+            $path = JOBS_PATH . '/resumes/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
                 return '<a href="' . $path . '.pdf" class="icon submitted" title="Resume"><i class="fa fa-file"></i></a>';
