@@ -31,7 +31,7 @@ class HtmlPosting implements Document
      */
     private function setPath($serverPath = '', $filePath = '')
     {
-        $this->path = $serverPath . '/' . $filePath;
+        $this->path = rtrim($serverPath, '/') . '/' . rtrim($filePath, '/') . '/';
         return $this->path;
     }
 

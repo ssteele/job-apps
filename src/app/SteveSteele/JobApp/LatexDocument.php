@@ -29,7 +29,7 @@ class LatexDocument implements Document
      */
     private function setScript($serverPath = '', $filePath = '')
     {
-        $this->script = $serverPath . '/' . $filePath . 'latex/generate-auto.bash';
+        $this->script = rtrim($serverPath, '/') . '/' . rtrim($filePath, '/') . '/latex/generate-auto.bash';
         return $this->script;
     }
 
