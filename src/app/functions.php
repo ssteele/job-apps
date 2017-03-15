@@ -9,7 +9,7 @@ header('Cache-Control: no-cache, max-age=0, must-revalidate, no-store');
 
 
 // Debug settings
-if ('local' === ENVIRONMENT) {
+if ('development' === ENVIRONMENT) {
     ini_set('display_errors', '1');
     error_reporting(E_ALL);
 }

@@ -3,11 +3,19 @@
 *A standalone application to help you stay organized while seeking employment*
 
 ###Setup
-Very basic coding skill is required: PHP, JSON, LaTeX (optional). You'll want to set up a server on your local machine (MAMP, Node, nginx) or publically (hopefully behind basic auth) and serve from project root. No database is necessary.
+Very basic coding skill is required: PHP, JSON, LaTeX (optional). All you really need to know is how to set up a server to run PHP (there are many easy ways to do this) and how to edit PHP and JSON files using the correct syntax. You'll want to set up a server on your local machine (MAMP, Node, nginx) or publically (hopefully behind basic auth) and serve from project root. No database is necessary.
 
     git clone https://github.com/ssteele/job-apps.git
     cd job-apps
     composer install
+
+Edit `src/app/config.php`:
+
+    const APP_URL = 'http://YOUR-URL';                              // supply the URL where you are hosting your site
+    const ENVIRONMENT = 'production';                               // if 'development', shows error reporting for debuggery
+    const AUTO_GENERATE_LATEX_DOCUMENTS = true;                     // (see 'Document generation' below)
+    const AUTO_GENERATE_PHP_INTERVIEWS = true;                      // (see 'Document generation' below)
+    const AUTO_CURL_HTML_POSTINGS = true;                           // (see 'Document generation' below)
 
 ###Save Links, Job Lists, and Companies
 
@@ -49,7 +57,7 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'app_date'       => '05.16.2015',                           // when you actually applied for the job
         'title'          => 'DevOps Engineer',                      // job title
         'company'        => 'W2O Group',                            // company name
-        'local_posting'  => true,                                   // if true, clicking on date in the app alerts you to the file that you should save the job posting markup within
+        'local_posting'  => true,                                   // keep track of the original job posting
         'public_posting' => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
         'resume'         => true,                                   // keep track of the resume you sent
         'letter'         => true,                                   // keep track of the cover letter you applied with
@@ -64,13 +72,27 @@ Once you have found a posting that interests you, add it to the app. Job applica
         ],
     ]);
 
-A couple of mock applications have been populated into the app to give you a sense of where to put things. The app will alert you what to name files with a click the appropriate icon/text. The basic workflow is to copy the filename text from the alert box, navigate to the appropriate folder in the jobs directory (postings, cover-letters, or resumes), and save a new file named from the copied filename. Note: new job entries must have a status of 'dream' or 'potential' when following the examples below. Otherwise the app assumes you don't want to save an archive of the posting, or that you do not want to track a resume or cover letter.
+###Document Generation
+
+In `src/app/config.php`, there are several options you can toggle on or off:
+
+    const AUTO_GENERATE_LATEX_DOCUMENTS = true;                     // if true, the application will generate resumes and cover letters using LaTeX
+    const AUTO_GENERATE_PHP_INTERVIEWS = true;                      // if true, the application will generate interview php files
+    const AUTO_CURL_HTML_POSTINGS = true;                           // if true, the application will fetch job posting markup and save it locally
+
+####Auto-Generation (easy)
+
+Setting the above values to true turns on automatic document generation. This allows you to generate assets at the click of the mouse. You can generate a resume and cover letter, as well as save a local copy of of the job posting for applications with 'potential' status by setting the appropriate `Job` object propery (see 'Find and Track Jobs' above) and clicking the appropriate icon. Once you have applied and you've updated the application to 'applied' status, you can add interviews to the `Job`, click the 'spinny' icon, and the application will copy a PHP script from template that you can customize for that interview in `src/jobs/interviews/`.
+
+####Manual Generation (not as easy)
+
+If you have `AUTO_GENERATE_LATEX_DOCUMENTS`, `AUTO_GENERATE_PHP_INTERVIEWS`, and `AUTO_CURL_HTML_POSTINGS` set to 'false', you'll have to manually create assets and copy them to the correct place in the application if you want to track them. A couple of mock applications have been populated into the app to give you a sense of where to put things. The app will alert you what to name files with a click the appropriate icon/text. The basic workflow is to copy the filename text from the alert box, navigate to the appropriate folder in the jobs directory (postings, cover-letters, or resumes), and save a new file named from the copied filename. Note: new job entries must have a status of 'dream' or 'potential' when following the examples below. Otherwise the app assumes you don't want to save an archive of the posting, or that you do not want to track a resume or cover letter.
 
 Click on the lefthand date of a new entry to save a local copy of the job posting (must copy the original job posting page's source into the new file). Save cover letters and resumes for potential applications with a mouse click over the envelope and page icon outlines to the right. If your cover letter was, say, an email instead of a PDF, change the extension of the new file to 'txt' instead of 'pdf.' Later, we'll also save interviews by adding an entry to the interviews array (see code above) and clicking the spinning arrow: See Interview Pages section below for more.
 
 ###Easily Create Custom Resumes and Cover Letters (optional)
 
-For this you'll need to set LaTeX up on your machine. A basic layout and bash scripts are included. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
+For auto-generated documents, you'll need to set LaTeX up on your machine. A basic layout and bash scripts are included. There is also a large selection of layout templates online available for download. I like this approach because customizing a resume or cover letter for a job and authoring out PDFs is a breeze once it's set up... just customize a tex file for a specific job and run the script. Word of warning: LaTeX can be really burdensome if you want to tweak something on your layout.
 
 Here's how I installed it:
 
@@ -81,11 +103,21 @@ You may need to update the paths to your LaTeX library in a few files:
     src/jobs/cover-letters/latex/generate-auto.bash
     src/jobs/resumes/latex/generate-auto.bash
 
-You'll also want to update file names from 'steve-steele' to your own name as well as any references therein.
+You'll also want to update file names from 'steve-steele' to your own name as well as any references therein (eg: generation scripts - search for `steve-steele`).
+
+For manually generated documents, you will want to click the resume or cover letter icon at right to copy the formatted filename the application expects. Save your document with that filename inside the `src/jobs/resumes/` folder.
+
+###Save a Local Copy of the Original Job Posting
+
+Click the search date on the left of a 'Potential' job application with auto-generation enabled to have the server fetch the contents of the public posting you have set in the `Job` object. To save a copy manually, get the job posting be viewing the source of the URL, and save that to the proper filename (retrieved by clicking on the date) within the `src/jobs/postings` folder.
 
 ###Interview Pages
 
-When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `src/jobs/applications/applications.php`. Create it if necessary using the example provided in the code snippet found in the Find and Track Jobs section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow. Copy the new filename to the clipboard [Ctrl-c]. Navigate to `src/jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
+When you've secured an interview, add it to the interviews array (inside the corresponding job array) in `src/jobs/applications/applications.php`. Create the `Job` if necessary using the example provided in the code snippet found in the 'Find and Track Jobs' section. You'll want to include the interview date and type. Then hit up the app and click the spinning arrow.
+
+For auto-generated interviews, a php file will be created for you in `src/jobs/interviews/` that you can edit for the interview. The new file will be named using the interview date, job title, and company.
+
+To manually generate the interview, copy the new filename to the clipboard [Ctrl-c]. Navigate to `src/jobs/interviews/` directory and create a new file from template.php: `cp template.php [Ctrl-v]` (pasting from the clipboard into the terminal). If you want to stay clear of terminal, you can simply duplicate template.php and rename it using the copied filepath using finder or whatever. Open the new file (here using '04-21-2015_senior_devops_engineer_w2o_group.php' as the new file) and fill in some job specifics:
 
 *src/jobs/interviews/04-21-2015_senior_devops_engineer_w2o_group.php*
 
