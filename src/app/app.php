@@ -26,6 +26,8 @@ require_once route([JOBS_PATH, '/applications/applications.php']);
 require_once route([JOBS_PATH, '/applications/meta.php']);
 ?>
 
+<header></header>
+
 <div class="row">
     <div class="small-12 columns">
 
@@ -45,6 +47,8 @@ require_once route([JOBS_PATH, '/applications/meta.php']);
 
     </div>
 </div>
+
+<footer></footer>
 
 </body>
 </html>

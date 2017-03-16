@@ -4,9 +4,9 @@
 }
 
 body {
-    background:url(../img/bg.png);
-    font:16px "Trebuchet MS", sans-serif;
+    background:#1b1b1b url(../img/bg.png);
     color:#555;
+    font:16px "Trebuchet MS", sans-serif;
     line-height:24px;
 }
 
@@ -139,4 +139,8 @@ a:hover {
 .postings i {
     margin:4px 0 0 8px;
     position:absolute;
+}
+
+footer {
+    height:100px;
 }
