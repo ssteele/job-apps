@@ -310,13 +310,13 @@ abstract class Application
 
         $output .=  '</div>';
 
-        echo $output;
+        return $output;
     }
 
 
     /**
      * Drivers to render a job application row
      */
-    abstract public function renderApplications();
-    abstract public function renderPotentials();
+    abstract public function renderApplications($print = true);
+    abstract public function renderPotentials($print = true);
 }

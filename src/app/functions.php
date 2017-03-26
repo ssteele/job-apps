@@ -162,27 +162,27 @@ function sanitizeInput($input, $type = null)
 
 /**
  * Render useful job meta
- * @param  array  $arr        Job meta
+ * @param  array  $meta       Job meta
  * @param  string $wrapper    HTML container tag
+ * @return string             Link markup
  */
-function renderLinks($title, $arr = [], $wrapper = '')
+function renderLinks($title, $meta = [], $wrapper = '')
 {
     // Bail if section is empty
-    if (count($arr) <= 0) {
+    if (count($meta) <= 0) {
         return false;
     }
 
     $output = '';
 
     $output .= '<div class="section">';
-
     $output .= '<h2>' . $title . '</h2>';
 
     if (! empty($wrapper)) {
         $output .= '<' . $wrapper . '>';
     }
 
-    foreach ($arr as $name => $url) {
+    foreach ($meta as $name => $url) {
         $output .= '<a href="' . $url . '">' . $name . '</a><br />';
     }
 
@@ -192,7 +192,7 @@ function renderLinks($title, $arr = [], $wrapper = '')
 
     $output .= '</div>';
 
-    echo $output;
+    return $output;
 }
 
 

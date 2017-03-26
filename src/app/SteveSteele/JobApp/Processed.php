@@ -22,17 +22,25 @@ abstract class Processed extends Application
 
     /**
      * Driver to render job application row
+     * @param  boolean  $print    Echo if true
      */
-    public function renderApplications()
+    public function renderApplications($print = true)
     {
-        $this->renderRow();
+        $output = $this->renderRow();
+
+        if ($print) {
+            echo $output;
+        }
+
+        return $output;
     }
 
 
     /**
      * Driver to render potential job row
+     * @param  boolean  $print    Echo if true
      */
-    public function renderPotentials()
+    public function renderPotentials($print = true)
     {
         return false;
     }

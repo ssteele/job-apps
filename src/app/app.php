@@ -31,9 +31,9 @@ require_once route([JOBS_PATH, '/applications/meta.php']);
 <div class="row">
     <div class="small-12 columns">
 
-        <?php renderLinks('links', $links); ?>
-        <?php renderLinks('lists', $lists); ?>
-        <?php renderLinks('companies', $companies); ?>
+        <?php echo renderLinks('links', $links); ?>
+        <?php echo renderLinks('lists', $lists); ?>
+        <?php echo renderLinks('companies', $companies); ?>
 
         <div class="section">
             <h2 id="apply_count" class="count">applied</h2>
