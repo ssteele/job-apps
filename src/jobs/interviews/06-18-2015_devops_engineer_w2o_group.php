@@ -6,14 +6,14 @@ use SteveSteele\Interview\Interview;
 
 // Type: recruiter, code, phone, face, contract
 $type = 'phone';
-$date = 'April 21, 2015';
+$date = 'June 18, 2015';
 $time = '9:00am';
 
 // Company details
 $company = 'W2O Group';
-$jobTitle = 'Senior DevOps Engineer';
+$jobTitle = 'DevOps Engineer';
 $interviewerName = 'Bob';
-$interviewerTitle = 'Super Senior DevOps Engineer';
+$interviewerTitle = 'Super DevOps Engineer';
 
 // About the company
 $interviews[] = new Interview([

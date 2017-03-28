@@ -183,7 +183,7 @@ abstract class Application
 
                 if (file_exists($file)) {
                     $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
-                    $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
+                    $output .=     '<i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } elseif (AUTO_GENERATE_PHP_INTERVIEWS) {
                     // generator markup
@@ -194,7 +194,7 @@ abstract class Application
 
                     // markup to replace generator element after document created
                     $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
-                    $output .= '    <i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
+                    $output .=     '<i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
                     $output .= '</a>';
                 } else {
                     $output .= '<span class="icon copy-to-clipboard" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
