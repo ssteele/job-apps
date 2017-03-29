@@ -25,13 +25,23 @@ class HtmlPosting implements Document
 
 
     /**
-     * PHP document path setter
+     * Path setter
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      */
     private function setPath($serverPath = '', $filePath = '')
     {
         $this->path = rtrim($serverPath, '/') . '/' . rtrim($filePath, '/') . '/';
+        return $this->path;
+    }
+
+
+    /**
+     * Path getter
+     * @return string    Path relative to server root
+     */
+    public function getPath()
+    {
         return $this->path;
     }
 
@@ -48,12 +58,32 @@ class HtmlPosting implements Document
 
 
     /**
+     * File getter
+     * @return string    Name
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+
+    /**
      * URL setter
      * @param string $postUrl    Source job posting URL
      */
     private function setUrl($postUrl = '')
     {
         $this->url = $postUrl;
+        return $this->url;
+    }
+
+
+    /**
+     * URL getter
+     * @return string    Source job posting URL
+     */
+    public function getUrl()
+    {
         return $this->url;
     }
 
