@@ -24,7 +24,7 @@ class PhpDocument implements Document
 
 
     /**
-     * PHP document path setter
+     * Path setter
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      */
@@ -36,12 +36,32 @@ class PhpDocument implements Document
 
 
     /**
+     * Path getter
+     * @return string    Path relative to server root
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+
+    /**
      * File setter
      * @param string $fileName    Name
      */
     private function setFile($fileName = '')
     {
         $this->file = $fileName . '.php';
+        return $this->file;
+    }
+
+
+    /**
+     * File getter
+     * @return string    Filename
+     */
+    public function getFile($fileName = '')
+    {
         return $this->file;
     }
 
