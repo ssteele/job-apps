@@ -2,7 +2,7 @@
 
 namespace SteveSteele\JobApp;
 
-class LatexDocumentTest extends \PHPUnit_Framework_TestCase
+class PhpDocumentTest extends \PHPUnit_Framework_TestCase
 {
 
     public $serverPath;
