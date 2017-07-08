@@ -44,21 +44,21 @@ Once you have found a posting that interests you, add it to the app. Job applica
     // basic template - duplicate me when you find new job postings
     $jobs[] = Job::create([
         'status'         => 'potential',
-        'search_date'    => '05.15.2015',
+        'searchDate'     => '05.15.2015',
         'title'          => 'Junior DevOps Engineer',
         'company'        => 'W2O Group',
-        'public_posting' => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
+        'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
     ]);
 
     // ...lots of options
     $jobs[] = Job::create([
         'status'         => 'rejected',                             // options: dream, potential, applied, rejected
-        'search_date'    => '05.15.2015',                           // when you found the posting
-        'app_date'       => '05.16.2015',                           // when you actually applied for the job
+        'searchDate'     => '05.15.2015',                           // when you found the posting
+        'appDate'        => '05.16.2015',                           // when you actually applied for the job
         'title'          => 'DevOps Engineer',                      // job title
         'company'        => 'W2O Group',                            // company name
-        'local_posting'  => true,                                   // keep track of the original job posting
-        'public_posting' => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
+        'localPosting'   => true,                                   // keep track of the original job posting
+        'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
         'resume'         => true,                                   // keep track of the resume you sent
         'letter'         => true,                                   // keep track of the cover letter you applied with
         'network'        => false,                                  // keep track of who recommended the job
@@ -127,9 +127,9 @@ To manually generate the interview, copy the new filename to the clipboard [Ctrl
 
     // Company details
     $company = '';                                                  // company name
-    $job_title = '';                                                // position applying to
-    $interviewer_name = '';                                         // who will be interviewing you
-    $interviewer_title = '';                                        // ...that person's title
+    $jobTitle = '';                                                 // position applying to
+    $interviewerName = '';                                          // who will be interviewing you
+    $interviewerTitle = '';                                         // ...that person's title
 
     // About the company                                            // section outlining your research about the company
     // Why this job                                                 // reasons why you want to work at this company
@@ -183,21 +183,21 @@ Organize your content into topic sections. The example below is a 'Get to know m
 
 *src/jobs/interview-aide/general-question-answer.php*
 
-    $about_me = [
-        'title' => 'Get to know you...',                            // about_me section title
+    $aboutMe = [
+        'title' => 'Get to know you...',                            // aboutMe section title
     ];
 
-    $about_me[] = new Question([                                    // ...in about_me section
+    $aboutMe[] = new Question([                                     // ...in aboutMe section
         'question' => 'Tell me about yourself',                     // question
         'answers'  => ['about-me', ],                               // single JSON answer
     ]);
 
-    $about_me[] = new Question([
+    $aboutMe[] = new Question([
         'question' => 'What motivates you?',
         'answers'  => ['about-me', 'career-goals', ],               // about-me covers this, and i can continue with my career-goals if i want
     ]);
 
-    $about_me[] = new Question([
+    $aboutMe[] = new Question([
         'question' => 'How do you define success?',
         'answers'  => ['agile-methodology', 'career-goals', ],      // composed using multiple JSON answers for easy app maintenance (as above)
     ]);
