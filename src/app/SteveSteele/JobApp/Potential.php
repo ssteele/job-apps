@@ -38,12 +38,17 @@ class Potential extends Application
 
 
     /**
-     * Do not render job interviews for potential applications
-     * @return boolean    False always
+     * Render generated assets
+     * @return string    HTML markup
      */
     protected function jobInterviews()
     {
-        return false;
+        $output = '';
+
+        $output .= parent::jobResume();
+        $output .= parent::jobLetter();
+
+        return $output;
     }
 
 
