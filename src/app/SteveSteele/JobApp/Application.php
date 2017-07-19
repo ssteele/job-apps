@@ -220,6 +220,8 @@ abstract class Application
 
             if (file_exists($path . '.pdf')) {
                 return '<a href="' . $path . '.pdf" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+            } elseif (file_exists($path . '.html')) {
+                return '<a href="' . $path . '.html" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
             } elseif (file_exists($path . '.txt')) {
                 return '<a href="' . $path . '.txt" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
             }
