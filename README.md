@@ -52,7 +52,7 @@ Once you have found a posting that interests you, add it to the app. Job applica
 
     // ...lots of options
     $jobs[] = Job::create([
-        'status'         => 'rejected',                             // options: dream, potential, applied, rejected
+        'status'         => 'rejected',                             // options: dream, potential, applied, rejected, abandoned
         'searchDate'     => '05.15.2015',                           // when you found the posting
         'appDate'        => '05.16.2015',                           // when you actually applied for the job
         'title'          => 'DevOps Engineer',                      // job title
