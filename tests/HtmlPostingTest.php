@@ -2,7 +2,9 @@
 
 namespace SteveSteele\JobApp;
 
-class HtmlPostingTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class HtmlPostingTest extends TestCase
 {
 
     public $serverPath;

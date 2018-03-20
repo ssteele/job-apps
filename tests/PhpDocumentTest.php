@@ -2,7 +2,9 @@
 
 namespace SteveSteele\JobApp;
 
-class PhpDocumentTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PhpDocumentTest extends TestCase
 {
 
     public $serverPath;

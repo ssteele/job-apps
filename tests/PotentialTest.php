@@ -2,7 +2,9 @@
 
 namespace SteveSteele\JobApp;
 
-class PotentialTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PotentialTest extends TestCase
 {
 
     public function testRenderMethodsOnBasicAppWithoutAssets()

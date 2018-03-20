@@ -2,7 +2,9 @@
 
 namespace SteveSteele\JobApp;
 
-class RejectedTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class RejectedTest extends TestCase
 {
 
     public function testRenderMethodsOnBasicAppWithoutAssets()

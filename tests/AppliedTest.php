@@ -2,9 +2,10 @@
 
 namespace SteveSteele\JobApp;
 
-class AppliedTest extends \PHPUnit_Framework_TestCase
-{
+use PHPUnit\Framework\TestCase;
 
+class AppliedTest extends TestCase
+{
     public function testRenderMethodsOnBasicAppWithoutAssets()
     {
         $jobs[] = Job::create([
