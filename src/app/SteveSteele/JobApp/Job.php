@@ -8,7 +8,7 @@ class Job
     /**
      * Application factory
      * @param array $data    Job meta
-     * @return object       Concrete application instantiation
+     * @return object        Concrete application instantiation
      */
     public static function create($data = [])
     {
@@ -19,10 +19,10 @@ class Job
 
     /**
      * Handle the rendering of job rows
-     * @param  array  $jobs      Application objects
      * @param  string $status    Section
+     * @param  array  $jobs      Application objects
      */
-    public static function render($jobs = [], $status = 'applications')
+    public static function render($status = 'applications', $jobs = [])
     {
         $cmd = 'render' . ucfirst(strtolower($status));
 

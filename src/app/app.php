@@ -37,12 +37,12 @@ require_once route([JOBS_PATH, '/applications/meta.php']);
 
         <div class="section">
             <h2 id="apply_count" class="count">applied</h2>
-            <?php Job::render($jobs, 'applications'); ?>
+            <?php isset($jobs) ? Job::render('applications', $jobs) : ''; ?>
         </div>
 
         <div class="section">
             <h2>potential<span class="last">Last search: <?php echo $lastSearch; ?></span></h2>
-            <?php Job::render($jobs, 'potentials'); ?>
+            <?php isset($jobs) ? Job::render('potentials', $jobs) : ''; ?>
         </div>
 
     </div>
