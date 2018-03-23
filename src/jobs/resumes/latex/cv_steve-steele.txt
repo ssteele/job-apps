@@ -15,23 +15,27 @@ To apply my experience to web and application development
 
 Technical Proficiency
 
-PHP, Laravel, CodeIgniter, WordPress, PHPUnit, JavaScript, Vue, Angular, jQuery, Jasmine, SQL, Doctrine, Eloquent, Git, Python, Perl, bash, Regex, SASS, Gulp, Responsive Design, Photoshop
+PHP, Symfony, Laravel, CodeIgniter, WordPress, PHPUnit, JavaScript, Vue, Angular, jQuery, Jasmine, SQL, Doctrine, Eloquent, Git, Python, Perl, bash, Regex, SASS, Gulp, Responsive
 
 Professional Experience
 
+Bite Squad, Austin, TX (remote)
+Software Developer Aug 2017 - Mar 2018
+Collaborated with the desktop and mobile software team to improve, streamline, and maintain the core product suite built using Symfony, Doctrine, and Backbone.js. Tested with PHPUnit.
+
 FinanceGenius, Inc., Austin, TX
 Software Developer Jun 2015 - Present
-Contribute to the core Loan Origination SAAS product built using CodeIgniter, MySQL, Doctrine, PHP-DI, AngularJS, Knockout, jQuery, Kendo UI, and Bootstrap. Employ an object-oriented MVC/MVVM architecture. Test using PHPUnit, Karma, and Jasmine.
+Contributed to the core Loan Origination SAAS product. Employed an object-oriented MVC/MVVM architecture using CodeIgniter, Doctrine, and AngularJS. Tested via PHPUnit, Karma, and Jasmine.
 Clients: Austin Telco, First Financial, Webster First
 
 W2O Digital, Austin, TX
 Developer Jan 2013 – Present
-Collaborated on the Social BI and W2OPress software teams. Created object-oriented, responsive back-end web sites and single-page front-end applications. Built and maintained WordPress (multi)sites. Developed plugins that interact with a variety of external APIs. Planned and deployed Google Analytics events and conversions.
+Collaborated on the Social BI and W2OPress software teams. Created object-oriented, responsive back-end web sites and single-page front-end applications. Built and maintained WordPress (multi)sites. Developed plugins that interact with a variety of external APIs.
 Clients: MasterCard, Purdue Pharma, EMD Serono, Intel
 
 VM Foundry, Austin, TX
 Web Developer Apr 2012 – Dec 2012
-Built websites using PHP, MySQL, jQuery, and CSS. Maintained several WordPress sites. Learned best practices for deploying to staging and production environments using Git. Programmed a variety of cross-browser newsletters to work across multiple email clients. VM Foundry was sold and merged with W2O Group in 2012, forming W2O Digital.
+Built websites using PHP, SQL, jQuery, and CSS. Maintained several WordPress sites.
 Clients: PGA, Sunny Delight, Auxogyn, Sutter Home
 
 Web Services Consultant, Various Companies Nov 2010 – Feb 2012

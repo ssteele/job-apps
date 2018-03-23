@@ -1,14 +1,14 @@
-DATE
+**DATE**
 
-COMPANY
+**COMPANY**
 
-Dear EMPLOYER,
+Dear **EMPLOYER**,
 
-I am interested in being your new POSITION. I have been developing and maintaining web site and application front- and back-ends for several years now. I have a proven record of working both independently and with a team of other developers.
+I want to be your new **POSITION**. I have been building and maintaining web sites and applications for nearly a decade. I come from a solid PHP/Javascript background. I offer experience with a wide array of programming languages and design patterns. I’ve had success working in many environments: from free-flowing agencies tackling many projects to software teams collaborating on larger applications. I have worked remotely for the last few years.
 
-I’ve had success working within a range of environments, from small dev shop, to large and hectic agency, to that same large but less hectic agency operating under a more agile-like ideal. I come from a solid PHP/jQuery background and I’ve gained much experience with responsive, modular SASS working with MasterCard, Intel, and the PGA. I’ve also worked with Laravel, Node.js, and Bootstrap (though I prefer Foundation).
+I have years of experience developing REST APIs and have used many front and backend MVC/MVVM frameworks. **ADD APPROPRIATE SKILLS**. I enjoy TDD development where appropriate. I love learning and trying new things.
 
-Please find attached my resume, which documents my educational and professional experience. You can find samples of my work at my website (steve-steele.com). I look forward to hearing from you.
+Please find attached my resume, which documents my educational and professional experience. You can find samples of my work at steve-steele.com. I look forward to hearing from you. 
 
 Thank you for your consideration.
 
