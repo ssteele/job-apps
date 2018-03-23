@@ -8,8 +8,8 @@
             {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT-Austin grad school in architecture"},
             {"li" : "Got into web development because it was easily accessible and has creative elements"},
             {"li" : "Initially worked as a contractor on an eclectic mix of projects"},
-            {"li" : "Worked in an agency setting (with agile aspirations) for more than 3 years"},
-            {"li" : "Have been working in a software setting (with agile aspirations) for about 3 years"}
+            {"li" : "Worked in an agency setting (with agile aspirations) for over 3 years"},
+            {"li" : "Have been working in a software setting (with agile aspirations) for over 3 years"}
         ]
     },
 
@@ -25,7 +25,8 @@
             {"li" : "After graduating, contracted myself out as a freelance programmer &amp; web developer (and more travel)"},
             {"li" : "Settled into Austin in 2011 and worked at a couple of small digital shops (PCS and VM Foundry)"},
             {"li" : "Bought out by a larger marketing firm (W2O Group) at beginning of 2013 and began working at a larger scale, intro to agile and software development"},
-            {"li" : "Started developing FinTech software at FinanceGenius in 2015"}
+            {"li" : "Started developing FinTech software at FinanceGenius in 2015 - business went under in 2017"},
+            {"li" : "Started developing restaurant delivery service software at Bite Squad in 2017 - developer team layoffs in 2018"}
         ]
     },
 
@@ -60,7 +61,7 @@
         "ul" : [
             {"li" : "Have done a lot of that and it's never easy or straightforward"},
             {"li" : "Difficult to estimate well"},
-            {"li" : "Can be difficult to manage PM expectations, but am improving"}
+            {"li" : "Can be difficult to manage PM expectations, but am always improving"}
         ]
     },
 
@@ -127,20 +128,33 @@
         ]
     },
 
+    "bs-team-1" : {
+        "li" : "At Bite Squad, I collaborated on the desktop/mobile web team consisting of 3 other software developers, a QA tech, scrum master, and product owner; Reached out to CTO and VP of product as needed"
+    },
+
     "fg-team-1" : {
-        "li" : "Work alongside 7 other software developers, 4 QA techs, a scrum master, a BA, several managers, and a product owner on a daily basis"
+        "li" : "At FinanceGenius, I worked alongside 7 other software developers, 4 QA techs, a scrum master, a BA, several managers, and a product owner on a daily basis"
     },
 
     "w2o-team-1" : {
-        "li" : "Worked alongside 3 other WordPress developers, a Solution Manager, and a BA on a daily basis"
+        "li" : "At W2O, I worked alongside 3 other WordPress developers, a Solution Manager, and a BA on a daily basis"
     },
 
     "w2o-team-2" : {
-        "li" : "Was lead developer on a project that had a revolving door of developers (5 in-house, 3 contracted out)"
+        "li" : "Was lead developer on a project at W2O that had a revolving door of developers (5 in-house, 3 contracted out)"
     },
 
     "pcs-team-1" : {
-        "li" : "Was lead developer at PCS: Worked with a team of developers &amp; graphic artists to design, develop, deploy, &amp; maintain several websites"
+        "li" : "At PCS, I was the lead developer: Worked with a team of developers &amp; graphic artists to design, develop, deploy, &amp; maintain several websites"
+    },
+
+    "bs-1" : {
+        "li" : "Software Developer",
+        "ul" : [
+            {"li" : "Collaborated on the desktop/mobile web team developing features and fixing bugs"},
+            {"li" : "Major effort updating UX and streamlining the food ordering process"},
+            {"li" : "Led effort in the move towards making desktop responsive so that we wouldn't have to double our efforts in supporting two applications that shared the same goal"}
+        ]
     },
 
     "fg-1" : {

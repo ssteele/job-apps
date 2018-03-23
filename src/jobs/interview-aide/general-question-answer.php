@@ -57,7 +57,7 @@ $general[] = new Question([
 
 $general[] = new Question([
     'question' => 'Teamwork',
-    'answers'  => ['fg-team-1', 'w2o-team-1', 'w2o-team-2', 'pcs-team-1', ],
+    'answers'  => ['bs-team-1', 'fg-team-1', 'w2o-team-1', 'w2o-team-2', 'pcs-team-1', ],
 ]);
 
 
@@ -68,6 +68,11 @@ $general[] = new Question([
 $experience = [
     'title' => 'Professional Experience',
 ];
+
+$experience[] = new Question([
+    'question' => 'Bite Squad',
+    'answers'  => ['bs-1', ],
+]);
 
 $experience[] = new Question([
     'question' => 'FinanceGenius',
