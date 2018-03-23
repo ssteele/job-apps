@@ -74,7 +74,7 @@ $(function() {
             var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'));
 
             var icon = $(this).find('i');
-            icon.attr('class', 'fa fa-fw fa-refresh fa-spin');
+            icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide');
 
             var endpoint = 'src/app/ajax/curl-html-posting.php';
             var data = {
@@ -119,7 +119,7 @@ $(function() {
 
             var icon = $(this).find('i');
             var iconClass = icon.attr('class');
-            icon.attr('class', 'fa fa-fw fa-refresh fa-spin');
+            icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide');
 
             var endpoint = 'src/app/ajax/generate-php-document.php';
             var data = {
@@ -161,7 +161,7 @@ $(function() {
 
             var icon = $(this).find('i');
             var iconClass = icon.attr('class');
-            icon.attr('class', 'fa fa-fw fa-refresh fa-spin');
+            icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide');
 
             var endpoint = 'src/app/ajax/generate-latex-document.php';
             var data = {

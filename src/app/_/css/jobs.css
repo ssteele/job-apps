@@ -108,11 +108,16 @@ a:hover {
     float:right;
     margin-left:8px;
     margin-right:0;
+    width:16px;
 }
 
 .network {
     margin-left:8px;
     margin-right:0;
+}
+
+.icon-too-wide {
+    margin-left:-3px;
 }
 
 .online {
