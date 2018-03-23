@@ -144,6 +144,8 @@ abstract class Application
             $output = '<span class="online"><span class="' . $this->status . '">' . $this->company . $title . '</span></span>';
         }
 
+        $output .= $this->jobNetwork();
+
         return $output;
     }
 
@@ -219,11 +221,11 @@ abstract class Application
             $path = JOBS_PATH . '/cover-letters/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
-                return '<a href="' . $path . '.pdf" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
             } elseif (file_exists($path . '.html')) {
-                return '<a href="' . $path . '.html" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.html" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
             } elseif (file_exists($path . '.txt')) {
-                return '<a href="' . $path . '.txt" class="icon submitted" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.txt" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
             }
         }
 
@@ -241,7 +243,7 @@ abstract class Application
             $path = JOBS_PATH . '/resumes/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
-                return '<a href="' . $path . '.pdf" class="icon submitted" title="Resume"><i class="fa fa-file"></i></a>';
+                return '<a href="' . $path . '.pdf" class="icon asset" title="Resume"><i class="fa fa-file"></i></a>';
             }
         }
 
@@ -256,7 +258,7 @@ abstract class Application
     protected function jobNetwork()
     {
         if ($this->network) {
-            return '<span class="icon submitted" title="' . $this->network . '"><i class="fa fa-linkedin-square"></i></span>';
+            return '<span class="icon network" title="' . $this->network . '"><i class="fa fa-linkedin-square"></i></span>';
         }
 
         return false;
@@ -273,7 +275,6 @@ abstract class Application
 
         $output .= $this->jobResume();
         $output .= $this->jobLetter();
-        $output .= $this->jobNetwork();
 
         return $output;
     }

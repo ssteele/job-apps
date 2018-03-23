@@ -104,8 +104,13 @@ a:hover {
     margin-right:5px;
 }
 
-.submitted {
+.asset {
     float:right;
+    margin-left:8px;
+    margin-right:0;
+}
+
+.network {
     margin-left:8px;
     margin-right:0;
 }
