@@ -5,10 +5,11 @@
         "ul" : [
             {"li" : "First exposure to programming &amp; computational methods"},
             {"li" : "Realized I have a strong technical prowess; Lot's of interest"},
-            {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT grad school in architecture and Austin was too good to pass up"},
+            {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT-Austin grad school in architecture"},
             {"li" : "Got into web development because it was easily accessible and has creative elements"},
             {"li" : "Initially worked as a contractor on an eclectic mix of projects"},
-            {"li" : "Have been working in an agency setting (with agile aspirations) for more than 3 years"}
+            {"li" : "Worked in an agency setting (with agile aspirations) for more than 3 years"},
+            {"li" : "Have been working in a software setting (with agile aspirations) for about 3 years"}
         ]
     },
 
@@ -23,7 +24,8 @@
             {"li" : "Years of catch-up and intense learning: fell in love with the elegance of the math, but drawn to the daily programming involved"},
             {"li" : "After graduating, contracted myself out as a freelance programmer &amp; web developer (and more travel)"},
             {"li" : "Settled into Austin in 2011 and worked at a couple of small digital shops (PCS and VM Foundry)"},
-            {"li" : "Bought out by a larger marketing firm (W2O Group) at beginning of 2013 and have since been working at a larger scale"}
+            {"li" : "Bought out by a larger marketing firm (W2O Group) at beginning of 2013 and began working at a larger scale, intro to agile and software development"},
+            {"li" : "Started developing FinTech software at FinanceGenius in 2015"}
         ]
     },
 
@@ -32,7 +34,7 @@
     },
 
     "weakness-1" : {
-        "li" : "Tend to get excited and start developing when solutions already exist"
+        "li" : "Tend towards creating maintainable solutions at the expense of speed"
     },
 
     "weakness-2" : {
@@ -43,7 +45,9 @@
         "li" : "Strong motivation to learn",
         "ul" : [
             {"li" : "Adapt Training internship: PHP, MySQL, Perl CGI &amp; JavaScript"},
-            {"li" : "MasterCard Content Hub: Learning OOP on the job (PHP 'model' back-end) while developing a front-end application ('view' and 'controller')"}
+            {"li" : "MasterCard Content Hub: Learning OOP on the job (PHP 'model' back-end) while developing a front-end application ('view' and 'controller')"},
+            {"li" : "FinanceGenius LOS: Grappling with a very large and complex piece of software trying hard to be productive in my first few weeks"},
+            {"li" : "I tend to latch onto developers with more experience to learn as much as I can from them"}
         ]
     },
 
@@ -52,11 +56,20 @@
     },
 
     "challenges-1" : {
-        "li" : "Following interests and jumping into entirely new careers"
+        "li" : "Implementing very large feature requests or carrying out a major refactor under a hard deadline",
+        "ul" : [
+            {"li" : "Have done a lot of that and it's never easy or straightforward"},
+            {"li" : "Difficult to estimate well"},
+            {"li" : "Can be difficult to manage PM expectations, but am improving"}
+        ]
     },
 
     "challenges-2" : {
         "li" : "Learning under a deadline"
+    },
+
+    "challenges-3" : {
+        "li" : "Following interests and jumping into entirely new careers"
     },
 
     "program-challenge-1" : {
@@ -114,20 +127,32 @@
         ]
     },
 
+    "fg-team-1" : {
+        "li" : "Work alongside 7 other software developers, 4 QA techs, a scrum master, a BA, several managers, and a product owner on a daily basis"
+    },
+
     "w2o-team-1" : {
-        "li" : "Work alongside 3 other WordPress developers, a Solution Manager, and a BA on a daily basis"
+        "li" : "Worked alongside 3 other WordPress developers, a Solution Manager, and a BA on a daily basis"
     },
 
     "w2o-team-2" : {
-        "li" : "Lead developer on a project that had a revolving door of developers (5 in-house, 3 contracted out)"
+        "li" : "Was lead developer on a project that had a revolving door of developers (5 in-house, 3 contracted out)"
     },
 
     "pcs-team-1" : {
-        "li" : "Lead Developer at PCS: Worked with a team of developers &amp; graphic artists to design, develop, deploy, &amp; maintain several websites"
+        "li" : "Was lead developer at PCS: Worked with a team of developers &amp; graphic artists to design, develop, deploy, &amp; maintain several websites"
+    },
+
+    "fg-1" : {
+        "li" : "Software Developer",
+        "ul" : [
+            {"li" : "Collaborated on the LOS software team developing all sorts of features, fixing bugs, and refactoring all manor of tech debt"},
+            {"li" : "Collaborated on the CLA team almost exclusively fixing bugs and refactoring all manor of anti-pattern"}
+        ]
     },
 
     "w2o-1" : {
-        "li" : "Web Developer",
+        "li" : "Developer",
         "ul" : [
             {"li" : "Collaborated on the Social BI software team: Executive dashboard"},
             {"li" : "Collaborated on the W2OPress software package that standardizes project development"},
@@ -139,7 +164,7 @@
     },
 
     "vmf-1" : {
-        "li" : "Junior Web Developer",
+        "li" : "Web Developer",
         "ul" : [
             {"li" : "Built websites using PHP, MySQL, jQuery, and CSS"},
             {"li" : "Maintained several WordPress sites"},
@@ -206,7 +231,7 @@
     "thesis-research" : {
         "li" : "Examined the effects of the Appalachians on the precipitation distribution of tropical cyclones that impinge upon them",
         "ul" : [
-            {"li" : "Identified areas of frequent heavy rain owing to (in)direct mountain effects"},
+            {"li" : "Identified areas of frequent heavy rain owing to (in)direct orographic (mountain) effects"},
             {"li" : "Documented the Appalachians effects on tropical and mid-latitude cyclones, and their interactions (ET and reintensification)"}
         ]
     },
@@ -260,10 +285,6 @@
 
     "salary-2" : {
         "li" : "...no matter how hard you push, you will not get a response from me"
-    },
-
-    "" : {
-        "li" : ""
     }
 
 }

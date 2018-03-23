@@ -8,6 +8,7 @@ use SteveSteele\Interview\Interview;
 //    JOB-SPECIFIC
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// Company details
 $company = 'COMPANY';
 $jobTitle = 'JOB TITLE';
 $interviewerName = 'INTERVIEWER';

@@ -32,22 +32,22 @@ $general[] = new Question([
 
 $general[] = new Question([
     'question' => 'Difficulies/Challenges',
-    'answers'  => ['challenges-1', 'challenges-2', ],
+    'answers'  => ['challenges-1', 'challenges-2', 'challenges-3', ],
 ]);
 
-$general[] = new Question([
-    'question' => 'Programming challenges',
-    'answers'  => ['program-challenge-1', 'program-challenge-2', ],
-]);
+// $general[] = new Question([
+//     'question' => 'Programming challenges',
+//     'answers'  => ['program-challenge-1', 'program-challenge-2', ],
+// ]);
 
 $general[] = new Question([
     'question' => 'Motivation',
-    'answers'  => ['motivation-1', 'learn-2', 'motivation-2', ],
+    'answers'  => ['motivation-1', 'motivation-2', ],
 ]);
 
 $general[] = new Question([
     'question' => 'Rewarding',
-    'answers'  => ['mesomodel-2', 'mesomodel-1', 'learn-2', ],
+    'answers'  => ['mesomodel-2', 'mesomodel-1', ],
 ]);
 
 $general[] = new Question([
@@ -57,7 +57,7 @@ $general[] = new Question([
 
 $general[] = new Question([
     'question' => 'Teamwork',
-    'answers'  => ['w2o-team-1', 'w2o-team-2', 'pcs-team-1', ],
+    'answers'  => ['fg-team-1', 'w2o-team-1', 'w2o-team-2', 'pcs-team-1', ],
 ]);
 
 
@@ -68,6 +68,11 @@ $general[] = new Question([
 $experience = [
     'title' => 'Professional Experience',
 ];
+
+$experience[] = new Question([
+    'question' => 'FinanceGenius',
+    'answers'  => ['fg-1', ],
+]);
 
 $experience[] = new Question([
     'question' => 'W2O Group',
