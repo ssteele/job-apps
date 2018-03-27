@@ -9,7 +9,7 @@ Very basic coding skill is required: PHP, JSON, LaTeX (optional). All you really
     cd job-apps
     composer install
 
-Edit `src/app/config.php`:
+Navigate to the `src/app` folder and copy `config-example.php` to `config.php`. Edit the new file:
 
     const APP_URL = 'http://YOUR-URL';                              // supply the URL where you are hosting your site
     const ENVIRONMENT = 'production';                               // if 'development', shows error reporting for debuggery
