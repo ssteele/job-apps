@@ -29,7 +29,7 @@ Once served, fire up the site (http://YOUR-URL). Then start populating the app w
     ];
 
     $lists = [                                                      // below is a link to Laravel job postings on Indeed that don't have a bunch of unrelated technologies also listed
-        'Indeed (Laravel)' => 'http://www.indeed.com/jobs?q=%22PHP%22+Laravel+-Java+-.Net+-C+-C%2B%2B+-C%23+-designer&l=Austin%2C+TX&sort=date',
+        'Indeed: Laravel' => 'http://www.indeed.com/jobs?q=%22PHP%22+Laravel+-Java+-.Net+-C+-C%2B%2B+-C%23+-designer&l=Austin%2C+TX&sort=date',
     ];
 
     $companies = [                                                  // google jobs
@@ -55,10 +55,12 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'status'         => 'rejected',                             // options: dream, potential, applied, rejected, abandoned
         'searchDate'     => '05.15.2015',                           // when you found the posting
         'appDate'        => '05.16.2015',                           // when you actually applied for the job
+        'searchLink'     => 'Indeed: Laravel',                      // job list used to find the job
         'title'          => 'DevOps Engineer',                      // job title
         'company'        => 'W2O Group',                            // company name
+        'location'       => 'Austin',                               // job location
         'localPosting'   => true,                                   // keep track of the original job posting
-        'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
+        'publicPosting'  => 'https://www.linkedin.com/jobs/view/1/',// link to job posting
         'resume'         => true,                                   // keep track of the resume you sent
         'letter'         => true,                                   // keep track of the cover letter you applied with
         'network'        => false,                                  // keep track of who recommended the job
