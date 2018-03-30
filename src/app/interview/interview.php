@@ -38,7 +38,10 @@ require_once route([JOBS_PATH, '/interviews/' . $file]);
             </div>
 
             <h2 class="centered">
-                <?php echo $interviewerTitle . ' - ' . $interviewerName; ?>
+                <?php
+                echo ($interviewerTitle) ? $interviewerTitle . ' - ' : '';
+                echo $interviewerName;
+                ?>
             </h2>
 
         </div>
