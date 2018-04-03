@@ -7,7 +7,7 @@ class PhpDocument implements Document
 
     private $path = '';
     private $file = '';
-    private $template = 'template.php';
+    private $template = '_template.php';
 
 
     /**
