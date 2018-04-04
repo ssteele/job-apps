@@ -154,20 +154,6 @@ $(function() {
 
 
     /**
-     * Allow the user to easily copy interview aide summary
-     */
-    var queueCopyAnswers = function()
-    {
-        // Escape double-quotes for easy insertion into interview file
-        var report = $('#summary').html().replace(/"/g, '\\"');
-
-        $('#copy-answers').click(function() {
-            window.prompt('Copy to clipboard: Ctrl+C, Enter', report);
-        });
-    };
-
-
-    /**
      * Drive events following stop click
      */
     var queueStopRecording = function()
@@ -176,9 +162,9 @@ $(function() {
 
             toggleRecording(false);
 
-            // Enqueue copy answers functionality
-            $('#summary').after('<button class="copy" id="copy-answers">Copy to clipboard</button>');
-            queueCopyAnswers();
+            // Escape double-quotes and tags for easy insertion into interview file
+            var markup = $('#summary').html().replace(/"/g, '\\"').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            $('#summary-markup').html(markup);
 
             // Show the report
             $('#report').toggleClass('hidden');
@@ -208,9 +194,6 @@ $(function() {
 
             // Ensure the report is hidden
             $('#report').addClass('hidden');
-
-            // Remove old copy button
-            $('#copy-answers').remove();
 
         });
     };

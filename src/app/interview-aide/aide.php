@@ -41,6 +41,8 @@ $aide->setPartialPath(route([AIDE_PATH, '/partials/']));
 
         <div class="summary" id="summary"></div>
 
+        <div class="summary-markup" id="summary-markup"></div>
+
     </div>
 </div>
 
