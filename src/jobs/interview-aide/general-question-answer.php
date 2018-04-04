@@ -12,7 +12,7 @@ $general = [
 
 $general[] = new Question([
     'question' => 'About me',
-    'answers'  => ['about-me', ],
+    'answers'  => ['about-me-1', 'about-me-2', 'about-me-3', ],
 ]);
 
 $general[] = new Question([

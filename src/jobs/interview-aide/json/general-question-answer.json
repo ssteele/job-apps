@@ -1,15 +1,27 @@
 {
 
-    "about-me" : {
+    "about-me-1" : {
         "li" : "I have a Masters in Atmospheric Science",
         "ul" : [
             {"li" : "First exposure to programming &amp; computational methods"},
             {"li" : "Realized I have a strong technical prowess; Lot's of interest"},
-            {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT-Austin grad school in architecture"},
+            {"li" : "Was planning to to pursue a career in numerical modeling; Wife was accepted to UT-Austin grad school in architecture"}
+        ]
+    },
+
+    "about-me-2" : {
+        "li" : "I became a web developer",
+        "ul" : [
             {"li" : "Got into web development because it was easily accessible and has creative elements"},
             {"li" : "Initially worked as a contractor on an eclectic mix of projects"},
-            {"li" : "Worked in an agency setting (with agile aspirations) for over 3 years"},
-            {"li" : "Have been working in a software setting (with agile aspirations) for over 3 years"}
+            {"li" : "Worked in an agency setting (with agile aspirations) for over 3 years"}
+        ]
+    },
+
+    "about-me-3" : {
+        "li" : "I became a software developer",
+        "ul" : [
+            {"li" : "Have been working in a few software settings (with agile aspirations) for an additional 3 years"}
         ]
     },
 
