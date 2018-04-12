@@ -107,8 +107,8 @@ $(function() {
             );
         }
 
-        // Mark as answered
-        t.addClass('grayed-out');
+        // Mark it (and similar questions in other sections) as answered
+        $('li.' + t.attr('class')).addClass('grayed-out');
     }
 
 
