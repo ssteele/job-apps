@@ -55,7 +55,6 @@ abstract class Application
      */
     protected function getLocalFilename()
     {
-
         $fields = [
             'title',
             'company',
@@ -63,10 +62,9 @@ abstract class Application
 
         foreach ($fields as $f) {
             $f = strtolower($this->$f);
-            $f = preg_replace('/[ -.]/', '_', $f);
+            $f = preg_replace('/[ -.\/]/', '_', $f);
 
             $this->localFilename .= $f . '_';
-
         }
 
         $this->localFilename = trim($this->localFilename, '_');
@@ -74,7 +72,6 @@ abstract class Application
 
         $this->terminalFriendlyFilepath = preg_replace('/\[/', '\[', $this->terminalFriendlyFilepath);
         $this->terminalFriendlyFilepath = preg_replace('/\]/', '\]', $this->terminalFriendlyFilepath);
-
     }
 
 
