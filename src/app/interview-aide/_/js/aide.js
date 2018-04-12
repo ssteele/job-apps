@@ -108,7 +108,13 @@ $(function() {
         }
 
         // Mark it (and similar questions in other sections) as answered
-        $('li.' + t.attr('class')).addClass('grayed-out');
+        var selector = t.attr('class');
+        var spaceIndex = selector.indexOf(' ');
+        if (-1 !== spaceIndex) {
+            selector = selector.substr(0, spaceIndex);
+        }
+
+        $('li.' + selector).addClass('grayed-out');
     }
 
 
