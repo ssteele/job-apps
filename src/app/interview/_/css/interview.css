@@ -62,6 +62,8 @@ li {
 
 pre {
     font-size:10pt;
+    overflow-wrap:break-word;
+    white-space:pre-wrap;
 }
 
 .row.interview {
