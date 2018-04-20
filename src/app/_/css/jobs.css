@@ -133,11 +133,16 @@ a:hover {
     color:#555;
 }
 
+.interviewing {
+    color:#777;
+}
+
 .abandoned {
     color:#3c3c3c;
 }
 
 .rejected {
+    color:#3c3c3c;
     text-decoration:line-through;
 }
 
