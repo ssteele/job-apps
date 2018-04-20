@@ -44,7 +44,7 @@ abstract class Application
             }
         }
 
-        $this->defineInternalVars();
+        $this->deriveInternalVariables();
 
         return $this;
     }
@@ -78,9 +78,9 @@ abstract class Application
     /**
      * Initialize protected internal attributes
      */
-    protected function defineInternalVars()
+    protected function deriveInternalVariables()
     {
-        $this->officialDate = ($this->appDate) ? $this->appDate : $this->searchDate;
+        $this->officialDate = ($this->appDate) ? $this->appDate : 'n/a';
         $this->searchDateDashed = preg_replace('/\./', '-', $this->searchDate);
         $this->getLocalFilename();
     }
