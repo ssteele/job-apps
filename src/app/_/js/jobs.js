@@ -50,6 +50,21 @@ $(function() {
   }
 
   /**
+   * Global var: shift key press status
+   * @type {bool}    True if shift key depressed, false otherwise
+   */
+  var isShiftKeyPressed = false
+
+  /**
+   * Listen to shift key to allow for extended front-end functionality
+   */
+  var listenToShiftKey = function() {
+    $(document).on('keyup keydown', function(e) {
+      isShiftKeyPressed = e.shiftKey
+    })
+  }
+
+  /**
    * Automatically generate php documents
    */
   var autoCurlHtml = function() {
@@ -76,7 +91,7 @@ $(function() {
         data: data,
         success: function (response) {
           if ('error' === response.status || 'invalid' === response.status) {
-            var message  = 'An error occurred while fetching/saving the html post...\n'
+            var message  = 'An error occurred while fetching/saving the HTML post...\n'
             message += response.message
             alert(message)
           }
@@ -118,7 +133,7 @@ $(function() {
         data: data,
         success: function (response) {
           if ('error' === response.status || 'invalid' === response.status) {
-            var message  = 'An error occurred while generating the document...\n'
+            var message  = 'An error occurred while generating the PHP document...\n'
             message += response.message
             alert(message)
           }
@@ -144,33 +159,61 @@ $(function() {
       var iconClass = icon.attr('class')
       icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide')
 
-      var endpoint = 'src/app/ajax/generate-latex-document.php'
+      var endpoint
       var data = {
         'filePath': $(this).attr('data-path'),
         'fileName': $(this).attr('id')
       }
 
-      $.ajax({
-        url: endpoint,
-        type: 'post',
-        cache: false,
-        dataType: 'json',
-        data: data,
-        success: function (response) {
-          if ('error' === response.status || 'invalid' === response.status) {
-            var message  = 'An error occurred while generating the document...\n'
+      if (! isShiftKeyPressed) {
+        endpoint = 'src/app/ajax/generate-latex-document.php'
+
+        $.ajax({
+          url: endpoint,
+          type: 'post',
+          cache: false,
+          dataType: 'json',
+          data: data,
+          success: function (response) {
+            if ('error' === response.status || 'invalid' === response.status) {
+              var message  = 'An error occurred while generating the LaTeX document...\n'
+              message += response.message
+              alert(message)
+            }
+            setTimeout(function() {resetIcon(icon, iconClass)}, 500)
+          },
+          error: function(response) {
+            var message  = 'A error occurred with the request...\n'
             message += response.message
             alert(message)
+            icon.attr('class', iconClass)
           }
-          setTimeout(function() {resetIcon(icon, iconClass)}, 500)
-        },
-        error: function(response) {
-          var message  = 'A error occurred with the request...\n'
-          message += response.message
-          alert(message)
-          icon.attr('class', iconClass)
-        }
-      })
+        })
+      } else {
+        endpoint = 'src/app/ajax/copy-text-document.php'
+
+        $.ajax({
+          url: endpoint,
+          type: 'post',
+          cache: false,
+          dataType: 'json',
+          data: data,
+          success: function (response) {
+            if ('error' === response.status || 'invalid' === response.status) {
+              var message  = 'An error occurred while copying the text document...\n'
+              message += response.message
+              alert(message)
+            }
+            setTimeout(function() {resetIcon(icon, iconClass)}, 500)
+          },
+          error: function(response) {
+            var message  = 'A error occurred with the request...\n'
+            message += response.message
+            alert(message)
+            icon.attr('class', iconClass)
+          }
+        })
+      }
     })
   }
 
@@ -179,6 +222,7 @@ $(function() {
    * Driver for all auto generate functionality
    */
   var autoGenerate = function() {
+    listenToShiftKey();
     autoCurlHtml()
     autoGeneratePhp()
     autoGenerateLatex()

@@ -8,7 +8,6 @@ abstract class Base implements Contract
     protected $script = '';
     protected $file = '';
     protected $url = '';
-    protected $template = '';
 
     /**
      * Constructor
