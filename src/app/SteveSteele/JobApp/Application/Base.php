@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\Application;
 
-abstract class Application
+abstract class Base
 {
 
     // Application properties

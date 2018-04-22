@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\DocumentGenerator;
 
-// http://shs.job-apps.com:8888/src/ajax/generate-latex-document.php
+// http://shs.job-apps.com:8888/src/app/ajax/generate-latex-document.php
 
 $response = [
     'status'   => 'success',

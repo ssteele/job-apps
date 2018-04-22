@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\Application;
 
-class Potential extends Application
+class Potential extends Base
 {
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\DocumentGenerator;
 
-class HtmlPosting implements Document
+class HtmlPosting implements Contract
 {
 
     private $path = '';

@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\DocumentGenerator;
 
-class PhpDocument implements Document
+class PhpDocument implements Contract
 {
 
     private $path = '';

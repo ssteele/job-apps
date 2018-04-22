@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\Application;
 
-abstract class Processed extends Application
+abstract class Processed extends Base
 {
 
     /**

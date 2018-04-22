@@ -12,7 +12,7 @@ class Job
      */
     public static function create($data = [])
     {
-        $className = '\\SteveSteele\\JobApp\\' . ucfirst(strtolower($data['status']));
+        $className = '\\SteveSteele\\JobApp\\Application\\' . ucfirst(strtolower($data['status']));
         return new $className($data);
     }
 

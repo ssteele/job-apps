@@ -1,8 +1,8 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\DocumentGenerator;
 
-// http://shs.job-apps.com:8888/src/ajax/curl-html-posting.php
+// http://shs.job-apps.com:8888/src/app/ajax/curl-html-posting.php
 
 $response = [
     'status'   => 'success',
