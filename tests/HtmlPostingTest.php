@@ -18,7 +18,7 @@ class HtmlPostingTest extends TestCase
         $this->serverPath = $_SERVER['PWD'];
         $this->filePath = JOBS_POSTINGS_PATH;
         $this->fileName = '05-15-2015_junior_devops_engineer_w2o_group';
-        $this->postUrl = APP_URL . '/src/jobs/postings/05-05-2015_devops_engineer_w2o_group.php';
+        $this->postUrl = 'http://www.steve-steele.com/content/themes/stevesteele/job-apps-unittest-asset.php';
 
         $this->htmlPosting = new HtmlPosting($this->serverPath, $this->filePath, $this->fileName, $this->postUrl);
     }
