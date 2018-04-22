@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\DocumentGenerator;
 
 class HtmlPosting extends Base
 {
-
     /**
      * Constructor
      * @param string $serverPath    Absolute server path
@@ -18,7 +17,6 @@ class HtmlPosting extends Base
         $this->setUrl($postUrl);
     }
 
-
     /**
      * File setter
      * @param string $fileName    Name
@@ -29,7 +27,6 @@ class HtmlPosting extends Base
         return $this->file;
     }
 
-
     /**
      * URL setter
      * @param string $postUrl    Source job posting URL
@@ -39,7 +36,6 @@ class HtmlPosting extends Base
         $this->url = $postUrl;
         return $this->url;
     }
-
 
     /**
      * Fetch job posting via cURL and save locally
@@ -62,7 +58,6 @@ class HtmlPosting extends Base
 
         return $status;
     }
-
 
     /**
      * Document generator

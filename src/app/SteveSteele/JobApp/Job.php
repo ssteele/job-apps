@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp;
 
 class Job
 {
-
     /**
      * Application factory
      * @param array $data    Job meta
@@ -15,7 +14,6 @@ class Job
         $className = '\\SteveSteele\\JobApp\\Application\\' . ucfirst(strtolower($data['status']));
         return new $className($data);
     }
-
 
     /**
      * Handle the rendering of job rows

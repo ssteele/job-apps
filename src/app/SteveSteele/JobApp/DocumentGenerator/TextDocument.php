@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\DocumentGenerator;
 
 class TextDocument extends Base
 {
-
     private $template = 'latex/cover_steve-steele.txt';
 
     /**
@@ -16,7 +15,6 @@ class TextDocument extends Base
         $this->file = $fileName . '.txt';
         return $this->file;
     }
-
 
     /**
      * Document generator

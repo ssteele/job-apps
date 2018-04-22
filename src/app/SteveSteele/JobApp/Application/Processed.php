@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\Application;
 
 abstract class Processed extends Base
 {
-
     /**
      * Render job application date
      * @return string    HTML markup
@@ -18,7 +17,6 @@ abstract class Processed extends Base
 
         return $output;
     }
-
 
     /**
      * Driver to render job application row
@@ -35,7 +33,6 @@ abstract class Processed extends Base
         return $output;
     }
 
-
     /**
      * Driver to render potential job row
      * @param  boolean  $print    Echo if true
@@ -44,5 +41,4 @@ abstract class Processed extends Base
     {
         return false;
     }
-
 }

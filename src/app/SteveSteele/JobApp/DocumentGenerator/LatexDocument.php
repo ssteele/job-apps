@@ -4,8 +4,6 @@ namespace SteveSteele\JobApp\DocumentGenerator;
 
 class LatexDocument extends Base
 {
-
-
     /**
      * Constructor
      * @param string $serverPath    Absolute server path
@@ -18,7 +16,6 @@ class LatexDocument extends Base
         parent::__construct($serverPath, $filePath, $fileName, $postUrl);
         $this->setScript($serverPath, $filePath);
     }
-
 
     /**
      * Script setter
@@ -36,7 +33,6 @@ class LatexDocument extends Base
         return $this->script;
     }
 
-
     /**
      * File setter
      * @param string $fileName    Name
@@ -46,7 +42,6 @@ class LatexDocument extends Base
         $this->file = $fileName;
         return $this->file;
     }
-
 
     /**
      * Document generator

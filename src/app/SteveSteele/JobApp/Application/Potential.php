@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\Application;
 
 class Potential extends Base
 {
-
     /**
      * Application date markup
      * ...overridden here to add copy to clipboard functionality
@@ -36,7 +35,6 @@ class Potential extends Base
         return $output;
     }
 
-
     /**
      * Render cover letter link created for this job
      * @return string    HTML markup
@@ -61,7 +59,6 @@ class Potential extends Base
 
         return false;
     }
-
 
     /**
      * Render resume link created for this job
@@ -88,7 +85,6 @@ class Potential extends Base
         return false;
     }
 
-
     /**
      * Render generated assets
      * @return string    HTML markup
@@ -103,7 +99,6 @@ class Potential extends Base
         return $output;
     }
 
-
     /**
      * Driver to render job application row
      * @param  boolean  $print    Echo if true
@@ -112,7 +107,6 @@ class Potential extends Base
     {
         return false;
     }
-
 
     /**
      * Driver to render potential job row

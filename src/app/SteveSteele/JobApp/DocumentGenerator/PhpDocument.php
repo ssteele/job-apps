@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\DocumentGenerator;
 
 class PhpDocument extends Base
 {
-
     private $template = '_template.php';
 
     /**
@@ -16,7 +15,6 @@ class PhpDocument extends Base
         $this->file = $fileName . '.php';
         return $this->file;
     }
-
 
     /**
      * Document generator

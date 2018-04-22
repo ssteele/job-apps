@@ -4,7 +4,6 @@ namespace SteveSteele\JobApp\Application;
 
 abstract class Base
 {
-
     // Application properties
     public $status;
     public $searchDate;
@@ -20,14 +19,12 @@ abstract class Base
     public $headhunter = false;
     public $interviews = [];
 
-
     // Internal properties
     protected $officialDate;
     protected $searchDateDashed;
     protected $localFilename;
     protected $localFilePath;
     protected $terminalFriendlyFilepath;
-
 
     /**
      * Constructor
@@ -49,7 +46,6 @@ abstract class Base
 
         return $this;
     }
-
 
     /**
      * Filename format: 'job_title_company'
@@ -75,7 +71,6 @@ abstract class Base
         $this->terminalFriendlyFilepath = preg_replace('/\]/', '\]', $this->terminalFriendlyFilepath);
     }
 
-
     /**
      * Initialize protected internal attributes
      */
@@ -85,7 +80,6 @@ abstract class Base
         $this->searchDateDashed = preg_replace('/\./', '-', $this->searchDate);
         $this->getLocalFilename();
     }
-
 
     /**
      * Map interview types with font-awesome icons
@@ -109,7 +103,6 @@ abstract class Base
         return $mapAwesome[$type];
     }
 
-
     /**
      * Application date markup
      * ...overridden by potential class to add copy to clipboard functionality
@@ -119,7 +112,6 @@ abstract class Base
     {
         return '(' . $this->officialDate . ')';
     }
-
 
     /**
      * Render job application date
@@ -147,7 +139,6 @@ abstract class Base
         return $output;
     }
 
-
     /**
      * Render job: Title - Company
      * @return string    HTML markup
@@ -174,7 +165,6 @@ abstract class Base
 
         return $output;
     }
-
 
     /**
      * Render job interview icon links
@@ -215,7 +205,6 @@ abstract class Base
         return $output;
     }
 
-
     /**
      * Render cover letter link created for this job
      * @return string    HTML markup
@@ -237,7 +226,6 @@ abstract class Base
         return false;
     }
 
-
     /**
      * Render resume link created for this job
      * @return string    HTML markup
@@ -255,7 +243,6 @@ abstract class Base
         return false;
     }
 
-
     /**
      * Mark remote job
      * @return string    HTML markup
@@ -268,7 +255,6 @@ abstract class Base
 
         return false;
     }
-
 
     /**
      * Render networking connection for this job
@@ -283,7 +269,6 @@ abstract class Base
         return false;
     }
 
-
     /**
      * Render assets for this job
      * @return string    HTML markup
@@ -297,7 +282,6 @@ abstract class Base
 
         return $output;
     }
-
 
     /**
      * Driver to render job application row
@@ -338,7 +322,6 @@ abstract class Base
 
         return $output;
     }
-
 
     /**
      * Drivers to render a job application row
