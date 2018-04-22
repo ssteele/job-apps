@@ -140,9 +140,7 @@ abstract class Application
             $output .= $this->officialDateMarkup();
         }
 
-        $output .= '<span class="show-for-large-up">';
-        $output .=     $this->addIconIfRemote();
-        $output .= '</span>';
+        $output .= $this->addIconIfRemote();
 
         $output .= '</span>';
 
@@ -171,10 +169,6 @@ abstract class Application
         }
 
         $output .= $this->addIconIfNetwork();
-
-        $output .= '<span class="hidden-for-large-up">';
-        $output .=     $this->addIconIfRemote();
-        $output .= '</span>';
 
         return $output;
     }
@@ -310,29 +304,35 @@ abstract class Application
     {
         $output = '';
 
-        $output .=  '<div class="row hide-for-medium-up">';
+        $output .=  '<div class="row hide-for-large-up collapse">';
         $output .=      '<div class="small-12 columns mobile-row">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
         $output .=  '</div>';
 
         $output .=  '<div class="row">';
-        $output .=      '<div class="small-3 medium-2 large-2 columns">';
+        $output .=      '<div class="small-6 medium-3 large-2 columns">';
         $output .=          $this->jobApplicationDate();
         $output .=      '</div>';
 
-        $output .=      '<div class="show-for-medium-up medium-5 large-5 columns">';
+        $output .=      '<div class="show-for-large-up large-5 columns">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
 
-        $output .=      '<div class="small-6 medium-3 large-4 columns">';
+        $output .=      '<div class="show-for-medium-up medium-7 large-4 columns">';
         $output .=          $this->jobInterviews();
         $output .=      '</div>';
 
-        $output .=      '<div class="small-3 medium-2 large-1 columns">';
+        $output .=      '<div class="small-6 medium-2 large-1 columns">';
         $output .=          $this->jobAssets();
         $output .=      '</div>';
         $output .=  '</div>';
+
+        if (! empty($this->interviews)) {
+            $output .=  '<div class="hide-for-medium-up small-12 columns">';
+            $output .=      $this->jobInterviews();
+            $output .=  '</div>';
+        }
 
         return $output;
     }

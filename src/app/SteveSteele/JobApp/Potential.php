@@ -19,7 +19,7 @@ class Potential extends Application
         $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">';
 
         // markup to render progress icon
-        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="show-for-medium-up fa fa-fw fa-' . $this->faType('generate') . '"></i>' : '';
+        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="show-for-large-up fa fa-fw fa-' . $this->faType('generate') . '"></i>' : '';
 
         $output .= '(' . $this->searchDate . ')';
         $output .= '</span>';
