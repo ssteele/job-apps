@@ -2,47 +2,20 @@
 
 namespace SteveSteele\JobApp\DocumentGenerator;
 
-class HtmlPosting implements Contract
+class HtmlPosting extends Base
 {
-
-    private $path = '';
-    private $file = '';
-    private $url = '';
-
 
     /**
      * Constructor
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      * @param string $fileName      Name
+     * @param string $postUrl       Fetch URL
      */
     public function __construct($serverPath = '', $filePath = '', $fileName = '', $postUrl = '')
     {
-        $this->setPath($serverPath, $filePath);
-        $this->setFile($fileName);
+        parent::__construct($serverPath, $filePath, $fileName, $postUrl);
         $this->setUrl($postUrl);
-    }
-
-
-    /**
-     * Path setter
-     * @param string $serverPath    Absolute server path
-     * @param string $filePath      Path relative to server root
-     */
-    private function setPath($serverPath = '', $filePath = '')
-    {
-        $this->path = rtrim($serverPath, '/') . '/' . rtrim($filePath, '/') . '/';
-        return $this->path;
-    }
-
-
-    /**
-     * Path getter
-     * @return string    Path relative to server root
-     */
-    public function getPath()
-    {
-        return $this->path;
     }
 
 
@@ -50,19 +23,9 @@ class HtmlPosting implements Contract
      * File setter
      * @param string $fileName    Name
      */
-    private function setFile($fileName = '')
+    public function setFile($fileName = '')
     {
         $this->file = $fileName . '.php';
-        return $this->file;
-    }
-
-
-    /**
-     * File getter
-     * @return string    Name
-     */
-    public function getFile()
-    {
         return $this->file;
     }
 
@@ -71,19 +34,9 @@ class HtmlPosting implements Contract
      * URL setter
      * @param string $postUrl    Source job posting URL
      */
-    private function setUrl($postUrl = '')
+    public function setUrl($postUrl = '')
     {
         $this->url = $postUrl;
-        return $this->url;
-    }
-
-
-    /**
-     * URL getter
-     * @return string    Source job posting URL
-     */
-    public function getUrl()
-    {
         return $this->url;
     }
 
@@ -92,7 +45,7 @@ class HtmlPosting implements Contract
      * Fetch job posting via cURL and save locally
      * @return boolean    True on success; False otherwise
      */
-    public function curlPosting()
+    private function curlPosting()
     {
         $ch = curl_init($this->url);
         $fp = fopen($this->path . $this->file, 'w');

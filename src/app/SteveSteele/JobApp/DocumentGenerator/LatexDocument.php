@@ -2,12 +2,8 @@
 
 namespace SteveSteele\JobApp\DocumentGenerator;
 
-class LatexDocument implements Contract
+class LatexDocument extends Base
 {
-
-    private $path = '';
-    private $script = '';
-    private $file = '';
 
 
     /**
@@ -15,34 +11,12 @@ class LatexDocument implements Contract
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      * @param string $fileName      Name
+     * @param string $postUrl       Fetch URL
      */
-    public function __construct($serverPath = '', $filePath = '', $fileName = '')
+    public function __construct($serverPath = '', $filePath = '', $fileName = '', $postUrl = '')
     {
-        $this->setPath($serverPath, $filePath);
+        parent::__construct($serverPath, $filePath, $fileName, $postUrl);
         $this->setScript($serverPath, $filePath);
-        $this->setFile($fileName);
-    }
-
-
-    /**
-     * Path setter
-     * @param string $serverPath    Absolute server path
-     * @param string $filePath      Path relative to server root
-     */
-    private function setPath($serverPath = '', $filePath = '')
-    {
-        $this->path = rtrim($serverPath, '/') . '/' . rtrim($filePath, '/') . '/';
-        return $this->path;
-    }
-
-
-    /**
-     * Path getter
-     * @return string    Path relative to server root
-     */
-    public function getPath()
-    {
-        return $this->path;
     }
 
 
@@ -51,7 +25,7 @@ class LatexDocument implements Contract
      * @param string $serverPath    Absolute server path
      * @param string $filePath      Path relative to server root
      */
-    private function setScript($serverPath = '', $filePath = '')
+    public function setScript($serverPath = '', $filePath = '')
     {
         $scriptPath = 'latex/generate-auto.bash';
         if (! $this->path) {
@@ -64,32 +38,12 @@ class LatexDocument implements Contract
 
 
     /**
-     * Script getter
-     * @return string    Path to latex generator script
-     */
-    public function getScript()
-    {
-        return $this->script;
-    }
-
-
-    /**
      * File setter
      * @param string $fileName    Name
      */
-    private function setFile($fileName = '')
+    public function setFile($fileName = '')
     {
         $this->file = $fileName;
-        return $this->file;
-    }
-
-
-    /**
-     * File getter
-     * @return string    Filename
-     */
-    public function getFile()
-    {
         return $this->file;
     }
 
