@@ -18,7 +18,7 @@ abstract class Application
     public $letter = true;
     public $network = false;
     public $headhunter = false;
-    public $interviews;
+    public $interviews = [];
 
 
     // Internal properties
@@ -160,12 +160,14 @@ abstract class Application
 
         $title = (! empty($this->title)) ? ' &#8226; ' . $this->title : '';
 
-        $output = '';
+        $cssClass = $this->status;
+        $cssClass .= (! empty($this->interviews)) ? ' interviewing' : '' ;
 
+        $output = '';
         if ($this->publicPosting) {
-            $output .= '<span class="online"><a class="' . $this->status . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
+            $output .= '<span class="online"><a class="' . $cssClass . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
         } else {
-            $output .= '<span class="online"><span class="' . $this->status . '">' . $this->company . $title . '</span></span>';
+            $output .= '<span class="online"><span class="' . $cssClass . '">' . $this->company . $title . '</span></span>';
         }
 
         $output .= $this->addIconIfNetwork();
@@ -181,7 +183,7 @@ abstract class Application
     protected function jobInterviews()
     {
         $output = '<span class="interview">&nbsp;';
-        if ($this->interviews) {
+        if (! empty($this->interviews)) {
             foreach ($this->interviews as $date => $type) {
                 $file = JOBS_PATH . '/interviews/' . $date . '_' . $this->localFilename . '.php';
                 $path = APP_PATH . '/interview/?i=' . urlencode($date . '_' . $this->localFilename);
