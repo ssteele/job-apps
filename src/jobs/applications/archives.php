@@ -46,7 +46,7 @@ $jobs[] = Job::create([
 ]);
 
 $jobs[] = Job::create([
-    'status'         => 'interviewing',
+    'status'         => 'applied',
     'searchDate'     => '05.05.2018',
     'appDate'        => '05.16.2018',
     'title'          => 'DevOps Engineer',

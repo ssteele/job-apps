@@ -1,6 +1,6 @@
 <?php
 
-namespace SteveSteele\JobApp;
+namespace SteveSteele\JobApp\DocumentGenerator;
 
 use PHPUnit\Framework\TestCase;
 
