@@ -16,19 +16,19 @@ class Potential extends Application
 
         // generator markup
         $action = (AUTO_CURL_HTML_POSTINGS) ? 'generate auto-curl-html' : 'copy-to-clipboard';
-        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">(';
-        $output .=      $this->searchDate;
-        $output .= ')';
+        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">';
 
         // markup to render progress icon
-        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="fa fa-fw fa-refresh"></i>' : '';
+        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="show-for-medium-up fa fa-fw fa-' . $this->faType('generate') . '"></i>' : '';
+
+        $output .= '(' . $this->searchDate . ')';
         $output .= '</span>';
 
         // markup to replace generator element after job posting fetched
         if (AUTO_CURL_HTML_POSTINGS) {
             $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
             $output .= '<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
-            $output .=     $this->officialDate;
+            $output .=     $this->searchDate;
             $output .= '</a>';
             $output .= ']</span>';
         }

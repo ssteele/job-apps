@@ -71,8 +71,12 @@ a:hover {
     display:block;
 }
 
-.mobile-pad {
-    margin-top:1.0em;
+.mobile-row {
+    border-top:1px solid #333;
+    margin-left:1em;
+    margin-top:1.5em;
+    padding:1em 0 0 0;
+    width:92%;
 }
 
 .section {
@@ -111,17 +115,14 @@ a:hover {
     width:16px;
 }
 
+.location,
 .network {
-    margin-left:8px;
+    margin-left:4px;
     margin-right:0;
 }
 
 .icon-too-wide {
     margin-left:-3px;
-}
-
-.online {
-    float:left;
 }
 
 .count:hover {
@@ -155,8 +156,8 @@ a:hover {
     display:inline-block;
 }
 
-.postings i {
-    margin:4px 0 0 8px;
+.postings .fa-refresh {
+    margin:5px 0 0 -24px;
     position:absolute;
 }
 

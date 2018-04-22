@@ -11,6 +11,7 @@ abstract class Application
     public $appDate;
     public $title;
     public $company;
+    public $location;
     public $localPosting = true;
     public $publicPosting;
     public $resume = true;
@@ -87,6 +88,29 @@ abstract class Application
 
 
     /**
+     * Map interview types with font-awesome icons
+     * @param  string $type    Interview type
+     * @return string          Font-Awesome icon name
+     */
+    protected function faType($type = '')
+    {
+        $mapAwesome = [
+            ''          => 'refresh fa-spin',
+            'generate'  => 'refresh',
+            'remote'    => 'wifi',
+            'network'   => 'linkedin-square',
+            'recruiter' => 'comment',
+            'code'      => 'desktop',
+            'phone'     => 'phone-square',
+            'face'      => 'user',
+            'contract'  => 'star',
+        ];
+
+        return $mapAwesome[$type];
+    }
+
+
+    /**
      * Application date markup
      * ...overridden by potential class to add copy to clipboard functionality
      * @return string    Application date
@@ -116,6 +140,10 @@ abstract class Application
             $output .= $this->officialDateMarkup();
         }
 
+        $output .= '<span class="show-for-large-up">';
+        $output .=     $this->addIconIfRemote();
+        $output .= '</span>';
+
         $output .= '</span>';
 
         return $output;
@@ -135,36 +163,20 @@ abstract class Application
         $title = (! empty($this->title)) ? ' &#8226; ' . $this->title : '';
 
         $output = '';
+
         if ($this->publicPosting) {
-            $output = '<span class="online"><a class="' . $this->status . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
+            $output .= '<span class="online"><a class="' . $this->status . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
         } else {
-            $output = '<span class="online"><span class="' . $this->status . '">' . $this->company . $title . '</span></span>';
+            $output .= '<span class="online"><span class="' . $this->status . '">' . $this->company . $title . '</span></span>';
         }
 
-        $output .= $this->jobNetwork();
+        $output .= $this->addIconIfNetwork();
+
+        $output .= '<span class="hidden-for-large-up">';
+        $output .=     $this->addIconIfRemote();
+        $output .= '</span>';
 
         return $output;
-    }
-
-
-    /**
-     * Map interview types with font-awesome icons
-     * @param  string $type    Interview type
-     * @return string          Font-Awesome icon name
-     */
-    protected function faType($type = '')
-    {
-        $mapAwesome = [
-            ''          => 'refresh fa-spin',
-            'generate'  => 'refresh',
-            'recruiter' => 'comment',
-            'code'      => 'desktop',
-            'phone'     => 'phone-square',
-            'face'      => 'user',
-            'contract'  => 'star',
-        ];
-
-        return $mapAwesome[$type];
     }
 
 
@@ -249,13 +261,27 @@ abstract class Application
 
 
     /**
+     * Mark remote job
+     * @return string    HTML markup
+     */
+    protected function addIconIfRemote()
+    {
+        if ('remote' == strtolower($this->location)) {
+            return '<span class="icon location" title="' . $this->location . '"><i class="fa fa-fw fa-' . $this->faType('remote') . '"></i></span>';
+        }
+
+        return false;
+    }
+
+
+    /**
      * Render networking connection for this job
      * @return string    HTML markup
      */
-    protected function jobNetwork()
+    protected function addIconIfNetwork()
     {
         if ($this->network) {
-            return '<span class="icon network" title="' . $this->network . '"><i class="fa fa-linkedin-square"></i></span>';
+            return '<span class="icon network" title="' . $this->network . '"><i class="fa fa-fw fa-' . $this->faType('network') . '"></i></span>';
         }
 
         return false;
@@ -285,13 +311,12 @@ abstract class Application
         $output = '';
 
         $output .=  '<div class="row hide-for-medium-up">';
-        $output .=      '<div class="small-12 columns mobile-pad">';
+        $output .=      '<div class="small-12 columns mobile-row">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
         $output .=  '</div>';
 
         $output .=  '<div class="row">';
-
         $output .=      '<div class="small-3 medium-2 large-2 columns">';
         $output .=          $this->jobApplicationDate();
         $output .=      '</div>';
@@ -307,7 +332,6 @@ abstract class Application
         $output .=      '<div class="small-3 medium-2 large-1 columns">';
         $output .=          $this->jobAssets();
         $output .=      '</div>';
-
         $output .=  '</div>';
 
         return $output;
