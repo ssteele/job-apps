@@ -38,31 +38,21 @@ class Potential extends Base
 
 
     /**
-     * Render generated assets
-     * @return string    HTML markup
-     */
-    protected function jobInterviews()
-    {
-        $output = '';
-
-        $output .= parent::jobResume();
-        $output .= parent::jobLetter();
-
-        return $output;
-    }
-
-
-    /**
      * Render cover letter link created for this job
      * @return string    HTML markup
      */
-    protected function jobLetter()
+    protected function jobLetterGenerator()
     {
         if ($this->letter) {
             $output = '';
 
             $action = (AUTO_GENERATE_LATEX_DOCUMENTS) ? 'auto-generate-latex' : 'copy-to-clipboard';
-            $output .= '<span class="icon asset ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . JOBS_COVER_LETTERS_PATH . '">';
+            $output .= '<span';
+            $output .= '    class="show-for-large-up icon asset ' . $action . '"';
+            $output .= '    id="' . $this->terminalFriendlyFilepath . '"';
+            $output .= '    data-type="pdf"';
+            $output .= '    data-path="' . JOBS_COVER_LETTERS_PATH . '"';
+            $output .= '>';
             $output .=     '<i class="fa fa-envelope-o"></i>';
             $output .= '</span>';
 
@@ -77,13 +67,18 @@ class Potential extends Base
      * Render resume link created for this job
      * @return string    HTML markup
      */
-    protected function jobResume()
+    protected function jobResumeGenerator()
     {
         if ($this->resume) {
             $output = '';
 
             $action = (AUTO_GENERATE_LATEX_DOCUMENTS) ? 'auto-generate-latex' : 'copy-to-clipboard';
-            $output .= '<span class="icon asset ' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="pdf" data-path="' . JOBS_RESUMES_PATH . '">';
+            $output .= '<span';
+            $output .= '    class="show-for-large-up icon asset ' . $action . '"';
+            $output .= '    id="' . $this->terminalFriendlyFilepath . '"';
+            $output .= '    data-type="pdf"';
+            $output .= '    data-path="' . JOBS_RESUMES_PATH . '"';
+            $output .= '>';
             $output .=     '<i class="fa fa-file-o"></i>';
             $output .= '</span>';
 
@@ -91,6 +86,21 @@ class Potential extends Base
         }
 
         return false;
+    }
+
+
+    /**
+     * Render generated assets
+     * @return string    HTML markup
+     */
+    protected function jobInterviews()
+    {
+        $output = '';
+
+        $output .= $this->jobResumeGenerator();
+        $output .= $this->jobLetterGenerator();
+
+        return $output;
     }
 
 
