@@ -217,7 +217,6 @@ $(function() {
     })
   }
 
-
   /**
    * Driver for all auto generate functionality
    */
