@@ -124,10 +124,6 @@ a:hover {
     margin-right:0;
 }
 
-.icon-too-wide {
-    margin-left:-3px;
-}
-
 .count:hover {
     color:#999;
 }
@@ -152,16 +148,6 @@ a:hover {
 
 .generate:hover {
     color:#778;
-}
-
-.postings {
-    cursor:pointer;
-    display:inline-block;
-}
-
-.postings .fa-refresh {
-    margin:5px 0 0 -24px;
-    position:absolute;
 }
 
 footer {

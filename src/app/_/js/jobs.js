@@ -75,7 +75,7 @@ $(function() {
 
       var icon = $(this).find('i')
       var iconClass = icon.attr('class')
-      icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide')
+      icon.attr('class', 'fa fa-fw fa-refresh fa-spin')
 
       var endpoint = 'src/app/ajax/curl-html-posting.php'
       var data = {
@@ -119,7 +119,7 @@ $(function() {
 
       var icon = $(this).find('i')
       var iconClass = icon.attr('class')
-      icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide')
+      icon.attr('class', 'fa fa-fw fa-refresh fa-spin')
 
       var endpoint = 'src/app/ajax/generate-php-document.php'
       var data = {
@@ -159,7 +159,7 @@ $(function() {
 
       var icon = $(this).find('i')
       var iconClass = icon.attr('class')
-      icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide')
+      icon.attr('class', 'fa fa-fw fa-refresh fa-spin')
 
       var endpoint
       var data = {
