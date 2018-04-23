@@ -39,7 +39,8 @@ $jobs[] = Job::create([
 
 $jobs[] = Job::create([
     'status'         => 'applied',
-    'searchDate'     => '04.15.2018',
+    'searchDate'     => '04.15.2015',
+    'appDate'        => '04.16.2015',
     'title'          => 'Senior DevOps Engineer',
     'company'        => 'W2O Group',
     'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
@@ -47,12 +48,12 @@ $jobs[] = Job::create([
 
 $jobs[] = Job::create([
     'status'         => 'applied',
-    'searchDate'     => '05.05.2018',
-    'appDate'        => '05.16.2018',
+    'searchDate'     => '05.05.2015',
+    'appDate'        => '05.06.2015',
     'title'          => 'DevOps Engineer',
     'company'        => 'W2O Group',
     'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
     'interviews'     => [
-        '06-18-2018' => 'phone',
+        '06-18-2015' => 'phone',
     ],
 ]);

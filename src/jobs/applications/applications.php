@@ -16,8 +16,8 @@ Example of all options available
 
 $jobs[] = Job::create([
     'status'         => 'potential',
-    'searchDate'     => '05.15.2015',
-    'appDate'        => '05.16.2015',
+    'searchDate'     => '05.15.2018',
+    'appDate'        => '05.16.2018',
     'title'          => 'DevOps Engineer',
     'company'        => 'W2O Group',
     'localPosting'   => true,
@@ -41,7 +41,7 @@ $lastSearch = '05.15.2015';
 
 $jobs[] = Job::create([
     'status'         => 'potential',
-    'searchDate'     => '05.15.2018',
+    'searchDate'     => '05.15.2015',
     'title'          => 'Junior DevOps Engineer',
     'company'        => 'W2O Group',
     'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',

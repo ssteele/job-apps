@@ -76,7 +76,10 @@ abstract class Base
      */
     protected function deriveInternalVariables()
     {
-        $this->officialDate = ($this->appDate) ? $this->appDate : 'n/a';
+        $this->officialDate = $this->searchDate;
+        if ('potential' !== $this->status && 'dream' !== $this->status) {
+            $this->officialDate = ($this->appDate) ? $this->appDate : 'n/a';
+        }
         $this->searchDateDashed = preg_replace('/\./', '-', $this->searchDate);
         $this->getLocalFilename();
     }
