@@ -5,37 +5,6 @@ namespace SteveSteele\JobApp\Application;
 class Potential extends Base
 {
     /**
-     * Application date markup
-     * ...overridden here to add copy to clipboard functionality
-     * @return string    Application date
-     */
-    protected function officialDateMarkup()
-    {
-        $output = '';
-
-        // generator markup
-        $action = (AUTO_CURL_HTML_POSTINGS) ? 'generate auto-curl-html' : 'copy-to-clipboard';
-        $output .= '<span class="' . $action . '" id="' . $this->terminalFriendlyFilepath . '" data-type="php" data-path="' . JOBS_POSTINGS_PATH . '" data-url="' . $this->publicPosting . '">';
-
-        // markup to render progress icon
-        $output .= (AUTO_CURL_HTML_POSTINGS) ? '<i class="show-for-large-up fa fa-fw fa-' . $this->faType('generate') . '"></i>' : '';
-
-        $output .= '(' . $this->searchDate . ')';
-        $output .= '</span>';
-
-        // markup to replace generator element after job posting fetched
-        if (AUTO_CURL_HTML_POSTINGS) {
-            $output .= '<span style="display:none" data-ref="' . $this->terminalFriendlyFilepath . '">[';
-            $output .= '<a href="' . JOBS_URL . '/postings/' . $this->localFilePath . '.php">';
-            $output .=     $this->searchDate;
-            $output .= '</a>';
-            $output .= ']</span>';
-        }
-
-        return $output;
-    }
-
-    /**
      * Render save link to locally persist the job posting
      * @return string    HTML markup
      */

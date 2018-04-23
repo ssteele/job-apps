@@ -74,6 +74,7 @@ $(function() {
       var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'))
 
       var icon = $(this).find('i')
+      var iconClass = icon.attr('class')
       icon.attr('class', 'fa fa-fw fa-refresh fa-spin icon-too-wide')
 
       var endpoint = 'src/app/ajax/curl-html-posting.php'
@@ -95,12 +96,13 @@ $(function() {
             message += response.message
             alert(message)
           }
-          setTimeout(function() {activateLink(generatorMarkup, hiddenLinkMarkup)}, 500)
+          setTimeout(function() {resetIcon(icon, iconClass)}, 500)
         },
         error: function(response) {
           var message  = 'A error occurred with the request...\n'
           message += response.message
           alert(message)
+          icon.attr('class', iconClass)
         }
       })
     })
