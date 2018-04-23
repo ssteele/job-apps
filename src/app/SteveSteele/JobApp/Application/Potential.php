@@ -36,6 +36,32 @@ class Potential extends Base
     }
 
     /**
+     * Render save link to locally persist the job posting
+     * @return string    HTML markup
+     */
+    protected function jobPostingGenerator()
+    {
+        if ($this->letter) {
+            $output = '';
+
+            $action = (AUTO_CURL_HTML_POSTINGS) ? 'generate auto-curl-html' : 'copy-to-clipboard';
+            $output .= '<span';
+            $output .= '    class="show-for-large-up icon asset ' . $action . '"';
+            $output .= '    id="' . $this->terminalFriendlyFilepath . '"';
+            $output .= '    data-type="php"';
+            $output .= '    data-path="' . JOBS_POSTINGS_PATH . '"';
+            $output .= '    data-url="' . $this->publicPosting . '"';
+            $output .= '>';
+            $output .=     $this->faIcon('generate-posting');
+            $output .= '</span>';
+
+            return $output;
+        }
+
+        return false;
+    }
+
+    /**
      * Render cover letter link created for this job
      * @return string    HTML markup
      */
@@ -51,7 +77,7 @@ class Potential extends Base
             $output .= '    data-type="pdf"';
             $output .= '    data-path="' . JOBS_COVER_LETTERS_PATH . '"';
             $output .= '>';
-            $output .=     '<i class="fa fa-envelope-o"></i>';
+            $output .=     $this->faIcon('generate-letter');
             $output .= '</span>';
 
             return $output;
@@ -76,7 +102,7 @@ class Potential extends Base
             $output .= '    data-type="pdf"';
             $output .= '    data-path="' . JOBS_RESUMES_PATH . '"';
             $output .= '>';
-            $output .=     '<i class="fa fa-file-o"></i>';
+            $output .=     $this->faIcon('generate-resume');
             $output .= '</span>';
 
             return $output;
@@ -95,6 +121,7 @@ class Potential extends Base
 
         $output .= $this->jobResumeGenerator();
         $output .= $this->jobLetterGenerator();
+        $output .= $this->jobPostingGenerator();
 
         return $output;
     }

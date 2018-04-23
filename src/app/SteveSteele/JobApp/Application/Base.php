@@ -85,25 +85,41 @@ abstract class Base
     }
 
     /**
-     * Map interview types with font-awesome icons
-     * @param  string $type    Interview type
-     * @return string          Font-Awesome icon name
+     * Map interview types with font awesome icons
+     * @param  string $type    Icon type
+     * @return string          Font Awesome icon name
      */
     protected function faType($type = '')
     {
         $mapAwesome = [
-            ''          => 'refresh fa-spin',
-            'generate'  => 'refresh',
-            'remote'    => 'wifi',
-            'network'   => 'linkedin-square',
-            'recruiter' => 'comment',
-            'code'      => 'desktop',
-            'phone'     => 'phone-square',
-            'face'      => 'user',
-            'contract'  => 'star',
+            ''                 => 'refresh fa-spin',
+            'generate'         => 'refresh',
+            'remote'           => 'wifi',
+            'network'          => 'linkedin-square',
+            'recruiter'        => 'comment',
+            'code'             => 'desktop',
+            'phone'            => 'phone-square',
+            'face'             => 'user',
+            'contract'         => 'star',
+            'letter'           => 'envelope',
+            'resume'           => 'file',
+            'posting'          => 'bookmark',
+            'generate-letter'  => 'envelope-o',
+            'generate-resume'  => 'file-o',
+            'generate-posting' => 'bookmark-o',
         ];
 
         return $mapAwesome[$type];
+    }
+
+    /**
+     * Render font awesome icons helper method
+     * @param  string $type    Icon type
+     * @return string          Markup for rendering Font Awesome icon
+     */
+    protected function faIcon($type = '')
+    {
+        return '<i class="fa fa-fw fa-' . $this->faType($type) . '" aria-hidden="true"></i>';
     }
 
     /**
@@ -183,22 +199,22 @@ abstract class Base
 
                 if (file_exists($file)) {
                     $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
-                    $output .=     '<i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
+                    $output .=     $this->faIcon($type);
                     $output .= '</a>';
                 } elseif (AUTO_GENERATE_PHP_INTERVIEWS) {
                     // generator markup
                     $output .= '<span class="icon auto-generate-php" id="' . $date . '_' . $this->localFilename . '"';
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';
-                    $output .=     '<i class="fa fa-fw fa-' . $this->faType('generate') . '"></i>';
+                    $output .=     $this->faIcon('generate');
                     $output .= '</span>';
 
                     // markup to replace generator element after document created
                     $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
-                    $output .=     '<i class="fa fa-fw fa-' . $this->faType($type) . '"></i>';
+                    $output .=     $this->faIcon($type);
                     $output .= '</a>';
                 } else {
                     $output .= '<span class="icon copy-to-clipboard" id="' . $date . '_' . $this->localFilename . '" data-type="php">';
-                    $output .=     '<i class="fa fa-fw fa-' . $this->faType() . '"></i>';
+                    $output .=     $this->faIcon();
                     $output .= '</span>';
                 }
             }
@@ -218,11 +234,11 @@ abstract class Base
             $path = JOBS_PATH . '/cover-letters/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
-                return '<a href="' . $path . '.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.pdf" class="icon asset" title="Cover Letter">' . $this->faIcon('letter') . '</a>';
             } elseif (file_exists($path . '.html')) {
-                return '<a href="' . $path . '.html" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.html" class="icon asset" title="Cover Letter">' . $this->faIcon('letter') . '</a>';
             } elseif (file_exists($path . '.txt')) {
-                return '<a href="' . $path . '.txt" class="icon asset" title="Cover Letter"><i class="fa fa-envelope"></i></a>';
+                return '<a href="' . $path . '.txt" class="icon asset" title="Cover Letter">' . $this->faIcon('letter') . '</a>';
             }
         }
 
@@ -239,7 +255,7 @@ abstract class Base
             $path = JOBS_PATH . '/resumes/' . $this->localFilePath;
 
             if (file_exists($path . '.pdf')) {
-                return '<a href="' . $path . '.pdf" class="icon asset" title="Resume"><i class="fa fa-file"></i></a>';
+                return '<a href="' . $path . '.pdf" class="icon asset" title="Resume">' . $this->faIcon('resume') . '</a>';
             }
         }
 
@@ -253,7 +269,7 @@ abstract class Base
     protected function addIconIfRemote()
     {
         if ('remote' == strtolower($this->location)) {
-            return '<span class="icon location" title="' . $this->location . '"><i class="fa fa-fw fa-' . $this->faType('remote') . '"></i></span>';
+            return '<span class="icon location" title="' . $this->location . '">' . $this->faIcon('remote') . '</span>';
         }
 
         return false;
@@ -266,7 +282,7 @@ abstract class Base
     protected function addIconIfNetwork()
     {
         if ($this->network) {
-            return '<span class="icon network" title="' . $this->network . '"><i class="fa fa-fw fa-' . $this->faType('network') . '"></i></span>';
+            return '<span class="icon location" title="' . $this->location . '">' . $this->faIcon('network') . '</span>';
         }
 
         return false;
