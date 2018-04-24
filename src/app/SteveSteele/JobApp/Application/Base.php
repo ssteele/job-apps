@@ -309,13 +309,13 @@ abstract class Base
     {
         $output = '';
 
-        $output .=  '<div class="row hide-for-large-up collapse">';
+        $output .=  '<div class="row hide-for-large-up collapse abridged-view">';
         $output .=      '<div class="small-12 columns mobile-row">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
         $output .=  '</div>';
 
-        $output .=  '<div class="row">';
+        $output .=  '<div class="row unabridged-view">';
         $output .=      '<div class="small-6 medium-3 large-2 columns">';
         $output .=          $this->jobApplicationDate();
         $output .=      '</div>';
@@ -334,8 +334,10 @@ abstract class Base
         $output .=  '</div>';
 
         if (! empty($this->interviews)) {
-            $output .=  '<div class="hide-for-medium-up small-12 columns">';
-            $output .=      $this->jobInterviews();
+            $output .=  '<div class="row hide-for-medium-up abridged-view">';
+            $output .=      '<div class="small-12 columns">';
+            $output .=          $this->jobInterviews();
+            $output .=      '</div>';
             $output .=  '</div>';
         }
 

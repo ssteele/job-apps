@@ -71,7 +71,7 @@ $(function() {
     $('.auto-curl-html').click(function() {
 
       var generatorMarkup = $(this)
-      var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'))
+      var hiddenLinkMarkup = $('.unabridged-view [data-ref="' + $(this).attr('id'))
 
       var icon = $(this).find('i')
       var iconClass = icon.attr('class')
@@ -115,7 +115,7 @@ $(function() {
     $('.auto-generate-php').click(function() {
 
       var generatorMarkup = $(this)
-      var hiddenLinkMarkup = $('[data-ref="' + $(this).attr('id'))
+      var hiddenLinkMarkup = $('.unabridged-view [data-ref="' + $(this).attr('id'))
 
       var icon = $(this).find('i')
       var iconClass = icon.attr('class')
