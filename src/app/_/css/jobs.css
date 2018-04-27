@@ -137,12 +137,12 @@ a:hover {
     color:#797;
 }
 
-.abandoned {
+.abandoned,
+.rejected {
     color:#3c3c3c;
 }
 
 .rejected {
-    color:#3c3c3c;
     text-decoration:line-through;
 }
 
