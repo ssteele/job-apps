@@ -193,23 +193,26 @@ abstract class Base
     {
         $output = '<span class="interview">&nbsp;';
         if (! empty($this->interviews)) {
-            foreach ($this->interviews as $date => $type) {
+            foreach ($this->interviews as $date => $typeStatus) {
+                $type = (is_array($typeStatus)) ? key($typeStatus) : $typeStatus;
+                $status = (is_array($typeStatus)) ? $typeStatus[$type] : '';
+
                 $file = JOBS_PATH . '/interviews/' . $date . '_' . $this->localFilename . '.php';
                 $path = APP_PATH . '/interview/?i=' . urlencode($date . '_' . $this->localFilename);
 
                 if (file_exists($file)) {
-                    $output .= '<a href="' . $path . '" class="icon ' . $type . '">';
+                    $output .= '<a href="' . $path . '" class="icon ' . $type . ' ' . $status . '">';
                     $output .=     $this->faIcon($type);
                     $output .= '</a>';
                 } elseif (AUTO_GENERATE_PHP_INTERVIEWS) {
                     // generator markup
-                    $output .= '<span class="icon auto-generate-php" id="' . $date . '_' . $this->localFilename . '"';
+                    $output .= '<span class="icon auto-generate-php ' . $status . '" id="' . $date . '_' . $this->localFilename . '"';
                     $output .= '    data-type="php" data-path="' . JOBS_INTERVIEWS_PATH . '" data-icon="' . $this->faType($type) . '">';
                     $output .=     $this->faIcon('generate');
                     $output .= '</span>';
 
                     // markup to replace generator element after document created
-                    $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . '" data-ref="' . $date . '_' . $this->localFilename . '">';
+                    $output .= '<a style="display:none" href="' . $path . '" class="icon ' . $type . ' '. $status . '" data-ref="' . $date . '_' . $this->localFilename . '">';
                     $output .=     $this->faIcon($type);
                     $output .= '</a>';
                 } else {

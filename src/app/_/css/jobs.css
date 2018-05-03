@@ -101,6 +101,22 @@ a:hover {
     color:#99c;
 }
 
+.icon.placeholder {
+    color: rgb(125, 65, 65);
+}
+
+.icon.prepped {
+    color: rgb(65, 125, 65);
+}
+
+.icon.pending {
+    color: rgb(65, 65, 125);
+}
+
+.icon.cancelled {
+    color: rgba(85, 85, 85, 0.5);
+}
+
 .icon.contract:hover {
     color:#ff0;
 }
