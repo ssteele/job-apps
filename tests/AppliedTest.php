@@ -7,28 +7,67 @@ use PHPUnit\Framework\TestCase;
 
 class AppliedTest extends TestCase
 {
-    public function testRenderMethodsOnBasicAppWithoutAssets()
+    private $fieldDefaults = [
+        'status'        => '',
+        'searchDate'    => '',
+        'appDate'       => '',
+        'searchLink'    => '',
+        'title'         => '',
+        'company'       => '',
+        'location'      => '',
+        'localPosting'  => true,
+        'publicPosting' => '',
+        'tags'          => [],
+        'resume'        => true,
+        'letter'        => true,
+        'network'       => false,
+        'headhunter'    => false,
+        'salary'        => '',
+        'interviews'    => [],
+    ];
+
+    public function verifyFields(Applied $job, array $input)
     {
-        $jobs[] = Job::create([
+        $input = array_merge($this->fieldDefaults, $input);
+
+        $this->assertEquals($input['status'], $job->status);
+        $this->assertEquals($input['searchDate'], $job->searchDate);
+        $this->assertEquals($input['appDate'], $job->appDate);
+        $this->assertEquals($input['searchLink'], $job->searchLink);
+        $this->assertEquals($input['title'], $job->title);
+        $this->assertEquals($input['company'], $job->company);
+        $this->assertEquals($input['location'], $job->location);
+        $this->assertEquals($input['localPosting'], $job->localPosting);
+        $this->assertEquals($input['publicPosting'], $job->publicPosting);
+        $this->assertEquals($input['tags'], $job->tags);
+        $this->assertEquals($input['resume'], $job->resume);
+        $this->assertEquals($input['letter'], $job->letter);
+        $this->assertEquals($input['network'], $job->network);
+        $this->assertEquals($input['headhunter'], $job->headhunter);
+        $this->assertEquals($input['salary'], $job->salary);
+        $this->assertEquals($input['interviews'], $job->interviews);
+    }
+
+    public function testBasicAppWithoutAssets()
+    {
+        $input = [
             'status'         => 'applied',
             'searchDate'     => '05.15.2015',
             'title'          => 'Junior DevOps Engineer',
             'company'        => 'W2O Group',
             'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Applied::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="applied" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; Junior DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="applied-for"></span><span class="postings">(n/a)</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="applied" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; Junior DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span class="interview">&nbsp;</span></div><div class="small-6 medium-2 large-1 columns"></div></div>';
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderPotentials(false));
-
-        $this->assertEquals($expectedMarkup, $job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnComplexAppWithoutAssets()
+    public function testComplexAppWithoutAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'applied',
             'searchDate'     => '05.15.2015',
             'appDate'        => '05.16.2015',
@@ -43,39 +82,35 @@ class AppliedTest extends TestCase
             'interviews'     => [
                 '06-18-2015' => 'phone',
             ],
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Applied::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="applied interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="applied-for"></span><span class="postings">(05.16.2015)</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="applied interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span class="interview">&nbsp;<a href="src/app/interview/?i=06-18-2015_devops_engineer_w2o_group" class="icon phone"><i class="fa fa-fw fa-phone-square" aria-hidden="true"></i></a></span></div><div class="small-6 medium-2 large-1 columns"></div></div><div class="row hide-for-medium-up abridged-view"><div class="small-12 columns"><span class="interview">&nbsp;<a href="src/app/interview/?i=06-18-2015_devops_engineer_w2o_group" class="icon phone"><i class="fa fa-fw fa-phone-square" aria-hidden="true"></i></a></span></div></div>';
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderPotentials(false));
-
-        $this->assertEquals($expectedMarkup, $job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnBasicAppWithAssets()
+    public function testBasicAppWithAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'applied',
             'searchDate'     => '05.05.2015',
             'title'          => 'DevOps Engineer',
             'company'        => 'W2O Group',
             'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Applied::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="applied" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="applied-for"></span><span class="postings">[<a href="http://shs.job-apps.com:8888/src/jobs/postings/05-05-2015_devops_engineer_w2o_group.php">n/a</a>]</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="applied" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span class="interview">&nbsp;</span></div><div class="small-6 medium-2 large-1 columns"><a href="src/jobs/resumes/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Resume"><i class="fa fa-fw fa-file" aria-hidden="true"></i></a><a href="src/jobs/cover-letters/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></div></div>';
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderPotentials(false));
-
-        $this->assertEquals($expectedMarkup, $job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnComplexAppWithAssets()
+    public function testComplexAppWithAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'applied',
             'searchDate'     => '05.05.2015',
             'appDate'        => '05.16.2015',
@@ -90,14 +125,12 @@ class AppliedTest extends TestCase
             'interviews'     => [
                 '06-18-2015' => 'phone',
             ],
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Applied::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="applied interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="applied-for"></span><span class="postings">[<a href="http://shs.job-apps.com:8888/src/jobs/postings/05-05-2015_devops_engineer_w2o_group.php">05.16.2015</a>]</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="applied interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span class="interview">&nbsp;<a href="src/app/interview/?i=06-18-2015_devops_engineer_w2o_group" class="icon phone"><i class="fa fa-fw fa-phone-square" aria-hidden="true"></i></a></span></div><div class="small-6 medium-2 large-1 columns"><a href="src/jobs/resumes/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Resume"><i class="fa fa-fw fa-file" aria-hidden="true"></i></a><a href="src/jobs/cover-letters/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></div></div><div class="row hide-for-medium-up abridged-view"><div class="small-12 columns"><span class="interview">&nbsp;<a href="src/app/interview/?i=06-18-2015_devops_engineer_w2o_group" class="icon phone"><i class="fa fa-fw fa-phone-square" aria-hidden="true"></i></a></span></div></div>';
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderPotentials(false));
-
-        $this->assertEquals($expectedMarkup, $job->renderApplications(false));
     }
 }

@@ -8,15 +8,18 @@ abstract class Base
     public $status;
     public $searchDate;
     public $appDate;
+    public $searchLink;
     public $title;
     public $company;
     public $location;
     public $localPosting = true;
     public $publicPosting;
+    public $tags = [];
     public $resume = true;
     public $letter = true;
     public $network = false;
     public $headhunter = false;
+    public $salary;
     public $interviews = [];
 
     // Internal properties

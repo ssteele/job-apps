@@ -7,29 +7,67 @@ use PHPUnit\Framework\TestCase;
 
 class PotentialTest extends TestCase
 {
+    private $fieldDefaults = [
+        'status'        => '',
+        'searchDate'    => '',
+        'appDate'       => '',
+        'searchLink'    => '',
+        'title'         => '',
+        'company'       => '',
+        'location'      => '',
+        'localPosting'  => true,
+        'publicPosting' => '',
+        'tags'          => [],
+        'resume'        => true,
+        'letter'        => true,
+        'network'       => false,
+        'headhunter'    => false,
+        'salary'        => '',
+        'interviews'    => [],
+    ];
 
-    public function testRenderMethodsOnBasicAppWithoutAssets()
+    public function verifyFields(Potential $job, array $input)
     {
-        $jobs[] = Job::create([
+        $input = array_merge($this->fieldDefaults, $input);
+
+        $this->assertEquals($input['status'], $job->status);
+        $this->assertEquals($input['searchDate'], $job->searchDate);
+        $this->assertEquals($input['appDate'], $job->appDate);
+        $this->assertEquals($input['searchLink'], $job->searchLink);
+        $this->assertEquals($input['title'], $job->title);
+        $this->assertEquals($input['company'], $job->company);
+        $this->assertEquals($input['location'], $job->location);
+        $this->assertEquals($input['localPosting'], $job->localPosting);
+        $this->assertEquals($input['publicPosting'], $job->publicPosting);
+        $this->assertEquals($input['tags'], $job->tags);
+        $this->assertEquals($input['resume'], $job->resume);
+        $this->assertEquals($input['letter'], $job->letter);
+        $this->assertEquals($input['network'], $job->network);
+        $this->assertEquals($input['headhunter'], $job->headhunter);
+        $this->assertEquals($input['salary'], $job->salary);
+        $this->assertEquals($input['interviews'], $job->interviews);
+    }
+
+    public function testBasicAppWithoutAssets()
+    {
+        $input = [
             'status'         => 'potential',
             'searchDate'     => '05.15.2015',
             'title'          => 'Junior DevOps Engineer',
             'company'        => 'W2O Group',
             'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Potential::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="potential" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; Junior DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="postings">(05.15.2015)</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="potential" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; Junior DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_junior_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_junior_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-15-2015_junior_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div><div class="small-6 medium-2 large-1 columns"></div></div>';
-        $this->assertEquals($expectedMarkup, $job->renderPotentials(false));
-
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnComplexAppWithoutAssets()
+    public function testComplexAppWithoutAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'potential',
             'searchDate'     => '05.15.2015',
             'appDate'        => '05.16.2015',
@@ -44,39 +82,35 @@ class PotentialTest extends TestCase
             'interviews'     => [
                 '06-18-2015' => 'phone',
             ],
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Potential::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="potential interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="postings">(05.15.2015)</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="potential interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-15-2015_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div><div class="small-6 medium-2 large-1 columns"></div></div><div class="row hide-for-medium-up abridged-view"><div class="small-12 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-15-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-15-2015_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div></div>';
-        $this->assertEquals($expectedMarkup, $job->renderPotentials(false));
-
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnBasicAppWithAssets()
+    public function testBasicAppWithAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'potential',
             'searchDate'     => '05.05.2015',
             'title'          => 'DevOps Engineer',
             'company'        => 'W2O Group',
             'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Potential::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="potential" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="postings">[<a href="http://shs.job-apps.com:8888/src/jobs/postings/05-05-2015_devops_engineer_w2o_group.php">05.05.2015</a>]</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="potential" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-05-2015_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div><div class="small-6 medium-2 large-1 columns"><a href="src/jobs/resumes/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Resume"><i class="fa fa-fw fa-file" aria-hidden="true"></i></a><a href="src/jobs/cover-letters/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></div></div>';
-        $this->assertEquals($expectedMarkup, $job->renderPotentials(false));
-
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderApplications(false));
     }
 
-    public function testRenderMethodsOnComplexAppWithAssets()
+    public function testComplexAppWithAssets()
     {
-        $jobs[] = Job::create([
+        $input = [
             'status'         => 'potential',
             'searchDate'     => '05.05.2015',
             'appDate'        => '05.16.2015',
@@ -91,14 +125,12 @@ class PotentialTest extends TestCase
             'interviews'     => [
                 '06-18-2015' => 'phone',
             ],
-        ]);
-
+        ];
+        $jobs[] = Job::create($input);
         $job = array_pop($jobs);
+
         $this->assertInstanceOf(Potential::class, $job);
-
-        $expectedMarkup = '<div class="row hide-for-large-up collapse abridged-view"><div class="small-12 columns mobile-row"><span class="online"><a class="potential interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div></div><div class="row unabridged-view"><div class="small-6 medium-3 large-2 columns"><span class="postings">[<a href="http://shs.job-apps.com:8888/src/jobs/postings/05-05-2015_devops_engineer_w2o_group.php">05.05.2015</a>]</span></div><div class="show-for-large-up large-5 columns"><span class="online"><a class="potential interviewing" href="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs">W2O Group &#8226; DevOps Engineer</a></span></div><div class="show-for-medium-up medium-7 large-4 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-05-2015_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div><div class="small-6 medium-2 large-1 columns"><a href="src/jobs/resumes/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Resume"><i class="fa fa-fw fa-file" aria-hidden="true"></i></a><a href="src/jobs/cover-letters/05-05-2015_devops_engineer_w2o_group.pdf" class="icon asset" title="Cover Letter"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></div></div><div class="row hide-for-medium-up abridged-view"><div class="small-12 columns"><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/resumes"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset auto-generate-latex"    id="05-05-2015_devops_engineer_w2o_group"    data-type="pdf"    data-path="src/jobs/cover-letters"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i></span><span    class="show-for-large-up icon asset generate auto-curl-html"    id="05-05-2015_devops_engineer_w2o_group"    data-type="php"    data-path="src/jobs/postings"    data-url="http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs"><i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i></span></div></div>';
-        $this->assertEquals($expectedMarkup, $job->renderPotentials(false));
-
+        $this->verifyFields($job, $input);
         $this->assertFalse($job->renderApplications(false));
     }
 }
