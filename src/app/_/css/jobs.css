@@ -101,19 +101,19 @@ a:hover {
     color:#99c;
 }
 
-.icon.placeholder {
+.icon.hold {
     color: rgb(125, 65, 65);
 }
 
-.icon.prepped {
+.icon.prep {
     color: rgb(65, 125, 65);
 }
 
-.icon.pending {
+.icon.wait {
     color: rgb(65, 65, 125);
 }
 
-.icon.cancelled {
+.icon.kill {
     color: rgba(85, 85, 85, 0.5);
 }
 

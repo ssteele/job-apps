@@ -66,11 +66,11 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'network'        => false,                                  // keep track of who recommended the job
         'headhunter'     => false,                                  // was it a recruiter? auugh
         'interviews'     => [                                       // interviews array
-            '06-01-2015' => 'recruiter',                            // ...add interview dates and types as you have them
-            '06-06-2015' => 'code',                                 // ...keep notes on questions, answers, general happenings using Interview Pages (see details below)
-            '06-18-2015' => 'phone',                                // ...wow, many interviews
-            '06-25-2015' => 'face',                                 // ......you are
-            '06-30-2015' => 'contract',                             // .........killing it
+            '06-01-2015' => 'recruiter',                            // add interview dates and types as you have them
+            '06-06-2015' => 'code',                                 // keep notes on questions, answers, general happenings using Interview Pages (see details below)
+            '06-18-2015' => 'phone',                                // wow, you are killing it with these interviews - interview status defaults to 'done'
+            '06-25-2015' => ['face' => 'prep'],                     // ...but you can supply the status, options include: `hold`, `prep`, `wait`, `done`, and `kill`
+            '06-30-2015' => ['contract', 'hold'],                   // ...let's just put a placeholder on the offer - feeling good about this one
         ],
     ]);
 
