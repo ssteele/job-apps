@@ -152,8 +152,12 @@ code {
     background-image:url(../img/phone.png);
 }
 
-.face {
-    background-image:url(../img/face.png);
+.person {
+    background-image:url(../img/person.png);
+}
+
+.committee {
+    background-image:url(../img/committee.png);
 }
 
 .contract {
