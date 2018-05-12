@@ -289,7 +289,7 @@ abstract class Base
     protected function addIconIfNetwork()
     {
         if ($this->network) {
-            return '<span class="icon location" title="' . $this->location . '">' . $this->faIcon('network') . '</span>';
+            return '<span class="icon network" title="' . $this->network . '">' . $this->faIcon('network') . '</span>';
         }
 
         return false;
