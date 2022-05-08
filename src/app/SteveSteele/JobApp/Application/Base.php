@@ -275,7 +275,7 @@ abstract class Base
      */
     protected function addIconIfRemote()
     {
-        if ('remote' == strtolower($this->location)) {
+        if ($this->location && 'remote' == strtolower($this->location)) {
             return '<span class="icon location" title="' . $this->location . '">' . $this->faIcon('remote') . '</span>';
         }
 

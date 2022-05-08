@@ -106,7 +106,7 @@ function sanitizeByType($input, $type)
 {
     switch ($type) {
         case 's':
-            $input = filter_var($input, FILTER_SANITIZE_STRING);
+            $input = filter_var($input, FILTER_UNSAFE_RAW);
             break;
 
         case 'i':
