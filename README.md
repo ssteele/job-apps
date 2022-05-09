@@ -98,7 +98,7 @@ For auto-generated documents, you'll need to set LaTeX up on your machine. A bas
 
 Here's how I installed it:
 
-    brew cask install mactex
+    brew install mactex --cask
 
 You may need to update the paths to your LaTeX library in a few files:
 
