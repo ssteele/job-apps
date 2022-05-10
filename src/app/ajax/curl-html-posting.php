@@ -33,11 +33,9 @@ $isGeneratedMessage = $htmlPosting->generate();
 if ('Document generated' !== $isGeneratedMessage) {
     $response['status'] = 'error';
     $response['message'] = 'Error: ' . $isGeneratedMessage;
-    echo json_encode($response);
-    die();
+} else {
+    $response['message'] = $isGeneratedMessage;
 }
-
-$response['message'] = $isGeneratedMessage;
 
 echo json_encode($response);
 die;

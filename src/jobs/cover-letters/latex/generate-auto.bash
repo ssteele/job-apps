@@ -23,10 +23,10 @@ if [[ -n "$1" ]]; then
     rm -fr ${filename}.log
 
     # driver
-    ${latex} ${filename}.tex
-    ${latex} ${filename}.tex
-    ${latex} ${filename}.tex
-    ${dvipdf} ${filename}
+    ${latex} ${filename}.tex >/dev/null 2>&1
+    ${latex} ${filename}.tex >/dev/null 2>&1
+    ${latex} ${filename}.tex >/dev/null 2>&1
+    ${dvipdf} ${filename} >/dev/null 2>&1
 
     if [ -e ${filename}.dvi ] && [ -s ${filename}.dvi ]; then
         if [ -e ${filename}.pdf ] && [ -s ${filename}.pdf ]; then
