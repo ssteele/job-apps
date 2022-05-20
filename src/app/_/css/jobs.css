@@ -153,12 +153,13 @@ a:hover {
     color:#797;
 }
 
+.declined,
 .abandoned,
 .rejected {
     color:#3c3c3c;
 }
 
-.rejected {
+.declined {
     text-decoration:line-through;
 }
 
