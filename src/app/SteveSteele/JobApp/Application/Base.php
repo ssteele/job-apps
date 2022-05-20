@@ -9,8 +9,9 @@ abstract class Base
     public $searchDate;
     public $appDate;
     public $searchLink;
-    public $title;
     public $company;
+    public $title;
+    public $role;
     public $location;
     public $localPosting = true;
     public $publicPosting;
@@ -28,6 +29,12 @@ abstract class Base
     protected $localFilename;
     protected $localFilePath;
     protected $terminalFriendlyFilepath;
+
+    const VALID_LOCATIONS = [
+        'remote',
+        'hybrid',
+        'office',
+    ];
 
     /**
      * Constructor
@@ -98,7 +105,10 @@ abstract class Base
             ''                 => 'refresh fa-spin',
             'generate'         => 'refresh',
             'remote'           => 'wifi',
+            'hybrid'           => 'paperclip',
+            'office'           => 'building-o',
             'network'          => 'linkedin-square',
+            'lead'             => 'shield',
             'recruiter'        => 'comment',
             'code'             => 'desktop',
             'phone'            => 'phone-square',
@@ -155,7 +165,7 @@ abstract class Base
             $output .= $this->officialDateMarkup();
         }
 
-        $output .= $this->addIconIfRemote();
+        $output .= $this->addLocationIcon();
 
         $output .= '</span>';
 
@@ -178,6 +188,7 @@ abstract class Base
         $cssClass .= (! empty($this->interviews)) ? ' interviewing' : '' ;
 
         $output = '';
+
         if ($this->publicPosting) {
             $output .= '<span class="online"><a class="' . $cssClass . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
         } else {
@@ -185,6 +196,7 @@ abstract class Base
         }
 
         $output .= $this->addIconIfNetwork();
+        $output .= $this->addIconIfLeadRole();
 
         return $output;
     }
@@ -270,13 +282,14 @@ abstract class Base
     }
 
     /**
-     * Mark remote job
+     * Add location icon: remote, office, hybrid
      * @return string    HTML markup
      */
-    protected function addIconIfRemote()
+    protected function addLocationIcon()
     {
-        if ($this->location && 'remote' == strtolower($this->location)) {
-            return '<span class="icon location" title="' . $this->location . '">' . $this->faIcon('remote') . '</span>';
+        $location = strtolower($this->location);
+        if ($location && in_array($location, self::VALID_LOCATIONS)) {
+            return '<span class="icon location" title="' . $location . '">' . $this->faIcon($location) . '</span>';
         }
 
         return false;
@@ -288,8 +301,23 @@ abstract class Base
      */
     protected function addIconIfNetwork()
     {
-        if ($this->network) {
-            return '<span class="icon network" title="' . $this->network . '">' . $this->faIcon('network') . '</span>';
+        $network = strtolower($this->network);
+        if ($network) {
+            return '<span class="icon network" title="' . $network . '">' . $this->faIcon('network') . '</span>';
+        }
+
+        return false;
+    }
+
+    /**
+     * Render lead icon where appropriate
+     * @return string    HTML markup
+     */
+    protected function addIconIfLeadRole()
+    {
+        $role = strtolower($this->role);
+        if ('lead' == $role) {
+            return '<span class="icon role" title="' . $role . '">' . $this->faIcon($role) . '</span>';
         }
 
         return false;
@@ -327,11 +355,11 @@ abstract class Base
         $output .=          $this->jobApplicationDate();
         $output .=      '</div>';
 
-        $output .=      '<div class="show-for-large-up large-5 columns">';
+        $output .=      '<div class="show-for-large-up large-6 columns">';
         $output .=          $this->jobTitle();
         $output .=      '</div>';
 
-        $output .=      '<div class="show-for-medium-up medium-7 large-4 columns">';
+        $output .=      '<div class="show-for-medium-up medium-7 large-3 columns">';
         $output .=          $this->jobInterviews();
         $output .=      '</div>';
 
