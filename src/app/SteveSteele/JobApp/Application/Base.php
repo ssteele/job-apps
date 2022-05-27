@@ -19,6 +19,7 @@ abstract class Base
     public $tags = [];
     public $resume = true;
     public $letter = true;
+    public $headhunter = false;
     public $network = false;
     public $salary;
     public $interviews = [];
@@ -114,6 +115,7 @@ abstract class Base
             'hybrid'           => 'paperclip',
             'office'           => 'building-o',
             'network'          => 'linkedin-square',
+            'headhunter'       => 'registered',
             'lead'             => 'shield',
             'recruiter'        => 'comment',
             'code'             => 'desktop',
@@ -184,9 +186,9 @@ abstract class Base
      */
     protected function jobTitle()
     {
-        $name = $this->company ?: $this->recruiter;
-        if ($this->recruiter) {
-            $name = '[' . $name . ']';
+        $name = $this->company;
+        if (! $name) {
+            $name = '[' . $this->recruiter . ']';
         }
 
         $title = (! empty($this->title)) ? ' &#8226; ' . $this->title : '';
@@ -202,6 +204,7 @@ abstract class Base
             $output .= '<span class="online"><span class="' . $cssClass . '">' . $name . $title . '</span></span>';
         }
 
+        $output .= $this->addIconIfHeadHunter();
         $output .= $this->addIconIfNetwork();
         $output .= $this->addIconIfLeadRole();
 
@@ -297,6 +300,26 @@ abstract class Base
         $location = strtolower($this->location);
         if ($location && in_array($location, self::VALID_LOCATIONS)) {
             return '<span class="icon location" title="' . $location . '">' . $this->faIcon($location) . '</span>';
+        }
+
+        return false;
+    }
+
+    /**
+     * Render headhunter connection for this job
+     * @return string    HTML markup
+     */
+    protected function addIconIfHeadHunter()
+    {
+        if ($this->headhunter) {
+            $output  = '<span class="icon headhunter tooltip-container">';
+            $output .=     $this->faIcon('headhunter');
+            $output .=     '<span class="tooltip">';
+            $output .=         $this->headhunter;
+            $output .=     '</span>';
+            $output .= '</span>';
+
+            return $output;
         }
 
         return false;

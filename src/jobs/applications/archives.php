@@ -29,6 +29,7 @@ $jobs[] = Job::create([
     'tags'           => ['php', 'javascript', 'api', 'agile'],
     'resume'         => true,
     'letter'         => true,
+    'headhunter'     => false,
     'network'        => false,
     'salary'         => '',
     'interviews'     => [

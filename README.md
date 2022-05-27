@@ -63,8 +63,8 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'publicPosting'  => 'https://www.linkedin.com/jobs/view/1/',// link to job posting
         'resume'         => true,                                   // keep track of the resume you sent
         'letter'         => true,                                   // keep track of the cover letter you applied with
-        'network'        => false,                                  // keep track of who recommended the job
-        'headhunter'     => false,                                  // was it a recruiter? auugh
+        'headhunter'     => false,                                  // track the name of the recruiter
+        'network'        => false,                                  // track the name of the person recommended the job
         'interviews'     => [                                       // interviews array
             '06-01-2015' => 'recruiter',                            // add interview dates and types as you have them
             '06-06-2015' => 'code',                                 // keep notes on questions, answers, general happenings using Interview Pages (see details below)
