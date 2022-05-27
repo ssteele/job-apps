@@ -45,8 +45,8 @@ Once you have found a posting that interests you, add it to the app. Job applica
     $jobs[] = Job::create([
         'status'         => 'potential',
         'searchDate'     => '05.15.2015',
-        'title'          => 'Junior DevOps Engineer',
         'company'        => 'W2O Group',
+        'title'          => 'Junior DevOps Engineer',
         'publicPosting'  => 'http://www.w2ogroup.com/careers/devops-engineer-onre0fwc/#sthash.s2gz1WrS.dpbs',
     ]);
 
@@ -56,8 +56,8 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'searchDate'     => '05.15.2015',                           // when you found the posting
         'appDate'        => '05.16.2015',                           // when you actually applied for the job
         'searchLink'     => 'Indeed: Laravel',                      // job list used to find the job
-        'title'          => 'DevOps Engineer',                      // job title
         'company'        => 'W2O Group',                            // company name
+        'title'          => 'DevOps Engineer',                      // job title
         'location'       => 'Austin',                               // job location
         'localPosting'   => true,                                   // keep track of the original job posting
         'publicPosting'  => 'https://www.linkedin.com/jobs/view/1/',// link to job posting
