@@ -9,6 +9,7 @@ abstract class Base
     public $searchDate;
     public $appDate;
     public $searchLink;
+    public $recruiter;
     public $company;
     public $title;
     public $role;
@@ -19,7 +20,6 @@ abstract class Base
     public $resume = true;
     public $letter = true;
     public $network = false;
-    public $headhunter = false;
     public $salary;
     public $interviews = [];
 
@@ -66,6 +66,12 @@ abstract class Base
             'title',
             'company',
         ];
+        if ($this->recruiter) {
+            $fields = [
+                'title',
+                'recruiter',
+            ];
+        }
 
         foreach ($fields as $f) {
             $f = strtolower($this->$f);
@@ -178,8 +184,9 @@ abstract class Base
      */
     protected function jobTitle()
     {
-        if ($this->headhunter) {
-            $this->company = '[' . $this->company . ']';
+        $name = $this->company ?: $this->recruiter;
+        if ($this->recruiter) {
+            $name = '[' . $name . ']';
         }
 
         $title = (! empty($this->title)) ? ' &#8226; ' . $this->title : '';
@@ -190,9 +197,9 @@ abstract class Base
         $output = '';
 
         if ($this->publicPosting) {
-            $output .= '<span class="online"><a class="' . $cssClass . '" href="' . $this->publicPosting . '">' . $this->company . $title . '</a></span>';
+            $output .= '<span class="online"><a class="' . $cssClass . '" href="' . $this->publicPosting . '">' . $name . $title . '</a></span>';
         } else {
-            $output .= '<span class="online"><span class="' . $cssClass . '">' . $this->company . $title . '</span></span>';
+            $output .= '<span class="online"><span class="' . $cssClass . '">' . $name . $title . '</span></span>';
         }
 
         $output .= $this->addIconIfNetwork();
@@ -303,7 +310,14 @@ abstract class Base
     {
         $network = strtolower($this->network);
         if ($network) {
-            return '<span class="icon network" title="' . $network . '">' . $this->faIcon('network') . '</span>';
+            $output  = '<span class="icon network tooltip-container">';
+            $output .=     $this->faIcon('network');
+            $output .=     '<span class="tooltip">';
+            $output .=         $network;
+            $output .=     '</span>';
+            $output .= '</span>';
+
+            return $output;
         }
 
         return false;

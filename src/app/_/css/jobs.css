@@ -167,6 +167,17 @@ a:hover {
     color:#778;
 }
 
+.tooltip-container:hover .tooltip {
+    display:block;
+}
+  
+.tooltip {
+    display: none;
+    left: 2rem;
+    position: absolute;
+    z-index: 1000;
+}
+
 footer {
     height:100px;
 }
