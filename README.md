@@ -58,7 +58,7 @@ Once you have found a posting that interests you, add it to the app. Job applica
         'searchLink'     => 'Indeed: Laravel',                      // job list used to find the job
         'company'        => 'W2O Group',                            // company name
         'title'          => 'DevOps Engineer',                      // job title
-        'location'       => 'Austin',                               // job location
+        'location'       => 'remote',                               // options: remote, hybrid, office
         'localPosting'   => true,                                   // keep track of the original job posting
         'publicPosting'  => 'https://www.linkedin.com/jobs/view/1/',// link to job posting
         'resume'         => true,                                   // keep track of the resume you sent
