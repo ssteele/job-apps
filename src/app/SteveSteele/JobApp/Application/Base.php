@@ -312,9 +312,9 @@ abstract class Base
     protected function addIconIfHeadHunter()
     {
         if ($this->headhunter) {
-            $output  = '<span class="icon headhunter tooltip-container">';
+            $output  = '<span class="icon contact">';
             $output .=     $this->faIcon('headhunter');
-            $output .=     '<span class="tooltip">';
+            $output .=     '<span class="info hidden">';
             $output .=         $this->headhunter;
             $output .=     '</span>';
             $output .= '</span>';
@@ -331,12 +331,11 @@ abstract class Base
      */
     protected function addIconIfNetwork()
     {
-        $network = strtolower($this->network);
         if ($network) {
-            $output  = '<span class="icon network tooltip-container">';
+            $output  = '<span class="icon contact">';
             $output .=     $this->faIcon('network');
-            $output .=     '<span class="tooltip">';
-            $output .=         $network;
+            $output .=     '<span class="info hidden">';
+            $output .=         $this->network;
             $output .=     '</span>';
             $output .= '</span>';
 

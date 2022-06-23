@@ -71,6 +71,10 @@ a:hover {
     display:block;
 }
 
+.hidden {
+    display: none;
+}
+
 .row > .mobile-row {
     border-top:none;
     padding-top:1.25em;
@@ -176,6 +180,16 @@ a:hover {
     left: 2rem;
     position: absolute;
     z-index: 1000;
+}
+
+#info-panel {
+    background: #ff0;
+    bottom: 0;
+    display: none;
+    left: 0;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
 }
 
 footer {

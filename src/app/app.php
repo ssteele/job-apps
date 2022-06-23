@@ -45,6 +45,10 @@ require_once route([JOBS_PATH, '/applications/meta.php']);
             <?php isset($jobs) ? Job::render('potentials', $jobs) : ''; ?>
         </div>
 
+        <div id="info-panel">
+            <span></span>
+        </div>
+
     </div>
 </div>
 
