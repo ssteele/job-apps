@@ -75,6 +75,10 @@ a:hover {
     display: none;
 }
 
+.click-for-info {
+    color: #330;
+}
+
 .row > .mobile-row {
     border-top:none;
     padding-top:1.25em;

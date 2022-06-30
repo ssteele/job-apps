@@ -1,28 +1,26 @@
 $(function() {
 
+  var hideInfoPanel = function() {
+    var infoPanelEl = $('#info-panel');
+    infoPanelEl.fadeOut();
+  };
+
   var showInfoPanel = function(text) {
     var infoPanelTextEl = $('#info-panel span');
     infoPanelTextEl.text(text);
     var infoPanelEl = $('#info-panel');
     infoPanelEl.fadeIn();
-  };
-
-  var hideInfoPanel = function() {
-    var infoPanelEl = $('#info-panel');
-    infoPanelEl.fadeOut();
+    setTimeout(hideInfoPanel, 3000);
   };
 
   /**
    * Count up the number of jobs applied to and inform
    */
   var infoAppCount = function() {
-    $('#apply-count').hover(
+    $('#apply-count').click(
     function() {
       var total = $('.applied-for').length;
       showInfoPanel(`You have applied to ${total} jobs`);
-    },
-    function() {
-      hideInfoPanel();
     })
   };
 
@@ -30,13 +28,10 @@ $(function() {
    * Count up the number of job potentials and inform
    */
   var infoPotentialCount = function() {
-    $('#potential-count').hover(
+    $('#potential-count').click(
     function() {
       var total = $('.potential:visible').length
       showInfoPanel(`You have ${total} potential jobs`);
-    },
-    function() {
-      hideInfoPanel();
     })
   };
 
@@ -44,15 +39,12 @@ $(function() {
    * Inform contact info: recruiter, network
    */
   var infoContact = function() {
-    $('.contact').hover(
+    $('.contact').click(
     function(e) {
       var name = e.target.textContent || e.target.parentElement.textContent;
       if (name) {
         showInfoPanel(name);
       }
-    },
-    function() {
-      hideInfoPanel();
     })
   };
 

@@ -312,7 +312,7 @@ abstract class Base
     protected function addIconIfHeadHunter()
     {
         if ($this->headhunter) {
-            $output  = '<span class="icon contact">';
+            $output  = '<span class="icon contact click-for-info">';
             $output .=     $this->faIcon('headhunter');
             $output .=     '<span class="info hidden">';
             $output .=         $this->headhunter;
@@ -332,7 +332,7 @@ abstract class Base
     protected function addIconIfNetwork()
     {
         if ($network) {
-            $output  = '<span class="icon contact">';
+            $output  = '<span class="icon contact click-for-info">';
             $output .=     $this->faIcon('network');
             $output .=     '<span class="info hidden">';
             $output .=         $this->network;
